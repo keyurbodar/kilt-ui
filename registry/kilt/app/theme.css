@@ -289,24 +289,46 @@
   --color-white: #fff;
   --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
+  --font-terminal: "JetBrainsMono Nerd Font Mono", var(--font-geist-mono);
+  --text-plan-chip: var(--responsive-text-plan-chip);
+  --text-plan-chip--line-height: 1.4;
+  --text-count-chip: var(--responsive-text-count-chip);
+  --text-count-chip--line-height: 1;
+  --text-avatar-sm: 10px;
+  --text-avatar-xs: 8px;
+  --text-2xs: var(--responsive-text-2xs);
+  --text-2xs--line-height: 1.3;
+  --text-2xs--letter-spacing: 0em;
   --text-xs: var(--responsive-text-xs);
   --text-xs--line-height: 1.3;
+  --text-xs--letter-spacing: 0em;
   --text-sm: var(--responsive-text-sm);
   --text-sm--line-height: 1.25;
+  --text-sm--letter-spacing: -0.01em;
   --text-base: var(--responsive-text-base);
   --text-base--line-height: 1.2;
+  --text-base--letter-spacing: -0.02em;
   --text-lg: var(--responsive-text-lg);
   --text-lg--line-height: 1.2;
+  --text-lg--letter-spacing: -0.02em;
   --text-xl: var(--responsive-text-xl);
   --text-xl--line-height: 1.2;
+  --text-xl--letter-spacing: -0.02em;
   --text-2xl: var(--responsive-text-2xl);
   --text-2xl--line-height: 1.2;
+  --text-2xl--letter-spacing: -0.025em;
   --text-3xl: 1.875rem;
   --text-3xl--line-height: calc(2.25 / 1.875);
   --text-4xl: 2.25rem;
   --text-4xl--line-height: calc(2.5 / 2.25);
   --text-7xl: 4.5rem;
   --text-7xl--line-height: 1;
+  --text-markdown: var(--responsive-text-markdown);
+  --text-markdown--line-height: 1.5;
+  --text-markdown--letter-spacing: -0.01em;
+  --text-code-block: var(--responsive-text-code-block);
+  --text-code-block--line-height: 1;
+  --text-code-block--letter-spacing: -0.01em;
   --font-weight-normal: 450;
   --font-weight-medium: 500;
   --font-weight-semibold: 560;
@@ -316,6 +338,10 @@
   --leading-normal: 1.5;
   --leading-relaxed: 1.625;
   --spacing: 0.25rem;
+  --spacing-page-padding: var(--responsive-page-padding);
+  --spacing-hairline: 0.5px;
+  --spacing-switch-inset: 1.5px;
+  --border-width-hairline: 0.5px;
   --container-xs: 20rem;
   --container-sm: 24rem;
   --container-md: 28rem;
@@ -331,12 +357,45 @@
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 96rem;
+  --radius: 0.375rem;
   --radius-xs: 0.125rem;
   --radius-sm: 0.1875rem;
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
+  --icon-xs: var(--responsive-icon-xs);
+  --icon-sm: var(--responsive-icon-sm);
+  --icon-base: var(--responsive-icon-base);
+  --icon-lg: var(--responsive-icon-lg);
+  --icon-mark: 32px;
+  --h-control-xs: var(--responsive-h-control-xs);
+  --h-control-sm: var(--responsive-h-control-sm);
+  --h-control-base: var(--responsive-h-control-base);
+  --h-control-lg: var(--responsive-h-control-lg);
+  --h-menu-row: var(--responsive-h-menu-row);
+  --h-palette-row: var(--responsive-h-palette-row);
+  --h-badge-xs: var(--responsive-h-badge-xs);
+  --h-badge-sm: var(--responsive-h-badge-sm);
+  --h-badge-base: var(--responsive-h-badge-base);
+  --h-badge-count: var(--responsive-h-badge-count);
+  --z-table-lead: 1;
+  --z-chat-row-lift: 1;
+  --z-preview-guest: 5;
+  --z-top-bar: 10;
+  --z-tile-divider: 15;
+  --z-drop-preview: 20;
+  --z-sidebar: 50;
+  --z-drawer: 350;
+  --z-dialog: 500;
+  --z-overlay-content: 550;
+  --z-toast: 600;
+  --z-tooltip: 700;
+  --duration-fast: 0.15s;
+  --duration-base: 0.2s;
+  --duration-slow: 0.3s;
+  --duration-slower: 0.5s;
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
   --default-transition-duration: 0.15s;
   --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --default-font-family: var(--font-sans);
@@ -370,6 +429,97 @@
   --responsive-h-badge-sm: 24px;
   --responsive-h-badge-base: 26px;
   --responsive-h-badge-count: 16px;
+  --color-background: var(--bg);
+  --color-chrome: var(--chrome);
+  --color-panel: var(--panel);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-popover: var(--popover);
+  --color-popover-hover: var(--popover-hover);
+  --color-input: var(--input);
+  --color-button: var(--button);
+  --color-button-hover: var(--button-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-section: var(--section);
+  --color-composer-ground: var(--composer-ground);
+  --color-muted: var(--muted);
+  --color-overlay: var(--overlay);
+  --color-overlay-fg: var(--overlay-fg);
+  --color-overlay-media: var(--overlay-media);
+  --color-device-glass: var(--device-glass);
+  --color-foreground: var(--fg);
+  --color-muted-foreground: var(--muted-foreground-1);
+  --color-muted-foreground-1: var(--muted-foreground-1);
+  --color-muted-foreground-2: var(--muted-foreground-2);
+  --color-muted-foreground-3: var(--muted-foreground-3);
+  --color-tab-inactive-foreground: var(--tab-inactive-foreground);
+  --color-tab-hover-foreground: var(--tab-hover-foreground);
+  --color-icon-muted: var(--icon-muted);
+  --color-border: var(--border-1);
+  --color-border-1: var(--border-1);
+  --color-border-2: var(--border-2);
+  --color-border-3: var(--border-3);
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+  --color-primary-foreground: var(--primary-text);
+  --color-primary-20: color-mix(in oklch, var(--primary) 20%, transparent);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-warning: var(--warning);
+  --color-warning-fg: var(--warning-fg);
+  --color-attention: var(--attention);
+  --color-progress: var(--progress);
+  --color-success: var(--success);
+  --color-info: var(--info);
+  --color-complete: var(--complete);
+  --color-purple: var(--purple);
+  --color-pink: var(--pink);
+  --color-orange: var(--orange);
+  --color-lime: var(--lime);
+  --color-diff-add: var(--diff-add);
+  --color-diff-del: var(--diff-del);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+  --color-chart-8: var(--chart-8);
+  --color-chart-other: var(--chart-other);
+  --shadow-card: var(--sh-card);
+  --gradient-skeleton: linear-gradient(
+    90deg,
+    var(--card-hover) 0%,
+    var(--secondary) 50%,
+    var(--card-hover) 100%
+  );
+  --gradient-skeleton-darker: linear-gradient(
+    90deg,
+    var(--secondary) 0%,
+    var(--muted) 50%,
+    var(--secondary) 100%
+  );
+  --gradient-progress-edge: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 36%,
+    var(--primary) 50%,
+    transparent 64%,
+    transparent 100%
+  );
+  --container-connections-wide: 46rem;
+  --radius-inner: 0.125rem;
+  --radius-button: 0.375rem;
+  --radius-kbd: 0.1875rem;
+  --radius-card: 0.5rem;
+  --radius-overlay: 0.5rem;
+  --radius-panel: 0.75rem;
+  --radius-composer-ground: calc(
+    var(--radius-card) +
+    var(--composer-ground-inset)
+  );
   --composer-ground-inset: 0.25rem;
   --gradient-panel-air: linear-gradient(
     180deg in oklab,
@@ -489,11 +639,56 @@
   --request-viewport-h-touch: min(40dvh, 260px);
   --contain-intrinsic-emoji-group: 220px;
   --right-panel-width: 32.5rem;
+  --container-crew-asks-footer: 34rem;
   --file-tree-indent-guide-w: 1px;
+  --duration-hover: 0.1s;
+  --duration-collapse: 0.11s;
+  --duration-exit: 0.12s;
+  --duration-tooltip-in: 0.14s;
+  --duration-crossfade-in: 0.16s;
+  --duration-sheet-exit-fade: 0.192s;
+  --duration-waiting-in: 0.2s;
+  --duration-halo: 0.22s;
+  --duration-sheet-exit: 0.24s;
+  --duration-spotlight: 0.32s;
+  --duration-ripple: 1.1s;
+  --delay-stagger: 40ms;
+  --delay-stagger-2: 50ms;
+  --delay-stagger-3: 60ms;
+  --delay-waiting-in: 60ms;
+  --delay-intro-step: 70ms;
+  --delay-reveal: 0.11s;
+  --delay-hover-intent: 0.12s;
+  --delay-fast: 0.15s;
+  --delay-ripple: 0.2s;
+  --delay-preview: 0.25s;
+  --delay-status: 0.4s;
+  --ease-pulse: cubic-bezier(0.4, 0, 0.6, 1);
+  --ease-shimmer-lit: cubic-bezier(0.33, 0.67, 0.67, 1);
+  --ease-shimmer-surface: steps(30, end);
   --animate-spin: spin 1s linear infinite;
   --animate-pulse: pulse 2s var(--ease-pulse) infinite;
+  --animate-skeleton-pulse: skeleton-pulse 2.4s ease-in-out infinite;
+  --animate-tooltip-in: fade-in var(--duration-tooltip-in) var(--ease-out);
+  --animate-tooltip-out: fade-out var(--duration-hover) var(--ease-out) both;
+  --animate-crossfade-in: fade-in var(--duration-crossfade-in) var(--ease-out);
+  --animate-crossfade-out: fade-out var(--duration-hover) var(--ease-out) both;
+  --animate-text-shimmer: text-shimmer-sweep 2s linear infinite;
+  --animate-shimmer-sweep: shimmer-sweep 2s linear infinite;
+  --animate-shimmer-surface: shimmer-surface-sweep 2s
+    var(--ease-shimmer-surface) infinite;
+  --animate-setup-guide-ripple: setup-guide-ripple var(--duration-ripple)
+    var(--ease-out-quint) var(--delay-ripple) 1 both;
+  --shadow-plate: var(--sh-plate);
+  --shadow-overlay: var(--sh-overlay);
+  --shadow-row-open: var(--sh-row-open);
+  --shadow-composer: var(--sh-composer);
+  --shadow-sheet: var(--sh-sheet);
   --mask-fade-ramp-default: 16px;
   --mask-fade-ramp-toolbar: 24px;
+  --shadow-composer: var(--sh-composer);
+  --spacing-code-inline-x: 3px;
+  --h-menu-group-label: 22px;
 }
 
 @media (width >= 768px), (hover: hover) and (pointer: fine) {

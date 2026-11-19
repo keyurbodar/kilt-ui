@@ -38,7 +38,10 @@ for (const file of ["primitives", "semantic", "components", "motion", "utilities
       const mode = prelude.includes("inline") ? "inline" : "static";
       for (const [name, value] of decls(body)) {
         if (name.endsWith("*")) continue;
-        (owned.has(name) ? scoped : theme[mode]).push(`  ${name}: ${value};`);
+        // Custom properties resolve where they are declared, so a theme value
+        // that reads a .kilt-app variable must be declared again in the scope.
+        if (!owned.has(name)) theme[mode].push(`  ${name}: ${value};`);
+        scoped.push(`  ${name}: ${value};`);
       }
     } else if (/^:root\b/.test(prelude)) {
       // The raw layer the @theme names read (--responsive-icon-sm, ...).
