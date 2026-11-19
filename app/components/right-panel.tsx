@@ -575,8 +575,6 @@ export function SettingsContent({ credit = true, inset = true }: { credit?: bool
     fadeInNext();
   }, [menuOpen, putOut, fadeInNext]);
 
-  const MonitorIcon = useIcon("monitor");
-  const SunIcon = useIcon("sun");
   const MoonIcon = useIcon("moon");
   const RectHorizIcon = useIcon("rectangle-horizontal");
   const CircleIcon = useIcon("circle");
@@ -586,8 +584,6 @@ export function SettingsContent({ credit = true, inset = true }: { credit?: bool
   const BaseUiIcon = useIcon("square-library");
 
   const themeOptions = [
-    { label: "System", value: "system" as Theme, icon: MonitorIcon },
-    { label: "Light", value: "light" as Theme, icon: SunIcon },
     { label: "Dark", value: "dark" as Theme, icon: MoonIcon },
   ];
 

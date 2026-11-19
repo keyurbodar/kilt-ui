@@ -30,7 +30,7 @@ export interface SiteSettings {
 
 /** What a first visit sees. */
 export const DEFAULT_SETTINGS: SiteSettings = {
-  theme: "system",
+  theme: "dark",
   shape: "sharp",
   size: "default",
   icons: "untitledui",
@@ -40,7 +40,7 @@ export const DEFAULT_SETTINGS: SiteSettings = {
 
 /** Every value each setting accepts, in the order the site lists them. */
 export const SETTING_VALUES = {
-  theme: ["system", "light", "dark"],
+  theme: ["dark"],
   shape: ["sharp", "rounded", "pill"],
   size: ["default", "compact"],
   icons: ["lucide", "tabler", "phosphor", "hugeicons", "untitledui"],
