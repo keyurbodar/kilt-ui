@@ -6,34 +6,34 @@
 
 @property --kilt-color-white { syntax: "<color>"; inherits: true; initial-value: #ffffff; }
 @property --kilt-color-black { syntax: "<color>"; inherits: true; initial-value: #000000; }
-@property --kilt-color-background { syntax: "<color>"; inherits: true; initial-value: #09090a; }
-@property --kilt-color-chrome { syntax: "<color>"; inherits: true; initial-value: #0a0a0b; }
-@property --kilt-color-panel { syntax: "<color>"; inherits: true; initial-value: #121213; }
-@property --kilt-color-card { syntax: "<color>"; inherits: true; initial-value: #161617; }
+@property --kilt-color-background { syntax: "<color>"; inherits: true; initial-value: #141414; }
+@property --kilt-color-chrome { syntax: "<color>"; inherits: true; initial-value: #181818; }
+@property --kilt-color-panel { syntax: "<color>"; inherits: true; initial-value: #181818; }
+@property --kilt-color-card { syntax: "<color>"; inherits: true; initial-value: color-mix(in oklab, #f0f0f0 6%, transparent); }
 @property --kilt-color-card-hover { syntax: "<color>"; inherits: true; initial-value: #1c1c1d; }
-@property --kilt-color-popover { syntax: "<color>"; inherits: true; initial-value: #1e1e1f; }
+@property --kilt-color-popover { syntax: "<color>"; inherits: true; initial-value: #181818; }
 @property --kilt-color-popover-hover { syntax: "<color>"; inherits: true; initial-value: #ffffff11; }
-@property --kilt-color-input { syntax: "<color>"; inherits: true; initial-value: #161617; }
+@property --kilt-color-input { syntax: "<color>"; inherits: true; initial-value: #181818; }
 @property --kilt-color-button { syntax: "<color>"; inherits: true; initial-value: #1a1a1b; }
 @property --kilt-color-button-hover { syntax: "<color>"; inherits: true; initial-value: #222222; }
-@property --kilt-color-secondary { syntax: "<color>"; inherits: true; initial-value: #ffffff14; }
+@property --kilt-color-secondary { syntax: "<color>"; inherits: true; initial-value: color-mix(in oklab, #f0f0f0 14%, transparent); }
 @property --kilt-color-secondary-hover { syntax: "<color>"; inherits: true; initial-value: #ffffff1c; }
 @property --kilt-color-section { syntax: "<color>"; inherits: true; initial-value: #ffffff09; }
 @property --kilt-color-muted { syntax: "<color>"; inherits: true; initial-value: #343435; }
 @property --kilt-color-composer-ground { syntax: "<color>"; inherits: true; initial-value: #1e1e20; }
-@property --kilt-color-foreground { syntax: "<color>"; inherits: true; initial-value: #ebebec; }
-@property --kilt-color-muted-foreground-1 { syntax: "<color>"; inherits: true; initial-value: #9a9999; }
-@property --kilt-color-muted-foreground-2 { syntax: "<color>"; inherits: true; initial-value: #747373; }
-@property --kilt-color-muted-foreground-3 { syntax: "<color>"; inherits: true; initial-value: #555354; }
+@property --kilt-color-foreground { syntax: "<color>"; inherits: true; initial-value: #f0f0f0; }
+@property --kilt-color-muted-foreground-1 { syntax: "<color>"; inherits: true; initial-value: color-mix(in oklab, #f0f0f0 74%, transparent); }
+@property --kilt-color-muted-foreground-2 { syntax: "<color>"; inherits: true; initial-value: color-mix(in oklab, #f0f0f0 60%, transparent); }
+@property --kilt-color-muted-foreground-3 { syntax: "<color>"; inherits: true; initial-value: color-mix(in oklab, #f0f0f0 36%, transparent); }
 @property --kilt-color-tab-inactive-foreground { syntax: "<color>"; inherits: true; initial-value: #969494; }
 @property --kilt-color-tab-hover-foreground { syntax: "<color>"; inherits: true; initial-value: #bdbcbc; }
 @property --kilt-color-segmented-foreground { syntax: "<color>"; inherits: true; initial-value: #ebebec99; }
 @property --kilt-color-icon-muted { syntax: "<color>"; inherits: true; initial-value: #595858; }
-@property --kilt-color-text-link { syntax: "<color>"; inherits: true; initial-value: #21a388; }
-@property --kilt-color-border-1 { syntax: "<color>"; inherits: true; initial-value: #ffffff14; }
-@property --kilt-color-border-2 { syntax: "<color>"; inherits: true; initial-value: #ffffff1f; }
-@property --kilt-color-border-3 { syntax: "<color>"; inherits: true; initial-value: #ffffff29; }
-@property --kilt-color-card-hairline { syntax: "<color>"; inherits: true; initial-value: #ffffff14; }
+@property --kilt-color-text-link { syntax: "<color>"; inherits: true; initial-value: #7bafe9; }
+@property --kilt-color-border-1 { syntax: "<color>"; inherits: true; initial-value: color-mix(in oklab, #f0f0f0 12%, transparent); }
+@property --kilt-color-border-2 { syntax: "<color>"; inherits: true; initial-value: color-mix(in oklab, #f0f0f0 8%, transparent); }
+@property --kilt-color-border-3 { syntax: "<color>"; inherits: true; initial-value: color-mix(in oklab, #f0f0f0 4%, transparent); }
+@property --kilt-color-card-hairline { syntax: "<color>"; inherits: true; initial-value: color-mix(in oklab, #f0f0f0 8%, transparent); }
 @property --kilt-color-highlight-top { syntax: "<color>"; inherits: true; initial-value: #ffffff0a; }
 @property --kilt-color-inverse { syntax: "<color>"; inherits: true; initial-value: #ebebec; }
 @property --kilt-color-inverse-hover { syntax: "<color>"; inherits: true; initial-value: #cdcbcc; }
@@ -41,21 +41,21 @@
 @property --kilt-color-overlay { syntax: "<color>"; inherits: true; initial-value: #0000008c; }
 @property --kilt-color-overlay-media { syntax: "<color>"; inherits: true; initial-value: #000000eb; }
 @property --kilt-color-overlay-fg { syntax: "<color>"; inherits: true; initial-value: #ffffff; }
-@property --kilt-color-primary { syntax: "<color>"; inherits: true; initial-value: #21a388; }
+@property --kilt-color-primary { syntax: "<color>"; inherits: true; initial-value: #599ce7; }
 @property --kilt-color-primary-ink { syntax: "<color>"; inherits: true; initial-value: #21a388; }
 @property --kilt-color-primary-soft { syntax: "<color>"; inherits: true; initial-value: #21a38833; }
 @property --kilt-color-primary-soft-hover { syntax: "<color>"; inherits: true; initial-value: #21a3883d; }
-@property --kilt-color-primary-foreground { syntax: "<color>"; inherits: true; initial-value: #ffffff; }
-@property --kilt-color-ring { syntax: "<color>"; inherits: true; initial-value: #21a388; }
+@property --kilt-color-primary-foreground { syntax: "<color>"; inherits: true; initial-value: #191c22; }
+@property --kilt-color-ring { syntax: "<color>"; inherits: true; initial-value: #599ce7; }
 @property --kilt-color-shader-ink { syntax: "<color>"; inherits: true; initial-value: #566a9e; }
-@property --kilt-color-destructive { syntax: "<color>"; inherits: true; initial-value: #c7332f; }
+@property --kilt-color-destructive { syntax: "<color>"; inherits: true; initial-value: #e34671; }
 @property --kilt-color-destructive-soft { syntax: "<color>"; inherits: true; initial-value: #c7332f38; }
 @property --kilt-color-destructive-soft-hover { syntax: "<color>"; inherits: true; initial-value: #c7332f47; }
 @property --kilt-color-destructive-foreground { syntax: "<color>"; inherits: true; initial-value: #ffffff; }
-@property --kilt-color-warning { syntax: "<color>"; inherits: true; initial-value: #eccd40; }
+@property --kilt-color-warning { syntax: "<color>"; inherits: true; initial-value: #f1b467; }
 @property --kilt-color-warning-fg { syntax: "<color>"; inherits: true; initial-value: #f1d357; }
 @property --kilt-color-warning-subtle { syntax: "<color>"; inherits: true; initial-value: #eccd401c; }
-@property --kilt-color-success { syntax: "<color>"; inherits: true; initial-value: #00a20a; }
+@property --kilt-color-success { syntax: "<color>"; inherits: true; initial-value: #3fa266; }
 @property --kilt-color-info { syntax: "<color>"; inherits: true; initial-value: #0081f1; }
 @property --kilt-color-complete { syntax: "<color>"; inherits: true; initial-value: #935edf; }
 @property --kilt-color-attention { syntax: "<color>"; inherits: true; initial-value: #ff7237; }
@@ -177,34 +177,34 @@
   /* color */
   --kilt-color-white: #ffffff;
   --kilt-color-black: #000000;
-  --kilt-color-background: light-dark(#f2f2f4, #09090a);
-  --kilt-color-chrome: light-dark(#eeeeef, #0a0a0b);
-  --kilt-color-panel: light-dark(#fbfbfb, #121213);
-  --kilt-color-card: light-dark(#fefefe, #161617);
+  --kilt-color-background: light-dark(#f5f5f5, #141414);
+  --kilt-color-chrome: light-dark(#f5f5f5, #181818);
+  --kilt-color-panel: light-dark(#ffffff, #181818);
+  --kilt-color-card: light-dark(color-mix(in oklab, #1c1c1c 6%, transparent), color-mix(in oklab, #f0f0f0 6%, transparent));
   --kilt-color-card-hover: light-dark(#fbfbfb, #1c1c1d);
-  --kilt-color-popover: light-dark(#fefefe, #1e1e1f);
+  --kilt-color-popover: light-dark(#ffffff, #181818);
   --kilt-color-popover-hover: light-dark(#0000000a, #ffffff11);
-  --kilt-color-input: light-dark(#fefefe, #161617);
+  --kilt-color-input: light-dark(#ffffff, #181818);
   --kilt-color-button: light-dark(#fefefe, #1a1a1b);
   --kilt-color-button-hover: light-dark(#fbfbfb, #222222);
-  --kilt-color-secondary: light-dark(#0000000d, #ffffff14);
+  --kilt-color-secondary: light-dark(color-mix(in oklab, #1c1c1c 14%, transparent), color-mix(in oklab, #f0f0f0 14%, transparent));
   --kilt-color-secondary-hover: light-dark(#00000014, #ffffff1c);
   --kilt-color-section: light-dark(#0000000a, #ffffff09);
   --kilt-color-muted: light-dark(#e7e7e9, #343435);
   --kilt-color-composer-ground: light-dark(#f1f1f1, #1e1e20);
-  --kilt-color-foreground: light-dark(#1e1e20, #ebebec);
-  --kilt-color-muted-foreground-1: light-dark(#686666, #9a9999);
-  --kilt-color-muted-foreground-2: light-dark(#868384, #747373);
-  --kilt-color-muted-foreground-3: light-dark(#a09e9e, #555354);
+  --kilt-color-foreground: light-dark(#1c1c1c, #f0f0f0);
+  --kilt-color-muted-foreground-1: light-dark(color-mix(in oklab, #1c1c1c 74%, transparent), color-mix(in oklab, #f0f0f0 74%, transparent));
+  --kilt-color-muted-foreground-2: light-dark(color-mix(in oklab, #1c1c1c 60%, transparent), color-mix(in oklab, #f0f0f0 60%, transparent));
+  --kilt-color-muted-foreground-3: light-dark(color-mix(in oklab, #1c1c1c 36%, transparent), color-mix(in oklab, #f0f0f0 36%, transparent));
   --kilt-color-tab-inactive-foreground: light-dark(#5c595a, #969494);
   --kilt-color-tab-hover-foreground: light-dark(#444242, #bdbcbc);
   --kilt-color-segmented-foreground: light-dark(#686666, #ebebec99);
   --kilt-color-icon-muted: light-dark(#939091, #595858);
-  --kilt-color-text-link: light-dark(#2a44af, #21a388);
-  --kilt-color-border-1: light-dark(#00000014, #ffffff14);
-  --kilt-color-border-2: light-dark(#0000001c, #ffffff1f);
-  --kilt-color-border-3: light-dark(#00000026, #ffffff29);
-  --kilt-color-card-hairline: light-dark(#00000000, #ffffff14);
+  --kilt-color-text-link: light-dark(#0b6dd3, #7bafe9);
+  --kilt-color-border-1: light-dark(color-mix(in oklab, #1c1c1c 12%, transparent), color-mix(in oklab, #f0f0f0 12%, transparent));
+  --kilt-color-border-2: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), color-mix(in oklab, #f0f0f0 8%, transparent));
+  --kilt-color-border-3: light-dark(color-mix(in oklab, #1c1c1c 4%, transparent), color-mix(in oklab, #f0f0f0 4%, transparent));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), color-mix(in oklab, #f0f0f0 8%, transparent));
   --kilt-color-highlight-top: light-dark(#00000000, #ffffff0a);
   --kilt-color-inverse: light-dark(#1e1e20, #ebebec);
   --kilt-color-inverse-hover: light-dark(#353333, #cdcbcc);
@@ -212,21 +212,21 @@
   --kilt-color-overlay: light-dark(#00000066, #0000008c);
   --kilt-color-overlay-media: #000000eb;
   --kilt-color-overlay-fg: #ffffff;
-  --kilt-color-primary: light-dark(#3b5de8, #21a388);
+  --kilt-color-primary: light-dark(#0b6dd3, #599ce7);
   --kilt-color-primary-ink: light-dark(#3b5de8, #21a388);
   --kilt-color-primary-soft: light-dark(#3b5de814, #21a38833);
   --kilt-color-primary-soft-hover: light-dark(#3b5de81f, #21a3883d);
-  --kilt-color-primary-foreground: #ffffff;
-  --kilt-color-ring: light-dark(#3452d0, #21a388);
+  --kilt-color-primary-foreground: light-dark(#ffffff, #191c22);
+  --kilt-color-ring: light-dark(#0b6dd3, #599ce7);
   --kilt-color-shader-ink: light-dark(#778abd, #566a9e);
-  --kilt-color-destructive: #c7332f;
+  --kilt-color-destructive: light-dark(#cd2834, #e34671);
   --kilt-color-destructive-soft: light-dark(#c7332f2e, #c7332f38);
   --kilt-color-destructive-soft-hover: light-dark(#c7332f3d, #c7332f47);
   --kilt-color-destructive-foreground: #ffffff;
-  --kilt-color-warning: #eccd40;
+  --kilt-color-warning: light-dark(#aa6300, #f1b467);
   --kilt-color-warning-fg: light-dark(#a87f09, #f1d357);
   --kilt-color-warning-subtle: light-dark(#eccd401a, #eccd401c);
-  --kilt-color-success: #00a20a;
+  --kilt-color-success: light-dark(#00854a, #3fa266);
   --kilt-color-info: #0081f1;
   --kilt-color-complete: #935edf;
   --kilt-color-attention: #ff7237;

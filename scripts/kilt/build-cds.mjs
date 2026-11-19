@@ -61,6 +61,34 @@ const groupOf = (name) => GROUPS.find(([, re]) => re.test(name)) ?? ["misc", /./
 const dark = new Map([...canvas.dark, ...guideDark]);
 const light = new Map([...canvas.light, ...guideLight]);
 const touch = canvas.touch;
+// Kiko's palette (scripts/kilt/vendor/kiko/index.css) replaces the CDS colour
+// values: dark is its :root, light its :root:not(.dark).
+const KIKO = {
+  "color-background": "bg-chrome", "color-chrome": "bg-sidebar", "color-panel": "bg-editor",
+  "color-card": "bg-card", "color-popover": "bg-elevated", "color-input": "bg-input",
+  "color-secondary": "bg-secondary", "color-foreground": "text-primary",
+  "color-muted-foreground-1": "text-secondary", "color-muted-foreground-2": "text-tertiary",
+  "color-muted-foreground-3": "text-quaternary", "color-border-1": "stroke-secondary",
+  "color-border-2": "stroke-tertiary", "color-border-3": "stroke-quaternary",
+  "color-card-hairline": "stroke-tertiary", "color-primary": "bg-accent",
+  "color-primary-foreground": "text-on-accent", "color-ring": "focus-ring",
+  "color-destructive": "bg-danger", "color-warning": "text-warning", "color-success": "text-success",
+  "color-text-link": "text-link",
+};
+{
+  const kiko = readFileSync(new URL("./vendor/kiko/index.css", import.meta.url), "utf8");
+  const block = (re) => {
+    const start = kiko.search(re);
+    const body = kiko.slice(kiko.indexOf("{", start) + 1, kiko.indexOf("\n}", start));
+    return new Map([...body.matchAll(/--([\w-]+):\s*([^;]+);/g)].map(([, n, val]) => [n, val.trim()]));
+  };
+  const kDark = block(/^:root \{\n\s+--bg-chrome/m);
+  const kLight = block(/^:root:not\(\.dark\) \{/m);
+  for (const [kilt, k] of Object.entries(KIKO)) {
+    if (kDark.has(k)) dark.set(kilt, kDark.get(k));
+    if (kLight.has(k)) light.set(kilt, kLight.get(k));
+  }
+}
 const names = [...dark.keys()];
 const v = (n) => `--${PREFIX}-${n}`;
 // Bare zeros ("0em") need a unit for a registered <length>; Doop already

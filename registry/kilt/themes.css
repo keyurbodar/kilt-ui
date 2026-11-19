@@ -6,7 +6,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -46,7 +46,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), #0d0d0d);
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), #121212);
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), #000);
@@ -86,7 +86,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), #1e1e2e);
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), #252536);
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), #11111b);
@@ -126,7 +126,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -166,7 +166,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), #1e1318);
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), #26191f);
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), #170d12);
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), #1e1318);
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), #000);
@@ -206,7 +206,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -246,7 +246,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -286,7 +286,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -326,7 +326,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), #32302f);
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), oklab(33.4112% 0.00373088 0.00422298));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), #282828);
@@ -366,7 +366,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), #000);
@@ -406,7 +406,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -446,7 +446,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -486,7 +486,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -526,7 +526,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), #171a34);
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), #1f223f);
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), #0a0b1e);
@@ -566,7 +566,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), #181828);
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), #1f1f30);
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), #0c0c15);
@@ -606,7 +606,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), #17232c);
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), #1d2a35);
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), #0d141b);
@@ -646,7 +646,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), #000000);
@@ -686,7 +686,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), #1e1318);
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), #26191f);
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), #170d12);
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), #1e1318);
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), #000000);
@@ -726,7 +726,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -766,7 +766,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -806,7 +806,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(#e7e0d7, #190303);
@@ -846,7 +846,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -886,7 +886,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -926,7 +926,7 @@
   --kilt-color-button: light-dark(#fafafa, #121212);
   --kilt-color-button-hover: light-dark(#f4f4f5, #1b1b1b);
   --kilt-color-card: light-dark(#ffffff, #111111);
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(#f4f4f5, #1b1b1b);
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(#fafafa, #000000);
@@ -966,7 +966,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), #343746);
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), #424450);
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), #21222c);
@@ -1006,7 +1006,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -1046,7 +1046,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -1086,7 +1086,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
@@ -1126,7 +1126,7 @@
   --kilt-color-button: light-dark(var(--kilt-color-card), color-mix(in srgb, white 7%, var(--kilt-color-background)));
   --kilt-color-button-hover: light-dark(var(--kilt-color-panel), color-mix(in srgb, white 10%, var(--kilt-color-background)));
   --kilt-color-card: light-dark(color-mix(in oklab, white 90%, var(--kilt-color-background)), color-mix(in oklab, white 7%, var(--kilt-color-background)));
-  --kilt-color-card-hairline: light-dark(#00000000, var(--kilt-color-border-1));
+  --kilt-color-card-hairline: light-dark(color-mix(in oklab, #1c1c1c 8%, transparent), var(--kilt-color-border-1));
   --kilt-color-card-hover: light-dark(var(--kilt-color-panel), color-mix(in oklab, white 10%, var(--kilt-color-background)));
   --kilt-color-chart-other: light-dark(var(--kilt-color-muted-foreground-3), #555354);
   --kilt-color-chrome: light-dark(color-mix(in oklab, var(--kilt-color-background) 35%, oklch(94.31% 0.0006 286.15)), color-mix(in oklab, var(--kilt-color-background) 50%, oklch(14.66% 0.0015 286.15)));
