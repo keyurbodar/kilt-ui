@@ -1,0 +1,60 @@
+{
+  "id": "cdwiseiqao",
+  "name": "Switch",
+  "signature": "Switch(checked: false|true = false, focus: false|true = false, disabled: false|true = false)",
+  "description": "Toggle (ui/switch.tsx): 28×16 pill, 0.5px border-2 on muted, 1.5px inset; 12px thumb in primary-foreground with plate shadow slides 12px, 150ms ease-out-quint. Checked = primary track, transparent border.",
+  "usage": "<doop-use component=\"Switch\" checked=\"false\" focus=\"false\" disabled=\"false\"></doop-use>",
+  "instances": 6,
+  "code": {
+    "path": "packages/web/src/ui",
+    "snippet": "Source file is not named in the bundle; the classes are copied from data-slot=switch in index-*.js."
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "checked",
+      "type": "enum",
+      "default": "false",
+      "options": [
+        "false",
+        "true"
+      ]
+    },
+    {
+      "name": "focus",
+      "type": "enum",
+      "default": "false",
+      "options": [
+        "false",
+        "true"
+      ]
+    },
+    {
+      "name": "disabled",
+      "type": "enum",
+      "default": "false",
+      "options": [
+        "false",
+        "true"
+      ]
+    }
+  ],
+  "slots": [],
+  "template": "<span class=\"sw\" data-doop-part=\"uwzy\"><span class=\"th\" data-doop-part=\"hvxr\"></span></span>",
+  "css": ".sw {--sh-card:0 0 0 1px rgb(0 0 0/.3);--sh-plate:0 .5px 1px 1px rgb(0 0 0/.3);--sh-overlay:0 3px 8px rgb(0 0 0/.13),0 2px 5px rgb(0 0 0/.13),0 1px 1px rgb(0 0 0/.13);position:relative;display:inline-flex;height:16px;width:28px;flex-shrink:0;cursor:pointer;align-items:center;border-radius:9999px;border:var(--spacing-hairline) solid var(--color-border-2);background:var(--color-muted);padding:1.5px;transition:background-color 150ms,border-color 150ms;box-sizing:border-box}\n:where([data-doop-theme=\"light\"]) .sw {--sh-card:0 0 0 .5px rgb(0 0 0/.11);--sh-plate:0 1px 2px rgb(0 0 0/.05);--sh-overlay:0 6px 18px rgb(0 0 0/.03),0 3px 9px rgb(0 0 0/.04),0 1px 1px rgb(0 0 0/.05);}\n.sw .th {width:12px;height:12px;border-radius:9999px;background:var(--color-primary-foreground);box-shadow:var(--sh-plate);transition:transform 150ms cubic-bezier(.23,1,.32,1)}\n.sw[data-checked=\"true\"] {border-color:transparent;background:var(--color-primary);--focus-ring:var(--color-primary-foreground)}\n.sw[data-checked=\"true\"] .th {transform:translateX(12px)}\n.sw[data-focus=\"true\"] {outline:1px solid var(--focus-ring,var(--color-ring));outline-offset:-1px}\n.sw[data-disabled=\"true\"] {cursor:not-allowed;opacity:.55}",
+  "parts": [
+    {
+      "key": "uwzy",
+      "tag": "span",
+      "class": "sw"
+    },
+    {
+      "key": "hvxr",
+      "tag": "span",
+      "class": "th"
+    }
+  ],
+  "main_frame_id": "jZCCVmLoht",
+  "main_image_url": "/i/jZCCVmLoht.png?scale=2",
+  "updated_at": "2026-11-17T02:53:32.757Z"
+}

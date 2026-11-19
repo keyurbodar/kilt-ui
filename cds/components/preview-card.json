@@ -1,0 +1,58 @@
+{
+  "id": "cxi3pn8a1x",
+  "name": "Preview Card",
+  "signature": "Preview Card(width: 288|320|384 = 288, text: text) slots: content",
+  "description": "Hover card (ui/preview-card.tsx): popover surface, w 288 (also 320 / 384), p 12, flex column, max-h available height. Opens after ~350ms hover with scale .97→1 + fade 150ms ease-out-quint. Used for PR chips, thread links, avatars.",
+  "usage": "<doop-use component=\"Preview Card\" width=\"288\" text=\"…\"><template slot=\"content\">…</template></doop-use>",
+  "instances": 1,
+  "code": {
+    "path": "packages/web/src/ui/preview-card.tsx"
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "width",
+      "type": "enum",
+      "default": "288",
+      "options": [
+        "288",
+        "320",
+        "384"
+      ]
+    },
+    {
+      "name": "text",
+      "type": "text"
+    }
+  ],
+  "slots": [
+    {
+      "name": "content",
+      "suggested": []
+    }
+  ],
+  "template": "<div class=\"pc\" data-doop-part=\"rkgz\"><div class=\"ct\" data-doop-slot=\"content\" data-doop-part=\"blav\"><div class=\"ph\" data-doop-prop=\"text\" data-doop-part=\"ovfq\">Preview content</div></div></div>",
+  "css": ".pc {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;--sh-card:0 0 0 1px rgb(0 0 0/.3);--sh-plate:0 .5px 1px 1px rgb(0 0 0/.3);--sh-overlay:0 3px 8px rgb(0 0 0/.13),0 2px 5px rgb(0 0 0/.13),0 1px 1px rgb(0 0 0/.13);display:flex;flex-direction:column;width:288px;overflow:hidden;border-radius:var(--radius-lg);border:var(--spacing-hairline) solid var(--color-border-2);background:var(--color-popover);padding:12px;color:var(--color-foreground);box-shadow:var(--sh-overlay);font-size:var(--text-sm)}\n:where([data-doop-theme=\"light\"]) .pc {--sh-card:0 0 0 .5px rgb(0 0 0/.11);--sh-plate:0 1px 2px rgb(0 0 0/.05);--sh-overlay:0 6px 18px rgb(0 0 0/.03),0 3px 9px rgb(0 0 0/.04),0 1px 1px rgb(0 0 0/.05);}\n.pc[data-width=\"320\"] {width:320px}\n.pc[data-width=\"384\"] {width:384px}",
+  "parts": [
+    {
+      "key": "rkgz",
+      "tag": "div",
+      "class": "pc"
+    },
+    {
+      "key": "blav",
+      "tag": "div",
+      "class": "ct",
+      "slot": "content"
+    },
+    {
+      "key": "ovfq",
+      "tag": "div",
+      "class": "ph",
+      "text_prop": "text"
+    }
+  ],
+  "main_frame_id": "XkUmCjkaCA",
+  "main_image_url": "/i/XkUmCjkaCA.png?scale=2",
+  "updated_at": "2026-11-17T02:53:15.951Z"
+}

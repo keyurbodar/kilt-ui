@@ -1,0 +1,58 @@
+{
+  "id": "c5ognv6htj",
+  "name": "Popover",
+  "signature": "Popover(arrow: boolean = false, text: text) slots: content",
+  "description": "Popover surface (ui/popover.tsx, qEt default): popover ground, 8px radius, 0.5px border-2, p 8, shadow-overlay; optional 10px rotated arrow with border on the trigger side. Opens scale .97→1 + fade, 150ms ease-out-quint, exit 120ms.",
+  "usage": "<doop-use component=\"Popover\" text=\"…\"><template slot=\"content\">…</template></doop-use>",
+  "instances": 1,
+  "code": {
+    "path": "packages/web/src/ui/popover.tsx"
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "arrow",
+      "type": "boolean",
+      "default": "false"
+    },
+    {
+      "name": "text",
+      "type": "text"
+    }
+  ],
+  "slots": [
+    {
+      "name": "content",
+      "suggested": []
+    }
+  ],
+  "template": "<div class=\"po\" data-doop-part=\"qicx\"><span class=\"ar\" data-doop-if=\"arrow\" data-doop-part=\"fklp\"></span><div class=\"ct\" data-doop-slot=\"content\" data-doop-part=\"acvq\"><div class=\"ph\" data-doop-prop=\"text\" data-doop-part=\"ayfl\">Popover content</div></div></div>",
+  "css": ".po {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;--sh-card:0 0 0 1px rgb(0 0 0/.3);--sh-plate:0 .5px 1px 1px rgb(0 0 0/.3);--sh-overlay:0 3px 8px rgb(0 0 0/.13),0 2px 5px rgb(0 0 0/.13),0 1px 1px rgb(0 0 0/.13);position:relative;display:flex;flex-direction:column;border-radius:var(--radius-lg);border:var(--spacing-hairline) solid var(--color-border-2);background:var(--color-popover);padding:8px;color:var(--color-foreground);box-shadow:var(--sh-overlay);font-size:var(--text-sm)}\n:where([data-doop-theme=\"light\"]) .po {--sh-card:0 0 0 .5px rgb(0 0 0/.11);--sh-plate:0 1px 2px rgb(0 0 0/.05);--sh-overlay:0 6px 18px rgb(0 0 0/.03),0 3px 9px rgb(0 0 0/.04),0 1px 1px rgb(0 0 0/.05);}\n.po .ar {position:absolute;left:24px;top:-5px;width:10px;height:10px;transform:rotate(45deg);background:var(--color-popover);border-top:var(--spacing-hairline) solid var(--color-border-2);border-left:var(--spacing-hairline) solid var(--color-border-2)}\n.po .ct {position:relative}",
+  "parts": [
+    {
+      "key": "qicx",
+      "tag": "div",
+      "class": "po"
+    },
+    {
+      "key": "acvq",
+      "tag": "div",
+      "class": "ct",
+      "slot": "content"
+    },
+    {
+      "key": "ayfl",
+      "tag": "div",
+      "class": "ph",
+      "text_prop": "text"
+    },
+    {
+      "key": "fklp",
+      "tag": "span",
+      "class": "ar"
+    }
+  ],
+  "main_frame_id": "TRftMiaJ1h",
+  "main_image_url": "/i/TRftMiaJ1h.png?scale=2",
+  "updated_at": "2026-11-17T02:53:15.860Z"
+}

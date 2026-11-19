@@ -1,0 +1,47 @@
+{
+  "id": "c6krq607ry",
+  "name": "Kbd",
+  "signature": "Kbd(variant: default|chip|on-fill = chip, keys: text)",
+  "description": "Keyboard shortcut glyph (ui/kbd.tsx, cva Jht). variant default = bare text; chip = 16px tile on secondary (menus, tooltips, palette footer); on-fill = inside a solid button.",
+  "usage": "<doop-use component=\"Kbd\" variant=\"default\" keys=\"…\"></doop-use>",
+  "instances": 26,
+  "code": {
+    "path": "packages/web/src/ui",
+    "snippet": "Source file is not named in the bundle; the classes are copied from cva Jht in index-*.js."
+  },
+  "rev": 2,
+  "props": [
+    {
+      "name": "variant",
+      "type": "enum",
+      "default": "chip",
+      "options": [
+        "default",
+        "chip",
+        "on-fill"
+      ]
+    },
+    {
+      "name": "keys",
+      "type": "text"
+    }
+  ],
+  "slots": [],
+  "template": "<kbd class=\"kbd\" data-doop-part=\"dhgw\"><span data-doop-prop=\"keys\" data-doop-part=\"pjgn\">⌘K</span></kbd>",
+  "css": ".kbd {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;pointer-events:none;display:inline-flex;align-items:center;justify-content:center;gap:2px;font-size:var(--text-xs);font-weight:var(--font-weight-normal);color:var(--color-muted-foreground-1);user-select:none;line-height:1}\n.kbd[data-variant=\"chip\"] {height:16px;min-width:16px;border-radius:var(--radius-sm);background:var(--color-secondary);padding:0 4px}\n.kbd[data-variant=\"on-fill\"] {height:16px;min-width:16px;border-radius:var(--radius-sm);background:color-mix(in srgb,currentColor 15%,transparent);padding:0 4px;color:color-mix(in srgb,currentColor 80%,transparent)}",
+  "parts": [
+    {
+      "key": "dhgw",
+      "tag": "kbd",
+      "class": "kbd"
+    },
+    {
+      "key": "pjgn",
+      "tag": "span",
+      "text_prop": "keys"
+    }
+  ],
+  "main_frame_id": "rVPJiZl4NG",
+  "main_image_url": "/i/rVPJiZl4NG.png?scale=2",
+  "updated_at": "2026-11-17T02:53:32.285Z"
+}

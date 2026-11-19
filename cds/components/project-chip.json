@@ -1,0 +1,47 @@
+{
+  "id": "cl489iggr4",
+  "name": "Project Chip",
+  "signature": "Project Chip(color: chart-1|chart-2|chart-3|chart-4|chart-5|chart-6|chart-7|chart-8 = chart-2, code: text)",
+  "description": "Two-letter project mark (shared/sidebar-threads.tsx): 14px square, 3px radius, mono plan-chip text (10px), semibold, tracking-tighter; chart colour at 15% ground with the full chart colour as text.",
+  "usage": "<doop-use component=\"Project Chip\" color=\"chart-1\" code=\"…\"></doop-use>",
+  "instances": 21,
+  "code": {
+    "path": "packages/web/src/shared/sidebar-threads.tsx"
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "color",
+      "type": "enum",
+      "default": "chart-2",
+      "options": [
+        "chart-1",
+        "chart-2",
+        "chart-3",
+        "chart-4",
+        "chart-5",
+        "chart-6",
+        "chart-7",
+        "chart-8"
+      ]
+    },
+    {
+      "name": "code",
+      "type": "text"
+    }
+  ],
+  "slots": [],
+  "template": "<span class=\"pj\" data-doop-prop=\"code\" data-doop-part=\"vstb\">HO</span>",
+  "css": ".pj {display:flex;width:14px;height:14px;flex-shrink:0;align-items:center;justify-content:center;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:var(--text-plan-chip);line-height:1;font-weight:var(--font-weight-semibold);letter-spacing:var(--tracking-tighter);user-select:none}\n.pj[data-color=\"chart-1\"] {background:color-mix(in srgb,var(--color-chart-1) 15%,transparent);color:var(--color-chart-1)}\n.pj[data-color=\"chart-2\"] {background:color-mix(in srgb,var(--color-chart-2) 15%,transparent);color:var(--color-chart-2)}\n.pj[data-color=\"chart-3\"] {background:color-mix(in srgb,var(--color-chart-3) 15%,transparent);color:var(--color-chart-3)}\n.pj[data-color=\"chart-4\"] {background:color-mix(in srgb,var(--color-chart-4) 15%,transparent);color:var(--color-chart-4)}\n.pj[data-color=\"chart-5\"] {background:color-mix(in srgb,var(--color-chart-5) 15%,transparent);color:var(--color-chart-5)}\n.pj[data-color=\"chart-6\"] {background:color-mix(in srgb,var(--color-chart-6) 15%,transparent);color:var(--color-chart-6)}\n.pj[data-color=\"chart-7\"] {background:color-mix(in srgb,var(--color-chart-7) 15%,transparent);color:var(--color-chart-7)}\n.pj[data-color=\"chart-8\"] {background:color-mix(in srgb,var(--color-chart-8) 15%,transparent);color:var(--color-chart-8)}",
+  "parts": [
+    {
+      "key": "vstb",
+      "tag": "span",
+      "class": "pj",
+      "text_prop": "code"
+    }
+  ],
+  "main_frame_id": "kFwPOwRWnf",
+  "main_image_url": "/i/kFwPOwRWnf.png?scale=2",
+  "updated_at": "2026-11-17T02:53:59.905Z"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "c4lflzvfiv",
+  "name": "Menu Label",
+  "signature": "Menu Label(label: text)",
+  "description": "Group heading inside a menu (menu-label, BL): min-h 22, px 8, text-xs medium muted-fg-2, mt 4 except first.",
+  "usage": "<doop-use component=\"Menu Label\" label=\"…\"></doop-use>",
+  "instances": 5,
+  "code": {
+    "path": "packages/web/src/ui/menu.tsx"
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "label",
+      "type": "text"
+    }
+  ],
+  "slots": [],
+  "template": "<div class=\"ml\" data-doop-prop=\"label\" data-doop-part=\"opwb\">Sort by</div>",
+  "css": ".ml {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;margin-top:4px;display:flex;min-height:22px;align-items:center;padding:0 8px;font-size:var(--text-xs);font-weight:var(--font-weight-medium);color:var(--color-muted-foreground-2);letter-spacing:var(--tracking-normal)}\n.ml:first-child {margin-top:0}",
+  "parts": [
+    {
+      "key": "opwb",
+      "tag": "div",
+      "class": "ml",
+      "text_prop": "label"
+    }
+  ],
+  "main_frame_id": "w1SLIGrY7_",
+  "main_image_url": "/i/w1SLIGrY7_.png?scale=2",
+  "updated_at": "2026-11-17T02:45:53.676Z"
+}

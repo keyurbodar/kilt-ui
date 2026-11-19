@@ -1,0 +1,167 @@
+{
+  "id": "ci868xat7c",
+  "name": "Composer",
+  "signature": "Composer(placeholder: text, model: text, effort: text)",
+  "description": "Message composer (composer): 8px card radius, composer-surface/card ground, p 12, shadow-composer, 0.5px gradient hairline (border-2 → border-1). Field min-h 64 / max-h 224, p 4, text-base, placeholder muted-fg-3 'Ask anything, / for commands, @ for context'. Toolbar (pt 4, gap 8): ghost icon-sm Add to message + Thread configuration, ghost sm model picker (accent 14px glyph, model, muted-fg-2 effort, muted-fg-3 chevron), and a solid accent icon-sm Voice input / send at the end.",
+  "usage": "<doop-use component=\"Composer\" placeholder=\"…\" model=\"…\" effort=\"…\"></doop-use>",
+  "instances": 3,
+  "code": {
+    "path": "packages/web/src/shared/composer/composer.tsx"
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "placeholder",
+      "type": "text"
+    },
+    {
+      "name": "model",
+      "type": "text"
+    },
+    {
+      "name": "effort",
+      "type": "text"
+    }
+  ],
+  "slots": [],
+  "template": "<div class=\"cm\" data-doop-part=\"czwj\"><span class=\"edge\" data-doop-part=\"gule\"></span><div class=\"fld\" data-doop-part=\"lvfv\"><span class=\"ph\" data-doop-part=\"fzpw\"><span data-doop-prop=\"placeholder\" data-doop-part=\"dkkp\">Ask anything</span><span class=\"ph2\" data-doop-part=\"skop\">, / for commands, @ for context</span></span></div><div class=\"tb\" data-doop-part=\"rbnp\"><div class=\"lft\" data-doop-part=\"fsoe\"><span class=\"ib\" data-doop-part=\"dmdm\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" data-doop-part=\"lked\"><path d=\"M12 5.5V12M12 12V18.5M12 12H5.5M12 12H18.5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-doop-part=\"cpmn\"></path></svg></span><span class=\"ib\" data-doop-part=\"wmjq\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" data-doop-part=\"gnfm\"><path d=\"M17 14V4M17 14C18.6575 14 20 15.3425 20 17C20 18.6575 18.6575 20 17 20C15.3425 20 14 18.6575 14 17C14 15.3425 15.3425 14 17 14Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"caal\"></path><path d=\"M7 20V12M7 12C5.3425 12 4 10.6575 4 9C4 7.3425 5.3425 6 7 6M7 12C8.6575 12 10 10.6575 10 9C10 7.3425 8.6575 6 7 6M7 6V4\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"dfns\"></path></svg></span><span class=\"mp\" data-doop-part=\"uoyx\"><span class=\"mi\" data-doop-part=\"rfuo\"><svg fill=\"currentColor\" fill-rule=\"evenodd\" viewBox=\"0 0 24 24\" data-doop-part=\"uejw\"><title data-doop-part=\"bknz\">Claude</title><path d=\"M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z\" data-doop-part=\"varv\"></path></svg></span><span data-doop-prop=\"model\" data-doop-part=\"wadl\">Claude Opus 5.5</span><span class=\"ef\" data-doop-prop=\"effort\" data-doop-part=\"ysag\">Medium</span><span class=\"mc\" data-doop-part=\"qrww\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" data-doop-part=\"kvjf\"><path d=\"M8 10L10.9393 12.9393C11.5251 13.5251 12.4749 13.5251 13.0607 12.9393L16 10\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"sopx\"></path></svg></span></span></div><span class=\"snd\" data-doop-part=\"albn\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" data-doop-part=\"gieb\"><path d=\"M12.0014 2C9.23999 2 7.00141 4.23858 7.00141 7V11C7.00141 13.7614 9.23999 16 12.0014 16C14.7628 16 17.0014 13.7614 17.0014 11V7C17.0014 4.23858 14.7628 2 12.0014 2Z\" fill=\"currentColor\" data-doop-part=\"cezm\"></path><path d=\"M5.85459 14.4556C5.55395 13.9924 4.93466 13.8605 4.47138 14.1612C4.00809 14.4618 3.87625 15.0811 4.1769 15.5444C5.30052 17.2758 7.44787 19.5784 11.0014 19.9488V21C11.0014 21.5523 11.4491 22 12.0014 22C12.5537 22 13.0014 21.5523 13.0014 21V19.9488C16.555 19.5784 18.7023 17.2758 19.8259 15.5444C20.1266 15.0811 19.9947 14.4618 19.5314 14.1612C19.0682 13.8605 18.4489 13.9924 18.1482 14.4556C17.1086 16.0576 15.2015 18 12.0014 18C8.80131 18 6.8942 16.0576 5.85459 14.4556Z\" fill=\"currentColor\" data-doop-part=\"vsqx\"></path></svg></span></div></div>",
+  "css": ".cm {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;--sh-composer:0 3px 8px rgb(0 0 0/.09),0 2px 5px rgb(0 0 0/.09),0 1px 1px rgb(0 0 0/.1);position:relative;border-radius:var(--radius-lg);background:var(--composer-surface,var(--color-card));padding:12px;box-shadow:var(--sh-composer);width:100%}\n:where([data-doop-theme=\"light\"]) .cm {--sh-composer:0 4px 12px rgb(0 0 0/.025),0 2px 6px rgb(0 0 0/.03),0 1px 1px rgb(0 0 0/.04);}\n.cm .edge {pointer-events:none;position:absolute;inset:0;border-radius:var(--radius-lg);border:var(--spacing-hairline) solid transparent;background:linear-gradient(180deg,var(--color-border-2),var(--color-border-1)) border-box;-webkit-mask:linear-gradient(#000,#000) padding-box,linear-gradient(#000,#000) border-box;-webkit-mask-composite:xor;mask-composite:exclude}\n.cm .fld {position:relative;min-height:64px;max-height:224px;padding:4px;font-size:var(--text-base);font-weight:var(--font-weight-normal);color:var(--color-foreground);letter-spacing:var(--tracking-tight)}\n.cm .ph {color:var(--color-muted-foreground-3)}\n.cm .tb {margin:0 -4px -4px;display:flex;align-items:center;gap:8px;padding-top:4px}\n.cm .lft {display:flex;min-width:0;flex:1;align-items:center;gap:2px}\n.cm .ib, .cm .snd {display:inline-flex;width:var(--spacing-control-sm);height:var(--spacing-control-sm);align-items:center;justify-content:center;border-radius:var(--radius-md);color:var(--color-muted-foreground-1);cursor:pointer;transition:color 100ms,background-color 100ms;border:var(--spacing-hairline) solid transparent;box-sizing:border-box}\n.cm .ib:hover {color:var(--color-foreground);background:var(--color-secondary)}\n.cm svg {width:var(--spacing-icon-sm);height:var(--spacing-icon-sm);flex-shrink:0}\n.cm .mp {margin-left:4px;display:inline-flex;height:var(--spacing-control-sm);align-items:center;gap:6px;padding:0 8px;border-radius:var(--radius-md);font-size:var(--text-xs);font-weight:var(--font-weight-medium);color:var(--color-muted-foreground-1);cursor:pointer;transition:color 100ms,background-color 100ms}\n.cm .mp:hover {color:var(--color-foreground);background:var(--color-secondary)}\n.cm .mi {display:flex;margin-left:-2px;color:var(--color-primary-ink)}\n.cm .ef {color:var(--color-muted-foreground-2)}\n.cm .mc {display:flex;margin-right:-2px;color:var(--color-muted-foreground-3)}\n.cm .snd {background:var(--color-primary);border-color:color-mix(in oklch,var(--color-primary) 80%,black);color:var(--color-primary-foreground);box-shadow:inset 0 1px oklch(1 0 0/.12),0 .5px 1px 1px rgb(0 0 0/.3)}\n.cm .snd:hover {background:color-mix(in oklch,var(--color-primary) 92%,black)}",
+  "parts": [
+    {
+      "key": "czwj",
+      "tag": "div",
+      "class": "cm"
+    },
+    {
+      "key": "rbnp",
+      "tag": "div",
+      "class": "tb"
+    },
+    {
+      "key": "albn",
+      "tag": "span",
+      "class": "snd"
+    },
+    {
+      "key": "gieb",
+      "tag": "svg"
+    },
+    {
+      "key": "vsqx",
+      "tag": "path"
+    },
+    {
+      "key": "cezm",
+      "tag": "path"
+    },
+    {
+      "key": "fsoe",
+      "tag": "div",
+      "class": "lft"
+    },
+    {
+      "key": "uoyx",
+      "tag": "span",
+      "class": "mp"
+    },
+    {
+      "key": "qrww",
+      "tag": "span",
+      "class": "mc"
+    },
+    {
+      "key": "kvjf",
+      "tag": "svg"
+    },
+    {
+      "key": "sopx",
+      "tag": "path"
+    },
+    {
+      "key": "ysag",
+      "tag": "span",
+      "class": "ef",
+      "text_prop": "effort"
+    },
+    {
+      "key": "wadl",
+      "tag": "span",
+      "text_prop": "model"
+    },
+    {
+      "key": "rfuo",
+      "tag": "span",
+      "class": "mi"
+    },
+    {
+      "key": "uejw",
+      "tag": "svg"
+    },
+    {
+      "key": "varv",
+      "tag": "path"
+    },
+    {
+      "key": "bknz",
+      "tag": "title"
+    },
+    {
+      "key": "wmjq",
+      "tag": "span",
+      "class": "ib"
+    },
+    {
+      "key": "gnfm",
+      "tag": "svg"
+    },
+    {
+      "key": "dfns",
+      "tag": "path"
+    },
+    {
+      "key": "caal",
+      "tag": "path"
+    },
+    {
+      "key": "dmdm",
+      "tag": "span",
+      "class": "ib"
+    },
+    {
+      "key": "lked",
+      "tag": "svg"
+    },
+    {
+      "key": "cpmn",
+      "tag": "path"
+    },
+    {
+      "key": "lvfv",
+      "tag": "div",
+      "class": "fld"
+    },
+    {
+      "key": "fzpw",
+      "tag": "span",
+      "class": "ph"
+    },
+    {
+      "key": "skop",
+      "tag": "span",
+      "class": "ph2"
+    },
+    {
+      "key": "dkkp",
+      "tag": "span",
+      "text_prop": "placeholder"
+    },
+    {
+      "key": "gule",
+      "tag": "span",
+      "class": "edge"
+    }
+  ],
+  "main_frame_id": "DcmEiL-VhL",
+  "main_image_url": "/i/DcmEiL-VhL.png?scale=2",
+  "updated_at": "2026-11-17T02:53:14.956Z"
+}

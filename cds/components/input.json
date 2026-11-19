@@ -1,0 +1,90 @@
+{
+  "id": "c2i4fr6ym7",
+  "name": "Input",
+  "signature": "Input(variant: default|ghost|blank = default, size: xs|sm|base = base, font: sans|mono|numeric = sans, state: default|hover|focus|invalid|disabled = default, value: text, placeholder: text)",
+  "description": "Single-line text field (ui/input.tsx, cva Aat). variant default (input ground + border-2 hairline), ghost (inline rename: transparent until hover/focus), blank. size xs 24 / sm 28 / base 32 (default). font mono for ids/paths. state for specimens: focus ring, invalid (destructive border), disabled.",
+  "usage": "<doop-use component=\"Input\" variant=\"default\" size=\"xs\" font=\"sans\" state=\"default\"></doop-use>",
+  "instances": 10,
+  "code": {
+    "path": "packages/web/src/ui",
+    "snippet": "Source file is not named in the bundle; the classes are copied from cva Aat in index-*.js."
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "variant",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "ghost",
+        "blank"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "default": "base",
+      "options": [
+        "xs",
+        "sm",
+        "base"
+      ]
+    },
+    {
+      "name": "font",
+      "type": "enum",
+      "default": "sans",
+      "options": [
+        "sans",
+        "mono",
+        "numeric"
+      ]
+    },
+    {
+      "name": "state",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "hover",
+        "focus",
+        "invalid",
+        "disabled"
+      ]
+    },
+    {
+      "name": "value",
+      "type": "text"
+    },
+    {
+      "name": "placeholder",
+      "type": "text"
+    }
+  ],
+  "slots": [],
+  "template": "<div class=\"inp\" data-doop-part=\"geht\"><span class=\"v\" data-doop-prop=\"value\" data-doop-part=\"argp\"></span><span class=\"ph\" data-doop-prop=\"placeholder\" data-doop-part=\"hqdz\">Search threads…</span></div>",
+  "css": ".inp {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;display:flex;align-items:center;width:100%;min-width:0;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:var(--font-weight-normal);color:var(--color-foreground);overflow:hidden;white-space:nowrap}\n.inp .v:empty {display:none}\n.inp .v:not(:empty) + .ph {display:none}\n.inp .ph {color:var(--color-muted-foreground-3)}\n.inp[data-variant=\"default\"] {background:var(--color-input);border:var(--spacing-hairline) solid var(--color-border-2)}\n.inp[data-variant=\"blank\"] {background:transparent;border:0}\n.inp[data-variant=\"ghost\"] {width:auto;background:transparent;border:var(--spacing-hairline) solid transparent;font-weight:var(--font-weight-medium);transition:border-color 150ms,background-color 150ms}\n.inp[data-variant=\"ghost\"] .ph {color:var(--color-foreground)}\n.inp[data-variant=\"ghost\"]:hover, .inp[data-variant=\"ghost\"][data-state=\"hover\"], .inp[data-variant=\"ghost\"][data-state=\"focus\"] {border-color:var(--color-border-2);background:var(--color-input)}\n.inp[data-state=\"focus\"] {outline:1px solid var(--focus-ring,var(--color-ring));outline-offset:-1px}\n.inp[data-state=\"invalid\"] {border-color:var(--color-destructive)}\n.inp[data-state=\"disabled\"] {cursor:not-allowed;opacity:.55}\n.inp[data-size=\"xs\"] {height:var(--spacing-control-xs);padding:0 6px;font-size:var(--text-xs)}\n.inp[data-size=\"sm\"] {height:var(--spacing-control-sm);padding:0 8px}\n.inp[data-size=\"base\"] {height:var(--spacing-control-base);padding:0 10px}\n.inp[data-font=\"mono\"] {font-family:var(--font-mono);font-size:var(--text-xs)}\n.inp[data-font=\"numeric\"] {font-variant-numeric:tabular-nums}",
+  "parts": [
+    {
+      "key": "geht",
+      "tag": "div",
+      "class": "inp"
+    },
+    {
+      "key": "hqdz",
+      "tag": "span",
+      "class": "ph",
+      "text_prop": "placeholder"
+    },
+    {
+      "key": "argp",
+      "tag": "span",
+      "class": "v",
+      "text_prop": "value"
+    }
+  ],
+  "main_frame_id": "w2pq8h_xtN",
+  "main_image_url": "/i/w2pq8h_xtN.png?scale=2",
+  "updated_at": "2026-11-17T02:53:32.453Z"
+}

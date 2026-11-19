@@ -1,0 +1,79 @@
+{
+  "id": "cyhixehvhu",
+  "name": "Checkbox",
+  "signature": "Checkbox(state: unchecked|checked|indeterminate = unchecked, focus: false|true = false, disabled: false|true = false)",
+  "description": "Checkbox (ui/checkbox.tsx, $I): 16px square, 3px radius, 0.5px border-3 on input ground; checked/indeterminate fill primary with a 12px check (checkmark-1) in primary-foreground. Disabled opacity .55. Coarse pointer 44px hit area.",
+  "usage": "<doop-use component=\"Checkbox\" state=\"unchecked\" focus=\"false\" disabled=\"false\"></doop-use>",
+  "instances": 6,
+  "code": {
+    "path": "packages/web/src/ui",
+    "snippet": "Source file is not named in the bundle; the classes are copied from class $I in index-*.js."
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "state",
+      "type": "enum",
+      "default": "unchecked",
+      "options": [
+        "unchecked",
+        "checked",
+        "indeterminate"
+      ]
+    },
+    {
+      "name": "focus",
+      "type": "enum",
+      "default": "false",
+      "options": [
+        "false",
+        "true"
+      ]
+    },
+    {
+      "name": "disabled",
+      "type": "enum",
+      "default": "false",
+      "options": [
+        "false",
+        "true"
+      ]
+    }
+  ],
+  "slots": [],
+  "template": "<span class=\"cb\" data-doop-part=\"sgjr\"><span class=\"ind\" data-doop-part=\"wpgb\"><svg class=\"ck\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"bmje\"><path d=\"M5 12.75L10 19L19 5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"daed\"></path></svg><svg class=\"mi\" viewBox=\"0 0 24 24\" fill=\"none\" data-doop-part=\"zbuw\"><path d=\"M6 12H18\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-doop-part=\"nzuo\"></path></svg></span></span>",
+  "css": ".cb {position:relative;display:flex;width:16px;height:16px;flex-shrink:0;align-items:center;justify-content:center;border-radius:var(--radius-sm);border:var(--spacing-hairline) solid var(--color-border-3);background:var(--color-input);color:var(--color-primary-foreground);transition:background-color 100ms,border-color 100ms;cursor:pointer;box-sizing:border-box}\n.cb .ind {display:flex;align-items:center;justify-content:center}\n.cb svg {width:12px;height:12px;display:none}\n.cb[data-state=\"checked\"], .cb[data-state=\"indeterminate\"] {border-color:transparent;background:var(--color-primary);--focus-ring:var(--color-primary-foreground)}\n.cb[data-state=\"checked\"] .ck {display:block}\n.cb[data-state=\"indeterminate\"] .mi {display:block}\n.cb[data-focus=\"true\"] {outline:1px solid var(--focus-ring,var(--color-ring));outline-offset:-1px}\n.cb[data-disabled=\"true\"] {cursor:not-allowed;opacity:.55}",
+  "parts": [
+    {
+      "key": "sgjr",
+      "tag": "span",
+      "class": "cb"
+    },
+    {
+      "key": "wpgb",
+      "tag": "span",
+      "class": "ind"
+    },
+    {
+      "key": "zbuw",
+      "tag": "svg",
+      "class": "mi"
+    },
+    {
+      "key": "nzuo",
+      "tag": "path"
+    },
+    {
+      "key": "bmje",
+      "tag": "svg",
+      "class": "ck"
+    },
+    {
+      "key": "daed",
+      "tag": "path"
+    }
+  ],
+  "main_frame_id": "4ddlKXKAe_",
+  "main_image_url": "/i/4ddlKXKAe_.png?scale=2",
+  "updated_at": "2026-11-17T02:53:32.679Z"
+}

@@ -1,0 +1,107 @@
+{
+  "id": "c9zyhpuljr",
+  "name": "Agent Message",
+  "signature": "Agent Message(lead: text, footer: boolean = false, sections-shown: boolean = true) slots: sections",
+  "description": "Capy's turn (agent-message): no bubble; full-width markdown sections with gap 1.5em (1.25em on mobile), py 8. Body text 13/1.5 in foreground, strong 560, inline code in mono on secondary. Each section has its own hover rail (Message Footer).",
+  "usage": "<doop-use component=\"Agent Message\" lead=\"…\"><template slot=\"sections\">…</template></doop-use>",
+  "instances": 3,
+  "code": {
+    "path": "packages/web/src/features/thread/agent-message.tsx"
+  },
+  "rev": 2,
+  "props": [
+    {
+      "name": "lead",
+      "type": "text"
+    },
+    {
+      "name": "footer",
+      "type": "boolean",
+      "default": "false"
+    },
+    {
+      "name": "sections-shown",
+      "type": "boolean",
+      "default": "true",
+      "description": "Show the extra sections slot"
+    }
+  ],
+  "slots": [
+    {
+      "name": "sections",
+      "suggested": []
+    }
+  ],
+  "template": "<div class=\"am\" data-doop-part=\"feah\"><div class=\"sec\" data-doop-part=\"eojb\"><div class=\"md\" data-doop-part=\"qlcb\"><p data-doop-prop=\"lead\" data-doop-part=\"icwr\">The chat UX came through well this time. Composer and right pane are in <code data-doop-part=\"grfm\">kiki-fast.js</code>.</p></div><div class=\"ft\" data-doop-if=\"footer\" data-doop-part=\"ooss\"><doop-use component=\"crs73ui594\" data-doop-part=\"zujk\" time=\"9:56 PM\"></doop-use></div></div><div class=\"sec\" data-doop-if=\"sections-shown\" data-doop-slot=\"sections\" data-doop-part=\"dqak\"><div class=\"md\" data-doop-part=\"qpok\"><p data-doop-part=\"wkqb\"><strong data-doop-part=\"pydq\">Chat UX: captured, with 50 distinct row types</strong></p><ul data-doop-part=\"pjuv\"><li data-doop-part=\"pcdt\">User and agent messages, activity lines, cards</li><li data-doop-part=\"nkgd\">Composer with model picker and voice input</li></ul></div></div></div>",
+  "css": ".am {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;display:flex;min-width:0;flex-direction:column;padding:8px 0;gap:1.5em;width:100%;font-size:var(--text-markdown)}\n.am .sec {position:relative;min-width:0}\n.am .md {font-size:var(--text-markdown);line-height:var(--leading-normal);color:var(--color-foreground)}\n.am .md p {margin:0}\n.am .md p + p, .am .md p + ul, .am .md ul + p {margin-top:.75em}\n.am .md ul {margin:.5em 0 0;padding-left:1.25em}\n.am .md li + li {margin-top:.25em}\n.am .md strong {font-weight:var(--font-weight-semibold)}\n.am .md code {font-family:var(--font-mono);font-size:.9em;background:var(--color-secondary);border-radius:var(--radius-sm);padding:1px 4px}\n.am .ft {position:absolute;right:0;top:-22px}",
+  "parts": [
+    {
+      "key": "feah",
+      "tag": "div",
+      "class": "am"
+    },
+    {
+      "key": "dqak",
+      "tag": "div",
+      "class": "sec",
+      "slot": "sections"
+    },
+    {
+      "key": "qpok",
+      "tag": "div",
+      "class": "md"
+    },
+    {
+      "key": "pjuv",
+      "tag": "ul"
+    },
+    {
+      "key": "nkgd",
+      "tag": "li"
+    },
+    {
+      "key": "pcdt",
+      "tag": "li"
+    },
+    {
+      "key": "wkqb",
+      "tag": "p"
+    },
+    {
+      "key": "pydq",
+      "tag": "strong"
+    },
+    {
+      "key": "eojb",
+      "tag": "div",
+      "class": "sec"
+    },
+    {
+      "key": "ooss",
+      "tag": "div",
+      "class": "ft"
+    },
+    {
+      "key": "zujk",
+      "tag": "doop-use",
+      "component": "crs73ui594"
+    },
+    {
+      "key": "qlcb",
+      "tag": "div",
+      "class": "md"
+    },
+    {
+      "key": "icwr",
+      "tag": "p",
+      "text_prop": "lead"
+    },
+    {
+      "key": "grfm",
+      "tag": "code"
+    }
+  ],
+  "main_frame_id": "bR_NS8TMpx",
+  "main_image_url": "/i/bR_NS8TMpx.png?scale=2",
+  "updated_at": "2026-11-17T03:01:47.312Z"
+}

@@ -1,0 +1,60 @@
+{
+  "id": "c9h5fvb0ei",
+  "name": "Sidebar Section Header",
+  "signature": "Sidebar Section Header(label: text, count: text)",
+  "description": "Collapsible group heading in the sidebar list (Working, Waiting, folders): h 28 (--spacing-sidebar-section-header), 6px radius, px 8, gap 6, text-xs muted-fg-2 (foreground on hover), count in muted-fg-3 tabular, 12px chevron in muted-fg-3. Groups sit 12px apart (--spacing-sidebar-section-gap).",
+  "usage": "<doop-use component=\"Sidebar Section Header\" label=\"…\" count=\"…\"></doop-use>",
+  "instances": 6,
+  "code": {
+    "path": "packages/web/src/shared/sidebar-threads.tsx"
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "label",
+      "type": "text"
+    },
+    {
+      "name": "count",
+      "type": "text"
+    }
+  ],
+  "slots": [],
+  "template": "<div class=\"sh\" data-doop-part=\"zuit\"><span class=\"lb\" data-doop-prop=\"label\" data-doop-part=\"pbyb\">Working</span><span class=\"ct\" data-doop-prop=\"count\" data-doop-part=\"cuwm\">1</span><span class=\"cv\" data-doop-part=\"zlby\"><svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"engu\"><path d=\"M8 10L10.9393 12.9393C11.5251 13.5251 12.4749 13.5251 13.0607 12.9393L16 10\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"zgow\"></path></svg></span></div>",
+  "css": ".sh {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;display:flex;height:var(--spacing-sidebar-section-header);min-width:0;cursor:pointer;align-items:center;gap:6px;border-radius:var(--radius-md);padding:0 8px;font-size:var(--text-xs);color:var(--color-muted-foreground-2);user-select:none;transition:color 100ms;letter-spacing:var(--tracking-normal)}\n.sh:hover {color:var(--color-foreground)}\n.sh .lb {min-width:0;overflow:hidden;white-space:nowrap}\n.sh .ct {flex-shrink:0;color:var(--color-muted-foreground-3);font-variant-numeric:tabular-nums}\n.sh .cv {display:flex;margin:0 -2px;color:var(--color-muted-foreground-3)}\n.sh .cv svg {width:var(--spacing-icon-xs);height:var(--spacing-icon-xs)}",
+  "parts": [
+    {
+      "key": "zuit",
+      "tag": "div",
+      "class": "sh"
+    },
+    {
+      "key": "zlby",
+      "tag": "span",
+      "class": "cv"
+    },
+    {
+      "key": "engu",
+      "tag": "svg"
+    },
+    {
+      "key": "zgow",
+      "tag": "path"
+    },
+    {
+      "key": "cuwm",
+      "tag": "span",
+      "class": "ct",
+      "text_prop": "count"
+    },
+    {
+      "key": "pbyb",
+      "tag": "span",
+      "class": "lb",
+      "text_prop": "label"
+    }
+  ],
+  "main_frame_id": "tinRyUNxld",
+  "main_image_url": "/i/tinRyUNxld.png?scale=2",
+  "updated_at": "2026-11-17T02:53:59.923Z"
+}

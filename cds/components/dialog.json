@@ -1,0 +1,126 @@
+{
+  "id": "coijw8hd80",
+  "name": "Dialog",
+  "signature": "Dialog(size: base|xl = base, spacing: default|compact = default, title: text, description: text, body: text) slots: body, actions",
+  "description": "Modal (ui/dialog.tsx): max-w 512 (lg), 12px panel radius, 0.5px border-2, popover ground, shadow-overlay. Header grid px 20 pt 16 with title (text-base or text-xl, medium, balance) and ghost icon-sm close; description text-sm muted-fg-2 mt 4. Body px 20, gap 16 py 20 (compact gap 12 py 16). Footer flex end gap 8 px 20 pb 16. Opens with overlay fade 200ms ease-out and panel scale .95→1 200ms ease-out-quint; exits 150ms.",
+  "usage": "<doop-use component=\"Dialog\" size=\"base\" spacing=\"default\" title=\"…\" description=\"…\"><template slot=\"body\">…</template><template slot=\"actions\">…</template></doop-use>",
+  "instances": 2,
+  "code": {
+    "path": "packages/web/src/ui/dialog.tsx"
+  },
+  "rev": 3,
+  "props": [
+    {
+      "name": "size",
+      "type": "enum",
+      "default": "base",
+      "options": [
+        "base",
+        "xl"
+      ]
+    },
+    {
+      "name": "spacing",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "compact"
+      ]
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "body",
+      "type": "text"
+    }
+  ],
+  "slots": [
+    {
+      "name": "body",
+      "suggested": []
+    },
+    {
+      "name": "actions",
+      "suggested": [
+        "Button"
+      ]
+    }
+  ],
+  "template": "<div class=\"dl\" data-doop-part=\"jxlu\"><div class=\"hd\" data-doop-part=\"yemc\"><div class=\"t\" data-doop-prop=\"title\" data-doop-part=\"xtap\">Archive this thread?</div><button class=\"cl\" type=\"button\" aria-label=\"Close\" data-doop-part=\"mxis\"><svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"nndi\"><path d=\"M6.5 6.5L17.5 17.5M17.5 6.5L6.5 17.5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"wthi\"></path></svg></button><div class=\"d\" data-doop-prop=\"description\" data-doop-part=\"iabp\">Its machines stop and its pull requests keep running.</div></div><div class=\"bd\" data-doop-slot=\"body\" data-doop-part=\"npbr\"><div class=\"ph\" data-doop-prop=\"body\" data-doop-part=\"lvom\">You can unarchive it from Threads at any time.</div></div><div class=\"ft\" data-doop-slot=\"actions\" data-doop-slot-suggest=\"Button\" data-doop-part=\"vryl\"><doop-use component=\"ceuibhjcbs\" data-doop-part=\"acaf\" label=\"Cancel\" variant=\"ghost\"></doop-use><doop-use component=\"ceuibhjcbs\" data-doop-part=\"ayjo\" intent=\"danger\" label=\"Archive\"></doop-use></div></div>",
+  "css": ".dl {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;--sh-card:0 0 0 1px rgb(0 0 0/.3);--sh-plate:0 .5px 1px 1px rgb(0 0 0/.3);--sh-overlay:0 3px 8px rgb(0 0 0/.13),0 2px 5px rgb(0 0 0/.13),0 1px 1px rgb(0 0 0/.13);position:relative;display:flex;width:100%;max-width:512px;flex-direction:column;overflow-y:auto;border-radius:var(--radius-xl);border:var(--spacing-hairline) solid var(--color-border-2);background:var(--color-popover);text-align:left;box-shadow:var(--sh-overlay);color:var(--color-foreground)}\n:where([data-doop-theme=\"light\"]) .dl {--sh-card:0 0 0 .5px rgb(0 0 0/.11);--sh-plate:0 1px 2px rgb(0 0 0/.05);--sh-overlay:0 6px 18px rgb(0 0 0/.03),0 3px 9px rgb(0 0 0/.04),0 1px 1px rgb(0 0 0/.05);}\n.dl .hd {display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;padding:16px 20px 0}\n.dl .t {grid-column:1;grid-row:1;align-self:center;text-wrap:balance;font-weight:var(--font-weight-medium);font-size:var(--text-base);letter-spacing:var(--tracking-tight)}\n.dl[data-size=\"xl\"] .t {font-size:var(--text-xl)}\n.dl .hd .btn {grid-column:2;grid-row:1;margin-top:-2px;margin-right:-6px;align-self:start;justify-self:end;color:var(--color-icon-muted)}\n.dl .d {grid-column:1/-1;grid-row:2;margin-top:4px;text-wrap:pretty;font-size:var(--text-sm);color:var(--color-muted-foreground-2);line-height:var(--leading-normal)}\n.dl .bd {display:flex;flex-direction:column;padding:20px;gap:16px;font-size:var(--text-sm);color:var(--color-muted-foreground-1);line-height:var(--leading-normal)}\n.dl[data-spacing=\"compact\"] .bd {gap:12px;padding:16px 20px}\n.dl .ft {display:flex;flex-direction:row;justify-content:flex-end;gap:8px;padding:0 20px 16px}\n.dl .cl {grid-column:2;grid-row:1;margin-top:-2px;margin-right:-6px;align-self:start;justify-self:end;display:inline-flex;align-items:center;justify-content:center;width:var(--spacing-control-sm);height:var(--spacing-control-sm);border-radius:var(--radius-md);border:var(--spacing-hairline) solid transparent;background:transparent;color:var(--color-icon-muted);cursor:pointer;transition:color 100ms,background-color 100ms;padding:0}\n.dl .cl:hover {color:var(--color-foreground);background:var(--color-secondary)}\n.dl .cl svg {width:var(--spacing-icon-sm);height:var(--spacing-icon-sm)}",
+  "parts": [
+    {
+      "key": "jxlu",
+      "tag": "div",
+      "class": "dl"
+    },
+    {
+      "key": "vryl",
+      "tag": "div",
+      "class": "ft",
+      "slot": "actions"
+    },
+    {
+      "key": "ayjo",
+      "tag": "doop-use",
+      "component": "ceuibhjcbs"
+    },
+    {
+      "key": "acaf",
+      "tag": "doop-use",
+      "component": "ceuibhjcbs"
+    },
+    {
+      "key": "npbr",
+      "tag": "div",
+      "class": "bd",
+      "slot": "body"
+    },
+    {
+      "key": "lvom",
+      "tag": "div",
+      "class": "ph",
+      "text_prop": "body"
+    },
+    {
+      "key": "yemc",
+      "tag": "div",
+      "class": "hd"
+    },
+    {
+      "key": "iabp",
+      "tag": "div",
+      "class": "d",
+      "text_prop": "description"
+    },
+    {
+      "key": "mxis",
+      "tag": "button",
+      "class": "cl"
+    },
+    {
+      "key": "nndi",
+      "tag": "svg"
+    },
+    {
+      "key": "wthi",
+      "tag": "path"
+    },
+    {
+      "key": "xtap",
+      "tag": "div",
+      "class": "t",
+      "text_prop": "title"
+    }
+  ],
+  "main_frame_id": "_1npS_Vp9o",
+  "main_image_url": "/i/_1npS_Vp9o.png?scale=2",
+  "updated_at": "2026-11-17T02:53:15.769Z"
+}

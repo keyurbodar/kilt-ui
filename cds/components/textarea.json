@@ -1,0 +1,69 @@
+{
+  "id": "cy139xhni4",
+  "name": "Textarea",
+  "signature": "Textarea(variant: default|blank|editor = default, tone: value|placeholder = placeholder, state: default|focus|invalid|disabled = default, text: text)",
+  "description": "Multi-line field (ui/textarea.tsx, cva yhn). variant default (input ground, px 10 py 6, text-sm), blank (auto-sizing, no chrome, e.g. composer), editor (card ground, mono code-block text, line-height 1.5, for file editing).",
+  "usage": "<doop-use component=\"Textarea\" variant=\"default\" tone=\"value\" state=\"default\" text=\"…\"></doop-use>",
+  "instances": 3,
+  "code": {
+    "path": "packages/web/src/ui",
+    "snippet": "Source file is not named in the bundle; the classes are copied from cva yhn in index-*.js."
+  },
+  "rev": 3,
+  "props": [
+    {
+      "name": "variant",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "blank",
+        "editor"
+      ]
+    },
+    {
+      "name": "tone",
+      "type": "enum",
+      "default": "placeholder",
+      "options": [
+        "value",
+        "placeholder"
+      ],
+      "description": "placeholder renders the text in muted-fg-3"
+    },
+    {
+      "name": "state",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "focus",
+        "invalid",
+        "disabled"
+      ]
+    },
+    {
+      "name": "text",
+      "type": "text"
+    }
+  ],
+  "slots": [],
+  "template": "<div class=\"ta\" data-doop-part=\"dhgf\"><span data-doop-prop=\"text\" class=\"tx\" data-doop-part=\"rgwx\">Describe what you want Capy to build…</span></div>",
+  "css": ".ta {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;width:100%;min-width:0;min-height:var(--spacing-control-base);color:var(--color-foreground);white-space:pre-wrap}\n.ta[data-variant=\"default\"] {border-radius:var(--radius-md);background:var(--color-input);padding:6px 10px;font-size:var(--text-sm);font-weight:var(--font-weight-normal);border:var(--spacing-hairline) solid var(--color-border-2);min-height:72px}\n.ta[data-variant=\"blank\"] {border:0;background:transparent;padding:0;font-size:var(--text-sm)}\n.ta[data-variant=\"editor\"] {border-radius:0;border:0;background:var(--color-card);padding:12px 16px;font-family:var(--font-mono);font-size:var(--text-code-block);line-height:1.5;letter-spacing:0;min-height:96px}\n.ta[data-tone=\"placeholder\"] .tx {color:var(--color-muted-foreground-3)}\n.ta[data-state=\"focus\"] {outline:1px solid var(--focus-ring,var(--color-ring));outline-offset:-1px}\n.ta[data-state=\"invalid\"] {border-color:var(--color-destructive)}\n.ta[data-state=\"disabled\"] {cursor:not-allowed;opacity:.55}",
+  "parts": [
+    {
+      "key": "dhgf",
+      "tag": "div",
+      "class": "ta"
+    },
+    {
+      "key": "rgwx",
+      "tag": "span",
+      "class": "tx",
+      "text_prop": "text"
+    }
+  ],
+  "main_frame_id": "JlE878z-gJ",
+  "main_image_url": "/i/JlE878z-gJ.png?scale=2",
+  "updated_at": "2026-11-17T02:53:32.594Z"
+}
