@@ -1,0 +1,4 @@
+[data-slot="drawer-content"],
+[data-slot="drawer-overlay"] {
+  -webkit-app-region: no-drag;
+}

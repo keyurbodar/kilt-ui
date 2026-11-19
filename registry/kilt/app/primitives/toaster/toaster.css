@@ -1,0 +1,8 @@
+[data-sonner-toast][data-styled="false"] {
+  width: var(--width);
+}
+
+[data-sonner-toast][data-styled="false"] [data-content],
+[data-sonner-toast][data-styled="false"] [data-title] {
+  height: 100%;
+}
