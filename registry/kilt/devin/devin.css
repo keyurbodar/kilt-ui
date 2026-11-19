@@ -1,0 +1,18 @@
+/* Values read from app.devin.ai computed styles (tools/dds/distilled.json). */
+.kilt-dv {font-family:var(--kilt-font-sans);-webkit-font-smoothing:antialiased;color:var(--kilt-color-text-primary)}
+.kilt-dv-worklog {display:flex;flex-direction:column;gap:4px}
+.kilt-dv-step {display:flex;align-items:center;gap:8px;height:18px;font-size:var(--kilt-text-13);line-height:var(--kilt-leading-13);letter-spacing:-0.065px;color:var(--kilt-color-text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .15s var(--kilt-ease-devin-standard)}
+.kilt-dv-step:hover {color:var(--kilt-color-text-primary)}
+.kilt-dv-step__dur {margin-left:auto;font-size:var(--kilt-text-12);line-height:var(--kilt-leading-12)}
+.kilt-dv-user {display:flex;flex-direction:column;gap:4px;padding-top:2px;margin-left:var(--kilt-chat-bubble-gutter);max-width:min(100% - 96px, 506px);align-self:flex-end;container-type:inline-size}
+.kilt-dv-actions {display:flex;justify-content:flex-end;height:28px;opacity:0;transition:opacity .2s ease}
+.kilt-dv-turn:hover .kilt-dv-actions,.kilt-dv-actions:focus-within {opacity:1}
+.kilt-dv-actions__bar {display:flex;align-items:center;background:var(--kilt-color-bg-elevated);border:1px solid var(--kilt-color-border-secondary);border-radius:8px}
+.kilt-dv-actions__time {font-size:var(--kilt-text-12);line-height:var(--kilt-leading-12);padding:0 4px 0 7px;color:var(--kilt-color-text-secondary)}
+.kilt-dv-actions__btn {display:flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:6px;color:var(--kilt-color-text-secondary);background:none;border:0}
+.kilt-dv-actions__btn:hover {background:var(--kilt-color-tint-secondary);color:var(--kilt-color-text-primary)}
+.kilt-dv-popup {background:rgb(255 255 255 / .94);border:1px solid var(--kilt-color-border-primary);border-radius:10px;padding:4px;box-shadow:var(--kilt-shadow-L3);width:300px}
+.dark .kilt-dv-popup {background:var(--kilt-color-bg-elevated)}
+.kilt-dv-option {display:flex;align-items:center;gap:8px;height:30px;padding:0 8px;border-radius:6px;font-size:var(--kilt-text-13);letter-spacing:-0.065px}
+.kilt-dv-option[data-highlighted] {background:var(--kilt-color-tint-secondary)}
+.kilt-dv-group {padding:6px 8px 2px;font-size:var(--kilt-text-11);line-height:var(--kilt-leading-11);color:var(--kilt-color-text-secondary)}
