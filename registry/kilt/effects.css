@@ -1,0 +1,64 @@
+/* Capy appearance effects: grain and vignette over the backdrop, the text
+   shimmer for live activity, and the progress-edge sweep. Values are tokens. */
+
+:root {
+  --kilt-effect-grain-image: url("./textures/grain.svg");
+  --kilt-effect-grain-size: 160px 160px;
+  --kilt-effect-grain-opacity: 0.35;
+  --kilt-effect-vignette-image: radial-gradient(ellipse at center, transparent 25%, rgb(0 0 0 / 0.45) 100%);
+  --kilt-backdrop-opacity-dark: 0.7;
+  --kilt-backdrop-opacity-light: 0.6;
+}
+
+@property --kilt-shimmer-lit { syntax: "<number>"; inherits: true; initial-value: 1; }
+
+[data-slot="kilt-effect"][data-effect="grain"] {
+  background-image: var(--kilt-effect-grain-image);
+  background-size: var(--kilt-effect-grain-size);
+  mix-blend-mode: soft-light;
+  opacity: var(--kilt-effect-grain-opacity);
+}
+
+[data-slot="kilt-effect"][data-effect="vignette"] {
+  background-image: var(--kilt-effect-vignette-image);
+}
+
+.kilt-shimmer {
+  --kilt-shimmer-lit: 1;
+  background-image: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--kilt-color-muted-foreground-2) calc(var(--kilt-shimmer-lit) * 100%), currentColor) 25%,
+    color-mix(in oklab, var(--kilt-color-foreground) calc(var(--kilt-shimmer-lit) * 100%), currentColor) 50%,
+    color-mix(in oklab, var(--kilt-color-muted-foreground-2) calc(var(--kilt-shimmer-lit) * 100%), currentColor) 75%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: --kilt-shimmer-lit var(--kilt-duration-slow) var(--kilt-ease-out);
+  animation: kilt-shimmer 2s linear infinite;
+}
+
+.kilt-shimmer[data-state="rest"] {
+  --kilt-shimmer-lit: 0;
+  animation-play-state: paused;
+}
+
+@keyframes kilt-shimmer {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+
+.kilt-backdrop-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kilt-shimmer {
+    animation: none;
+    background-image: none;
+    -webkit-text-fill-color: currentColor;
+  }
+}

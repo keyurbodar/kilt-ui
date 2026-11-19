@@ -1,0 +1,127 @@
+/*
+ * Live behaviour the static CDS specimens leave out: stacking, backdrop,
+ * form-control resets and the motion measured in cds/guidelines.md. Token values only.
+ */
+.kilt-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--kilt-z-dialog);
+  background: var(--kilt-color-overlay);
+  transition: opacity var(--kilt-duration-base) var(--kilt-ease-out);
+}
+.kilt-backdrop:is([data-starting-style], [data-ending-style]) {
+  opacity: 0;
+}
+
+.kilt-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--kilt-z-dialog);
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.kilt-modal > * {
+  pointer-events: auto;
+  transition:
+    opacity var(--kilt-duration-base) var(--kilt-ease-out-quint),
+    scale var(--kilt-duration-base) var(--kilt-ease-out-quint);
+}
+.kilt-modal > :is([data-starting-style], [data-ending-style]) {
+  opacity: 0;
+  scale: var(--kilt-scale-dialog-from);
+}
+
+.kilt-positioner {
+  z-index: var(--kilt-z-overlay-content);
+}
+.kilt-positioner[data-kind="tooltip"] {
+  z-index: var(--kilt-z-tooltip);
+}
+
+.kilt-pop {
+  transform-origin: var(--transform-origin);
+  transition:
+    opacity var(--kilt-duration-fast) var(--kilt-ease-out-quint),
+    scale var(--kilt-duration-fast) var(--kilt-ease-out-quint);
+}
+.kilt-pop:is([data-starting-style], [data-ending-style]) {
+  opacity: 0;
+  scale: var(--kilt-scale-overlay-from);
+}
+.kilt-pop[data-ending-style] {
+  transition-duration: var(--kilt-duration-exit);
+}
+.kilt-pop[data-instant] {
+  transition: none;
+}
+.kilt-pop.kilt-tooltip {
+  transition: opacity var(--kilt-duration-fast) var(--kilt-ease-out);
+  scale: none;
+}
+.kilt-pop.kilt-tooltip[data-ending-style] {
+  transition-duration: var(--kilt-duration-tooltip-exit);
+}
+
+.kilt-toast-viewport {
+  position: fixed;
+  right: calc(var(--kilt-spacing) * 4);
+  bottom: calc(var(--kilt-spacing) * 4);
+  z-index: var(--kilt-z-toast);
+  display: flex;
+  flex-direction: column-reverse;
+  gap: calc(var(--kilt-spacing) * 2);
+}
+.kilt-toast[data-starting-style] {
+  animation: kilt-toast-in var(--kilt-duration-base) var(--kilt-ease-out-quint);
+}
+.kilt-toast[data-ending-style] {
+  opacity: 0;
+  scale: var(--kilt-scale-toast-from);
+  transition:
+    opacity var(--kilt-duration-base) var(--kilt-ease-out),
+    scale var(--kilt-duration-base) var(--kilt-ease-out);
+}
+@keyframes kilt-toast-in {
+  from {
+    opacity: 0;
+    scale: var(--kilt-scale-toast-from);
+  }
+}
+
+.kilt-field-reset {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  resize: none;
+}
+
+.kilt-button-reset {
+  margin: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.kilt-composer__fld > .kilt-field-reset {
+  display: block;
+  field-sizing: content;
+  min-height: inherit;
+  max-height: inherit;
+  overflow-y: auto;
+}
+.kilt-composer__fld > .kilt-composer__ph {
+  position: absolute;
+  inset: 0;
+  padding: inherit;
+  pointer-events: none;
+}

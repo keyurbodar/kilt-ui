@@ -121,6 +121,10 @@ export const CUSTOM_ITEMS = new Set([
   "textarea",
   "thinking-indicator",
   "thinking-steps",
+  // Kilt items (scripts/kilt/build-cds.mjs) depend on each other by name.
+  ...JSON.parse(readFileSync(new URL("../registry.json", import.meta.url), "utf-8"))
+    .items.map((i) => i.name)
+    .filter((n) => n.startsWith("kilt")),
 ]);
 
 /**
