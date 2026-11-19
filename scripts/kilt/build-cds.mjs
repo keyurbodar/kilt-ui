@@ -265,7 +265,7 @@ console.log(`kilt: ${icons.size} icons`);
 
 const TARGET = "components/kilt";
 const file = (path, type = "registry:file") => ({ path: `registry/kilt/${path}`, type, target: `${TARGET}/${path}` });
-const sources = readdirSync(OUT).filter((f) => f.endsWith(".tsx") && f !== "icons.tsx").map((f) => f.slice(0, -4));
+const sources = readdirSync(OUT).filter((f) => f.endsWith(".tsx") && !["icons.tsx", "icon.tsx"].includes(f)).map((f) => f.slice(0, -4));
 const bySlug = new Map(components.map((c) => [c.slug, c]));
 
 const kiltItems = [
@@ -286,24 +286,46 @@ const kiltItems = [
     categories: ["kilt"],
   },
 ];
+kiltItems.push(
+  {
+    name: "kilt-themes",
+    type: "registry:file",
+    title: "Kilt Themes",
+    description: "Capy's 13 colour presets and the Explore wallpaper themes as [data-color-theme] blocks over the kilt tokens.",
+    registryDependencies: ["kilt-tokens"],
+    files: [file("themes.css"), file("themes.ts")],
+    categories: ["kilt"],
+  },
+  {
+    name: "kilt-icon",
+    type: "registry:ui",
+    title: "Kilt Icon",
+    description: "Capy's 350-glyph icon sprite on a 24px grid, rendered with <use>. Serve the sprite at /kilt/icons.svg.",
+    registryDependencies: ["utils", "kilt-tokens"],
+    files: [file("icon.tsx", "registry:ui"), file("icon-ids.ts"), { path: "public/kilt/icons.svg", type: "registry:file", target: "public/kilt/icons.svg" }],
+    categories: ["kilt"],
+  },
+);
 for (const slug of sources.sort()) {
   const src = readFileSync(join(OUT, `${slug}.tsx`), "utf8");
   const local = [...src.matchAll(/from "\.\/([\w-]+)"/g)].map((m) => m[1]);
   const styles = [...src.matchAll(/import "\.\/styles\/([\w-]+)\.css"/g)].map((m) => m[1]).filter((s) => s === slug);
-  const packages = [...new Set([...src.matchAll(/from "(@base-ui\/react)\/[\w-]+"/g)].map((m) => m[1]))];
+  const ownCss = [...src.matchAll(/import "\.\/([\w-]+\.css)"/g)].map((m) => m[1]);
+  const packages = [...new Set([...src.matchAll(/from "((?:@[\w-]+\/)?[\w-]+)[^"]*"/g)].map((m) => m[1]).filter((p) => !["react", "react-dom"].includes(p) && !p.startsWith("@/")))];
+  const DESCRIPTIONS = { dither: "Capy's WebGL dither (Paper Shaders): procedural Dither, WallpaperBackdrop with grain/vignette, and the shared on-screen shader clock." };
   const c = bySlug.get(slug);
   kiltItems.push({
     name: `kilt-${slug}`,
     type: "registry:ui",
     title: `Kilt ${c?.name ?? pascal(slug)}`,
-    description: c?.description ?? "",
+    description: c?.description ?? DESCRIPTIONS[slug] ?? "",
     ...(packages.length ? { dependencies: packages } : {}),
     registryDependencies: [
       "utils",
-      ...new Set(local.map((d) => (d === "tokens" ? "kilt-tokens" : d === "icons" ? "kilt-icons" : `kilt-${d}`))),
+      ...new Set(local.filter((d) => d !== "icon-ids").map((d) => (d === "tokens" ? "kilt-tokens" : d === "icons" ? "kilt-icons" : `kilt-${d}`))),
       ...(local.includes("tokens") ? [] : ["kilt-tokens"]),
     ],
-    files: [file(`${slug}.tsx`, "registry:ui"), ...styles.map((s) => file(`styles/${s}.css`))],
+    files: [file(`${slug}.tsx`, "registry:ui"), ...styles.map((s) => file(`styles/${s}.css`)), ...ownCss.map((c) => file(c)), ...(ownCss.includes("effects.css") ? [file("textures/grain.svg")] : [])],
     categories: ["kilt"],
   });
 }

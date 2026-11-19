@@ -14,6 +14,7 @@ import {
   useSidebar,
 } from "@/components/flavored/sidebar";
 import { componentList, systemNavList } from "@/lib/docs/components";
+import { kiltCatalog } from "@/lib/kilt/catalog.gen";
 import { KIND_DOT } from "@/lib/changelog/kind-style";
 import { useReleaseMarks } from "@/lib/changelog/marks";
 import { GitHubStarButton, SettingsContent } from "@/app/components/right-panel";
@@ -41,11 +42,13 @@ function NavGroup({
   entries,
   pathname,
   ariaLabel,
+  hrefBase = "/docs",
 }: {
   label?: string;
   entries: NavEntry[];
   pathname: string;
   ariaLabel: string;
+  hrefBase?: string;
 }) {
   // Landed since the latest release and listed ahead of the next.
   const { isRecent } = useReleaseMarks();
@@ -72,7 +75,7 @@ function NavGroup({
       {label && <div aria-hidden className="mb-1 ml-2 mr-3 h-px shrink-0 bg-border" />}
       <SidebarMenu aria-label={ariaLabel}>
         {entries.map((entry) => {
-          const href = `/docs/${entry.slug}`;
+          const href = `${hrefBase}/${entry.slug}`;
           return (
             <SidebarMenuItem key={entry.slug}>
               <SidebarMenuButton render={<Link href={href} />} isActive={pathname === href}>
@@ -146,6 +149,13 @@ export function SiteSidebar() {
           </SidebarMenu>
         </SidebarGroup>
 
+        <NavGroup
+          label="Kilt"
+          entries={kiltCatalog}
+          hrefBase="/kilt"
+          pathname={pathname}
+          ariaLabel="Kilt component navigation"
+        />
         <NavGroup
           label="System"
           entries={systemNavList}

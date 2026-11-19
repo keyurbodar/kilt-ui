@@ -3801,6 +3801,60 @@
       ]
     },
     {
+      "name": "kilt-themes",
+      "type": "registry:file",
+      "title": "Kilt Themes",
+      "description": "Capy's 13 colour presets and the Explore wallpaper themes as [data-color-theme] blocks over the kilt tokens.",
+      "registryDependencies": [
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/themes.css",
+          "type": "registry:file",
+          "target": "components/kilt/themes.css"
+        },
+        {
+          "path": "registry/kilt/themes.ts",
+          "type": "registry:file",
+          "target": "components/kilt/themes.ts"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-icon",
+      "type": "registry:ui",
+      "title": "Kilt Icon",
+      "description": "Capy's 350-glyph icon sprite on a 24px grid, rendered with <use>. Serve the sprite at /kilt/icons.svg.",
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/icon.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/icon.tsx"
+        },
+        {
+          "path": "registry/kilt/icon-ids.ts",
+          "type": "registry:file",
+          "target": "components/kilt/icon-ids.ts"
+        },
+        {
+          "path": "public/kilt/icons.svg",
+          "type": "registry:file",
+          "target": "public/kilt/icons.svg"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
       "name": "kilt-activity-line",
       "type": "registry:ui",
       "title": "Kilt Activity Line",
@@ -3820,6 +3874,11 @@
           "path": "registry/kilt/styles/activity-line.css",
           "type": "registry:file",
           "target": "components/kilt/styles/activity-line.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -3845,6 +3904,11 @@
           "path": "registry/kilt/styles/agent-message.css",
           "type": "registry:file",
           "target": "components/kilt/styles/agent-message.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -3871,6 +3935,11 @@
           "path": "registry/kilt/styles/alert.css",
           "type": "registry:file",
           "target": "components/kilt/styles/alert.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -3896,6 +3965,11 @@
           "path": "registry/kilt/styles/badge.css",
           "type": "registry:file",
           "target": "components/kilt/styles/badge.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -3924,6 +3998,11 @@
           "path": "registry/kilt/styles/button.css",
           "type": "registry:file",
           "target": "components/kilt/styles/button.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -3949,6 +4028,11 @@
           "path": "registry/kilt/styles/captain-avatar.css",
           "type": "registry:file",
           "target": "components/kilt/styles/captain-avatar.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -3974,6 +4058,11 @@
           "path": "registry/kilt/styles/card.css",
           "type": "registry:file",
           "target": "components/kilt/styles/card.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4003,6 +4092,11 @@
           "path": "registry/kilt/styles/checkbox.css",
           "type": "registry:file",
           "target": "components/kilt/styles/checkbox.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4035,6 +4129,11 @@
           "path": "registry/kilt/styles/command-palette.css",
           "type": "registry:file",
           "target": "components/kilt/styles/command-palette.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4061,6 +4160,11 @@
           "path": "registry/kilt/styles/composer.css",
           "type": "registry:file",
           "target": "components/kilt/styles/composer.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4090,6 +4194,45 @@
           "path": "registry/kilt/styles/dialog.css",
           "type": "registry:file",
           "target": "components/kilt/styles/dialog.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-dither",
+      "type": "registry:ui",
+      "title": "Kilt Dither",
+      "description": "Capy's WebGL dither (Paper Shaders): procedural Dither, WallpaperBackdrop with grain/vignette, and the shared on-screen shader clock.",
+      "dependencies": [
+        "@paper-design/shaders",
+        "@paper-design/shaders-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/dither.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/dither.tsx"
+        },
+        {
+          "path": "registry/kilt/effects.css",
+          "type": "registry:file",
+          "target": "components/kilt/effects.css"
+        },
+        {
+          "path": "registry/kilt/textures/grain.svg",
+          "type": "registry:file",
+          "target": "components/kilt/textures/grain.svg"
         }
       ],
       "categories": [
@@ -4118,6 +4261,11 @@
           "path": "registry/kilt/styles/input.css",
           "type": "registry:file",
           "target": "components/kilt/styles/input.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4143,6 +4291,11 @@
           "path": "registry/kilt/styles/kbd.css",
           "type": "registry:file",
           "target": "components/kilt/styles/kbd.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4174,6 +4327,11 @@
           "path": "registry/kilt/styles/menu.css",
           "type": "registry:file",
           "target": "components/kilt/styles/menu.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4199,6 +4357,11 @@
           "path": "registry/kilt/styles/menu-label.css",
           "type": "registry:file",
           "target": "components/kilt/styles/menu-label.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4225,6 +4388,11 @@
           "path": "registry/kilt/styles/menu-row.css",
           "type": "registry:file",
           "target": "components/kilt/styles/menu-row.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4250,6 +4418,11 @@
           "path": "registry/kilt/styles/menu-separator.css",
           "type": "registry:file",
           "target": "components/kilt/styles/menu-separator.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4276,6 +4449,11 @@
           "path": "registry/kilt/styles/message-footer.css",
           "type": "registry:file",
           "target": "components/kilt/styles/message-footer.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4302,6 +4480,11 @@
           "path": "registry/kilt/styles/pane-tab.css",
           "type": "registry:file",
           "target": "components/kilt/styles/pane-tab.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4330,6 +4513,11 @@
           "path": "registry/kilt/styles/popover.css",
           "type": "registry:file",
           "target": "components/kilt/styles/popover.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4358,6 +4546,11 @@
           "path": "registry/kilt/styles/preview-card.css",
           "type": "registry:file",
           "target": "components/kilt/styles/preview-card.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4383,6 +4576,11 @@
           "path": "registry/kilt/styles/project-chip.css",
           "type": "registry:file",
           "target": "components/kilt/styles/project-chip.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4409,6 +4607,11 @@
           "path": "registry/kilt/styles/sidebar-mode-toggle.css",
           "type": "registry:file",
           "target": "components/kilt/styles/sidebar-mode-toggle.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4435,6 +4638,11 @@
           "path": "registry/kilt/styles/sidebar-section-header.css",
           "type": "registry:file",
           "target": "components/kilt/styles/sidebar-section-header.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4461,6 +4669,11 @@
           "path": "registry/kilt/styles/sidebar-thread-row.css",
           "type": "registry:file",
           "target": "components/kilt/styles/sidebar-thread-row.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4489,6 +4702,11 @@
           "path": "registry/kilt/styles/switch.css",
           "type": "registry:file",
           "target": "components/kilt/styles/switch.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4514,6 +4732,11 @@
           "path": "registry/kilt/styles/textarea.css",
           "type": "registry:file",
           "target": "components/kilt/styles/textarea.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4543,6 +4766,11 @@
           "path": "registry/kilt/styles/toast.css",
           "type": "registry:file",
           "target": "components/kilt/styles/toast.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4571,6 +4799,11 @@
           "path": "registry/kilt/styles/tooltip.css",
           "type": "registry:file",
           "target": "components/kilt/styles/tooltip.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4596,6 +4829,11 @@
           "path": "registry/kilt/styles/user-message.css",
           "type": "registry:file",
           "target": "components/kilt/styles/user-message.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
         }
       ],
       "categories": [
@@ -4608,6 +4846,7 @@
       "title": "Kilt",
       "description": "Every Kilt component: the Capy Design System on Base UI.",
       "registryDependencies": [
+        "kilt-icon",
         "kilt-activity-line",
         "kilt-agent-message",
         "kilt-alert",
@@ -4619,6 +4858,7 @@
         "kilt-command-palette",
         "kilt-composer",
         "kilt-dialog",
+        "kilt-dither",
         "kilt-input",
         "kilt-kbd",
         "kilt-menu",
