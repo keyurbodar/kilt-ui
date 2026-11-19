@@ -175,6 +175,12 @@ tokensCss += `\n/* motion (cds/guidelines.md) */\n`;
 for (const [n, syntax, val] of MOTION) tokensCss += `@property ${v(n)} { syntax: "${syntax}"; inherits: true; initial-value: ${val}; }\n`;
 tokensCss += `:root {\n${MOTION.map(([n, , val, note]) => `  ${v(n)}: ${val}; /* ${note} */`).join("\n")}\n}\n`;
 
+// app.devin.ai layout, type, shadow and easing values (scripts/kilt/vendor/devin/layout.json).
+const DEVIN_LAYOUT = JSON.parse(readFileSync(new URL("./vendor/devin/layout.json", import.meta.url), "utf8"));
+tokensCss += `\n/* app.devin.ai layout, type scale, shadows, easings */\n`;
+for (const [n, syntax, val] of DEVIN_LAYOUT) if (syntax !== "*") tokensCss += `@property ${v(n)} { syntax: "${syntax}"; inherits: true; initial-value: ${val}; }\n`;
+tokensCss += `:root {\n${DEVIN_LAYOUT.map(([n, , val, note]) => `  ${v(n)}: ${val};${note ? ` /* ${note} */` : ""}`).join("\n")}\n}\n`;
+
 const HOOK_DEFAULTS = `\n/* Component hooks: override per subtree. */\n:root {\n  --kilt-focus-ring: var(--kilt-color-ring);\n  --kilt-composer-surface: var(--kilt-color-card);\n}\n`;
 writeFileSync(join(OUT, "tokens.css"), tokensCss.replace(/var\(--(?!kilt-)/g, "var(--kilt-") + HOOK_DEFAULTS);
 
