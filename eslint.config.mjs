@@ -250,7 +250,7 @@ export default [
   {
     // Kilt's generated token map and the vendored Kiki app layer name Kilt's own
     // --kilt-* roles, not the /compare shadcn theme this rule guards.
-    files: ["registry/kilt/tokens.ts", "registry/kilt/app/**/*.{ts,tsx}"],
+    files: ["registry/kilt/tokens.ts", "registry/kilt/app/**/*.{ts,tsx}", "scripts/kilt/kiki-overrides/**/*.{ts,tsx}"],
     rules: { "no-restricted-syntax": "off" },
   },
   {

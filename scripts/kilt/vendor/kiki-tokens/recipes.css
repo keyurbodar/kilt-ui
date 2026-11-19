@@ -1,0 +1,816 @@
+/*
+ * Layer 4: recipes.
+ *
+ * Component geometry — padding, gap, height, alignment, column widths — lives
+ * here, one class per surface in our vocabulary, and every value is a token
+ * reference. A row-height change is one token, not a sweep through tsx, and a
+ * surface that sets a geometry utility itself is the defect this layer exists
+ * to remove.
+ *
+ * Density: a surface picks a row height with `data-density`, which maps onto
+ * Capy's own measured row heights (28, 32, 36, 40, 44, 48) rather than a
+ * utility per component. `--row-h` is the default and the only name a caller
+ * should override.
+ *
+ * Colour, typography and state utilities stay in tsx: this layer owns geometry
+ * only, so a caller still writes `hover:bg-section` and `text-sm`.
+ */
+
+@layer components {
+  /* Shell ------------------------------------------------------------------ */
+
+  .kiki-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w-min);
+    max-width: var(--sidebar-w-max);
+    gap: var(--sidebar-gap);
+  }
+
+  .kiki-pane {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: var(--pane-gap);
+  }
+
+  /* Rows and cells --------------------------------------------------------- */
+
+  .kiki-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--list-gap);
+    padding-inline: var(--list-px);
+    padding-block: var(--list-py);
+  }
+
+  .kiki-row {
+    display: flex;
+    align-items: var(--row-align);
+    gap: var(--row-gap);
+    height: var(--row-h);
+    padding-inline: var(--row-px);
+    border-radius: var(--row-radius);
+  }
+
+  .kiki-row[data-density="dense"] {
+    --row-h: var(--row-h-dense);
+    --row-px: var(--row-px-tight);
+    --row-gap: var(--row-gap-tight);
+  }
+
+  .kiki-row[data-density="compact"] {
+    --row-h: var(--row-h-compact);
+  }
+
+  .kiki-row[data-density="comfy"] {
+    --row-h: var(--row-h-comfy);
+  }
+
+  .kiki-row[data-density="page"] {
+    --row-h: var(--row-h-page);
+  }
+
+  /* A row that keeps the page's tighter inset at another height. */
+  .kiki-row[data-padding="tight"] {
+    --row-px: var(--row-px-tight);
+  }
+
+  /* A pane's row: Capy's 36px line, held at the page's tighter inset. */
+  .kiki-row[data-density="pane"] {
+    --row-px: var(--row-px-tight);
+  }
+
+  .kiki-row[data-nested="true"] {
+    padding-inline-start: var(--row-indent);
+  }
+
+  .kiki-row[data-density="roomy"] {
+    --row-h: var(--row-h-roomy);
+    --row-px: var(--row-px-loose);
+  }
+
+  /* A pane section header: Capy's 28px strip over the section fill. */
+  .kiki-pane-section {
+    display: flex;
+    align-items: var(--row-align);
+    height: var(--row-h-dense);
+    border-radius: var(--row-radius);
+  }
+
+  /* The trigger fills the strip and carries its own inset, as Capy's does. */
+  .kiki-pane-section-trigger {
+    height: 100%;
+    padding-inline: var(--row-px-tight);
+  }
+
+  /* A section's empty line: one pane row, so a zero-count state keeps its shape. */
+  .kiki-pane-empty {
+    display: flex;
+    align-items: var(--row-align);
+    height: var(--row-h);
+    padding-inline: var(--row-px-tight);
+  }
+
+  .kiki-cell {
+    display: flex;
+    align-items: var(--row-align);
+    gap: var(--row-gap-tight);
+    min-width: 0;
+    text-align: var(--col-align-text);
+  }
+
+  .kiki-cell[data-col="text"] {
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+
+  .kiki-cell[data-col="code"] {
+    flex: none;
+    width: var(--col-code-w);
+  }
+
+  .kiki-cell[data-col="num"] {
+    flex: none;
+    justify-content: flex-end;
+    text-align: var(--col-align-num);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .kiki-cell[data-col="age"] {
+    flex: none;
+    width: var(--col-age-w);
+    justify-content: flex-end;
+    text-align: var(--col-align-num);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .kiki-cell[data-col="icon"] {
+    flex: none;
+    width: var(--col-icon-w);
+    justify-content: center;
+  }
+
+  /* A two-line cell: a name over its own age, both starting at the same edge. */
+  .kiki-cell[data-col="stack"] {
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    text-align: start;
+  }
+
+  .kiki-cell[data-col="avatar"] {
+    flex: none;
+    min-width: var(--col-avatar-w);
+    justify-content: flex-end;
+  }
+
+  /* Tables ----------------------------------------------------------------- */
+
+  .kiki-table {
+    display: grid;
+    width: 100%;
+  }
+
+  .kiki-table-row {
+    display: flex;
+    align-items: var(--row-align);
+    gap: var(--row-gap);
+    min-height: var(--table-row-h, var(--row-h-page));
+    padding-inline-end: var(--row-px);
+  }
+
+  .kiki-table-cell {
+    display: flex;
+    align-items: var(--row-align);
+    min-width: 0;
+    text-align: var(--col-align-text);
+  }
+
+  .kiki-table-cell[data-col="num"] {
+    justify-content: flex-end;
+    text-align: var(--col-align-num);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Icon boxes ------------------------------------------------------------- */
+
+  /*
+   * A square that centres a glyph or a small control. `data-size` picks the
+   * box, so a call site names its size instead of writing width, height and
+   * two alignment utilities.
+   */
+  .kiki-icon {
+    display: flex;
+    flex: none;
+    align-items: var(--row-align);
+    justify-content: center;
+    width: var(--icon-box);
+    height: var(--icon-box);
+  }
+
+  .kiki-icon[data-size="xs"] {
+    --icon-box: var(--icon-xs);
+  }
+
+  .kiki-icon[data-size="sm"] {
+    --icon-box: var(--icon-sm);
+  }
+
+  .kiki-icon[data-size="base"] {
+    --icon-box: var(--icon-base);
+  }
+
+  .kiki-icon[data-size="lg"] {
+    --icon-box: var(--icon-lg);
+  }
+
+  .kiki-icon[data-size="mark"] {
+    --icon-box: var(--icon-mark);
+  }
+
+  /* Badges, dialogs, menu rows, palette rows ------------------------------- */
+
+  /** A run of chips under a tool result: Capy's flex flex-wrap row. */
+  /* A tool body's prose: Capy's reading measure, clamped like its output card. */
+  .kiki-prose-body {
+    max-height: calc(var(--spacing) * 72);
+    padding-top: var(--spacing);
+    padding-bottom: calc(var(--spacing) * 2);
+  }
+
+  /*
+   * A remote build's own fields, the way Capy draws them: the label sizes to
+   * its word while the value takes what is left, on the tight row gap, with
+   * the commands and failure log sharing one gap under it.
+   */
+  .kiki-mobile-build {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+  }
+
+  .kiki-mobile-build-fields {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: calc(var(--spacing) * 4);
+    row-gap: calc(var(--spacing) * 1.5);
+    padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
+  }
+
+  .kiki-mobile-build-value {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .kiki-mobile-build-status {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing) * 1.5);
+  }
+
+  .kiki-mobile-build-dot {
+    width: var(--status-dot);
+    height: var(--status-dot);
+    border-radius: 9999px;
+  }
+
+  .kiki-mobile-build-code {
+    padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  }
+
+  .kiki-mobile-build-scroll {
+    max-height: calc(var(--spacing) * 60);
+    overflow: auto;
+  }
+
+  .kiki-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--row-gap-tight);
+  }
+
+  /*
+   * The reference chips beside a tool call's label: one baseline, one tight
+   * gap, and never a wrap, because the row's label is what truncates. The
+   * leading gap is the chip's own, so a call that names nothing moves nothing.
+   */
+  .kiki-tool-refs {
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--row-gap-tight);
+    min-width: 0;
+    margin-inline-start: var(--row-gap-tight);
+  }
+
+  /*
+   * The typed filters a palette holds: one chip per operator value, drawn
+   * above the results beside the input that typed them. The chip is a label
+   * button and a remove button, so its height comes from a control rather
+   * than the badge's padding.
+   */
+  /* The list's empty state when rows sit beside it, which `only:block` hides. */
+  .kiki-palette-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: var(--row-align);
+    justify-content: center;
+    gap: var(--row-gap);
+    padding: var(--row-h-comfy) var(--row-px-tight);
+    text-wrap: balance;
+  }
+
+  .kiki-filter-tokens {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: var(--row-align);
+    gap: var(--row-gap-tight);
+    padding: var(--row-gap) var(--palette-row-px) 0;
+  }
+
+  .kiki-filter-token {
+    display: inline-flex;
+    align-items: var(--row-align);
+    max-width: 100%;
+    height: var(--h-control-xs);
+    overflow: clip;
+  }
+
+  .kiki-filter-token-label {
+    padding-inline: var(--badge-px-sm);
+    overflow: hidden;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .kiki-filter-token-remove {
+    display: inline-flex;
+    align-items: var(--row-align);
+    justify-content: center;
+    width: var(--h-control-xs);
+    height: var(--h-control-xs);
+    cursor: pointer;
+  }
+
+  .kiki-filter-token-remove svg {
+    width: var(--icon-xs);
+    height: var(--icon-xs);
+  }
+
+  /*
+   * A badge's box: the pill centres its content, so `data-size` picks the
+   * height, inset and leading-glyph size that Capy's four badge sizes use.
+   * The glyph rules are scoped to the sizes that had them, because a rule
+   * reading an unset custom property is dropped in silence.
+   */
+  .kiki-badge {
+    display: inline-flex;
+    align-items: var(--row-align);
+    justify-content: center;
+    width: fit-content;
+    gap: var(--badge-gap);
+    height: var(--badge-h);
+    min-width: var(--badge-min-w);
+    padding-inline: var(--badge-px);
+  }
+
+  .kiki-badge svg:first-of-type {
+    margin-inline-start: var(--badge-icon-overlap);
+  }
+
+  .kiki-badge[data-size="base"] {
+    --badge-icon: var(--icon-sm);
+    --badge-icon-overlap: -2px;
+  }
+
+  .kiki-badge[data-size="sm"] {
+    --badge-h: var(--h-badge-sm);
+    --badge-px: var(--badge-px-sm);
+    --badge-icon: var(--icon-xs);
+    --badge-icon-overlap: -2px;
+  }
+
+  .kiki-badge[data-size="xs"] {
+    --badge-h: var(--h-badge-xs);
+    --badge-px: var(--badge-px-sm);
+    --badge-icon: var(--icon-xs);
+    --badge-icon-overlap: -2px;
+  }
+
+  .kiki-badge[data-size="count"] {
+    --badge-h: var(--h-badge-count);
+    --badge-min-w: 0;
+    --badge-px: 0;
+  }
+
+  .kiki-badge[data-size="auto"] {
+    --badge-h: auto;
+    --badge-px: var(--badge-px-tight);
+    --badge-icon: var(--icon-xs);
+  }
+
+  .kiki-badge[data-size="base"] svg:not([class*="size-"]),
+  .kiki-badge[data-size="sm"] svg:not([class*="size-"]),
+  .kiki-badge[data-size="xs"] svg:not([class*="size-"]),
+  .kiki-badge[data-size="auto"] svg:not([class*="size-"]) {
+    width: var(--badge-icon);
+    height: var(--badge-icon);
+  }
+
+  /*
+   * A dialog is a parts stack, not one padded box: the header and the footer
+   * carry their own inset and the body carries the rest, so a single padding
+   * on the content would double every gap Capy measures.
+   */
+  .kiki-dialog {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: var(--dialog-w);
+    overflow-y: auto;
+  }
+
+  .kiki-dialog-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: var(--dialog-header-gap);
+    padding-inline: var(--dialog-px);
+    padding-top: var(--dialog-pt);
+  }
+
+  .kiki-dialog-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dialog-gap);
+    padding-block: var(--dialog-py);
+    padding-inline: var(--dialog-px);
+  }
+
+  .kiki-dialog-body[data-spacing="relaxed"] {
+    --dialog-py: var(--dialog-py-relaxed);
+    gap: var(--dialog-gap-relaxed);
+  }
+
+  .kiki-dialog-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: var(--dialog-footer-gap);
+    padding-inline: var(--dialog-px);
+    padding-bottom: var(--dialog-pb);
+  }
+
+  /* A sidebar section header: its own token, its own inset and gap. */
+  .kiki-sidebar-section {
+    display: flex;
+    align-items: var(--row-align);
+    gap: var(--row-gap-tight);
+    height: var(--sidebar-section-header);
+    padding-inline: var(--row-px-tight);
+    border-radius: var(--row-radius);
+    text-align: start;
+  }
+
+  /* A folder header's options button, held over the chevron's cell. */
+  .kiki-sidebar-section-actions {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  /* A bare icon trigger's own hit area. */
+  .kiki-icon-button {
+    padding: var(--icon-button-pad);
+  }
+
+  /* A divider between menu rows, bleeding to the popup's own padding. */
+  .kiki-menu-divider {
+    height: 1px;
+    margin-block: var(--row-gap-tight);
+    margin-inline: calc(var(--menu-row-px) * -1);
+  }
+
+  /* The insertion line a thread drop draws between two sidebar rows. */
+  .kiki-sidebar-drop-line {
+    margin-block: var(--sidebar-drop-line-gap);
+    height: var(--sidebar-drop-line);
+  }
+
+  /* The row clone that follows the pointer during a drag, before transform. */
+  .kiki-drag-ghost {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  /*
+   * An issue's linked threads: one row each, as tight as Capy's, so a row and
+   * the handle in its gutter read as one line.
+   */
+  .kiki-thread-rows {
+    min-width: 0;
+    max-width: 100%;
+    gap: calc(var(--spacing) * 0.5);
+  }
+
+  /* The reorder handle that hangs in the gutter left of a thread row. */
+  .kiki-thread-handle-slot {
+    display: flex;
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: calc(var(--spacing) * -5);
+  }
+
+  /* A sortable handle that hangs in a row's gutter: Capy's 16 by 24 box. */
+  .kiki-sortable-handle-gutter {
+    width: calc(var(--spacing) * 4);
+    height: calc(var(--spacing) * 6);
+  }
+
+  /*
+   * The column of linked values under a property row: one reference per line,
+   * each starting at the row's own edge.
+   */
+  .kiki-property-values {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    gap: calc(var(--spacing) * 0.5);
+  }
+
+  /* A thread row's actions trigger: one control, its glyph sized to 16px. */
+  .kiki-thread-actions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--h-control-xs);
+    height: var(--h-control-xs);
+    cursor: pointer;
+  }
+
+  .kiki-thread-actions svg {
+    width: var(--icon-xs);
+    height: var(--icon-xs);
+  }
+
+  /* A linked thread's actions menu, so the row names the menu, not a utility. */
+  .kiki-thread-actions-menu {
+    width: var(--menu-w-thread-actions);
+  }
+
+  /* A menu separator's breathing room, in one place. */
+  .kiki-menu-separator {
+    margin-block: var(--row-gap-tight);
+  }
+
+  /* The theme grid: one column on a narrow viewport, two from the container. */
+  .kiki-theme-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: var(--grid-gap-x);
+    row-gap: var(--grid-gap-y);
+  }
+
+  @media (min-width: 48rem) {
+    .kiki-theme-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* A run of inline controls: one baseline, one gap. */
+  .kiki-inline {
+    display: flex;
+    align-items: var(--row-align);
+  }
+
+  /*
+   * The phone pane host: below the breakpoint the dock's panel stops being a
+   * column beside the transcript and becomes an overlay pinned under the tab
+   * strip — Capy's `max-md:absolute inset-x-0 top-(--thread-pane-top)` on the
+   * thread pane. The top is measured into the variable because the header
+   * above it is sticky and carries the safe area. Position stays a utility at
+   * the call site: `relative` in the base class is a utility too, and a
+   * component-layer rule loses to it.
+   */
+  @media not all and (width >= 48rem) {
+    .kiki-narrow-panel {
+      inset-inline: 0;
+      top: var(--thread-pane-top, 0);
+      bottom: 0;
+    }
+  }
+
+  /*
+   * A message's action row: Copy and More in flow under the body, which is how
+   * Capy's phone shows the actions instead of the hover rail.
+   */
+  .kiki-message-actions {
+    display: flex;
+    align-items: var(--row-align);
+    gap: var(--message-actions-gap);
+    padding-block-start: var(--message-actions-pt);
+    margin-inline-start: calc(-1 * var(--message-actions-indent));
+  }
+
+  /* A message's More menu, at Capy's 224px on the rail and on the phone. */
+  .kiki-message-menu {
+    width: var(--menu-w-message);
+  }
+
+  /* A menu's width, so a call site names the menu rather than a utility. */
+  .kiki-menu {
+    width: var(--menu-w);
+  }
+
+  /* A threads filter submenu, as wide as its menu so the two line up. */
+  .kiki-menu-filter {
+    width: var(--menu-w-message);
+  }
+
+  /*
+   * A filter chip's box. Capy caps chips and truncates the values they carry,
+   * so a row of filters keeps one height whatever is selected.
+   */
+  .kiki-filter-chip {
+    max-width: var(--filter-chip-w);
+  }
+
+  .kiki-filter-chip[data-wide] {
+    max-width: var(--filter-pattern-w);
+  }
+
+  .kiki-filter-chip-value {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* The pattern filter's editor, at the wider of the two chip widths. */
+  .kiki-pattern-menu {
+    width: var(--filter-pattern-w);
+  }
+
+  /* A pull's preview menu, sized for a service name over its hostname. */
+  .kiki-preview-menu {
+    width: var(--menu-w-previews);
+  }
+
+  /*
+   * The state mark on a preview chip's globe. The dot sits on the button
+   * surface, so it reads against the chip as well as the glyph.
+   */
+  .kiki-status-dot {
+    position: absolute;
+    right: calc(-1 * var(--status-dot-offset));
+    bottom: calc(-1 * var(--status-dot-offset));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    padding: var(--status-dot-ring);
+  }
+
+  .kiki-status-dot > * {
+    box-sizing: border-box;
+    width: var(--status-dot);
+    height: var(--status-dot);
+    border-radius: 9999px;
+  }
+
+  /* A deployment still building: a ring with a gap, turned by the caller. */
+  .kiki-status-dot[data-state="building"] > * {
+    border: var(--status-dot-stroke) solid currentColor;
+    border-inline-end-color: transparent;
+  }
+
+  /*
+   * The sidebar's `Loading threads` row. Capy draws three section shapes by
+   * hand while the org's threads are in flight, so the layout lives here and
+   * the bars come from the skeleton primitive.
+   */
+  .kiki-thread-skeleton {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .kiki-thread-skeleton-section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: calc(var(--spacing) * 3);
+  }
+
+  .kiki-thread-skeleton-header,
+  .kiki-thread-skeleton-line,
+  .kiki-thread-skeleton-meta {
+    display: flex;
+    align-items: center;
+  }
+
+  .kiki-thread-skeleton-header {
+    height: calc(var(--spacing) * 7);
+    gap: calc(var(--spacing) * 1);
+    padding-inline: calc(var(--spacing) * 2);
+  }
+
+  .kiki-thread-skeleton-row {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 1);
+    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
+  }
+
+  .kiki-thread-skeleton-line {
+    gap: calc(var(--spacing) * 2);
+  }
+
+  .kiki-thread-skeleton-meta {
+    gap: calc(var(--spacing) * 1);
+  }
+
+  .kiki-menu-row {
+    display: flex;
+    align-items: var(--row-align);
+    width: 100%;
+    min-width: 0;
+    gap: var(--menu-row-gap);
+    height: var(--menu-row-h);
+    padding-inline: var(--menu-row-px);
+  }
+
+  /* A row with a description: content height over the menu row's own floor. */
+  .kiki-menu-row-rich {
+    display: flex;
+    align-items: var(--row-align);
+    width: 100%;
+    min-width: 0;
+    gap: var(--menu-row-gap);
+    min-height: var(--menu-row-h);
+    padding-block: var(--row-gap-tight);
+    padding-inline: var(--menu-row-px);
+  }
+
+  .kiki-palette-row {
+    display: flex;
+    align-items: var(--row-align);
+    width: 100%;
+    min-width: 0;
+    gap: var(--palette-row-gap);
+    height: var(--palette-row-h);
+    padding-inline: var(--palette-row-px);
+  }
+
+  /* The leading glyph of a menu row, sized by the row it sits in. */
+  .kiki-menu-row svg:not([class*="size-"]),
+  .kiki-menu-row-rich svg:not([class*="size-"]) {
+    width: var(--menu-row-icon);
+    height: var(--menu-row-icon);
+  }
+
+  .kiki-palette-row svg:not([class*="size-"]) {
+    width: var(--palette-row-icon);
+    height: var(--palette-row-icon);
+  }
+
+  /*
+   * The dashboard wallpaper layer. A rotated wallpaper is drawn at the
+   * container's transposed size and turned about its centre, so the image
+   * still covers the surface after a quarter turn.
+   */
+  .kiki-backdrop-image {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .kiki-backdrop-image[data-rotated="true"] {
+    top: 50%;
+    left: 50%;
+    width: 100cqh;
+    height: 100cqw;
+  }
+
+  /* The quarter-turn choices in the background editor. */
+  .kiki-rotation-row {
+    display: flex;
+    gap: var(--row-gap);
+    padding-inline: var(--row-px);
+    padding-block-end: var(--row-px);
+  }
+
+  .kiki-rotation-option {
+    flex: 1;
+    padding-block: var(--row-px-tight);
+  }
+}

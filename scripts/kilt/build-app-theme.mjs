@@ -32,7 +32,7 @@ const theme = { static: [], inline: [] };
 const scoped = [];
 const extra = [];
 const media = [];
-for (const file of ["primitives", "semantic", "components", "motion", "utilities"]) {
+for (const file of ["primitives", "semantic", "components", "motion", "utilities", "recipes"]) {
   for (const [prelude, body] of blocks(read(`./vendor/kiki-tokens/${file}.css`))) {
     if (prelude.startsWith("@theme")) {
       const mode = prelude.includes("inline") ? "inline" : "static";
@@ -48,7 +48,9 @@ for (const file of ["primitives", "semantic", "components", "motion", "utilities
       for (const [name, value] of decls(body)) scoped.push(`  ${name}: ${value};`);
     } else if (prelude.startsWith("@media")) {
       const inner = blocks(body).filter(([p]) => /^:root\b/.test(p)).flatMap(([, b]) => decls(b));
-      if (inner.length) media.push(`${prelude} {\n  .kilt-app {\n${inner.map(([n, v]) => `    ${n}: ${v};`).join("\n")}\n  }\n}`);
+      if (inner.length) media.push(`${prelude} {\n  .kilt-app, body:has(.kilt-app) > :is([data-base-ui-portal], [data-slot]) {\n${inner.map(([n, v]) => `    ${n}: ${v};`).join("\n")}\n  }\n}`);
+    } else if (prelude.startsWith("@layer components")) {
+      extra.push(`${prelude} {${body}}`);
     } else if (prelude.startsWith("@utility") || prelude.startsWith("@keyframes")) {
       extra.push(`${prelude} {${body}}`);
     }
@@ -72,7 +74,7 @@ ${theme.inline.join("\n")}
 
 /* Inside .kilt-app, Kiki's theme variables read Kilt's CDS tokens, and the
    Tailwind names the site already owns take Kiki's values. */
-.kilt-app {
+.kilt-app, body:has(.kilt-app) > :is([data-base-ui-portal], [data-slot]) {
 ${bridge.join("\n")}
 ${scoped.join("\n")}
 }

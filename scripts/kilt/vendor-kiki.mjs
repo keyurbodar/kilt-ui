@@ -13,6 +13,11 @@ const OUT = new URL("../../registry/kilt/app/", import.meta.url).pathname;
 const ROUTER_LINK = (t) => t.replace('import { Link } from "@tanstack/react-router";', 'import { Link } from "@/lib/route-link";');
 const PATCHES = {
   "components/markdown-chips/chips.tsx": ROUTER_LINK,
+  "primitives/dot-grid-icon/dot-grid-icon.tsx": (t) =>
+    t.replace(
+      "for (const a of animations) paused ? a.pause() : a.play();",
+      "for (const a of animations) {\n      if (paused) a.pause();\n      else a.play();\n    }",
+    ),
   "components/markdown-chips/previews.tsx": ROUTER_LINK,
   "components/markdown-chips/context.tsx": (t) =>
     t.replace(
