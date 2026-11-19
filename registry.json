@@ -3789,6 +3789,9 @@
       "type": "registry:file",
       "title": "Kilt Icons",
       "description": "The SVG glyphs drawn in the CDS component templates, as React components.",
+      "registryDependencies": [
+        "kilt-tokens"
+      ],
       "files": [
         {
           "path": "registry/kilt/icons.tsx",
@@ -3982,7 +3985,7 @@
       "title": "Kilt Button",
       "description": "Every clickable action in Capy (ui/button.tsx, cva Xk). variant: solid (default plate), soft, ghost (toolbar/icon actions), outline, link, bare, inverse, segmented (inside a Segmented track). intent: neutral/accent (send, primary CTA)/danger. size: xs 24 (message actions), sm 28 (default; top-bar), base 32, lg 44, icon-xs/sm/base square. state is for specimens only; real hover/active/focus also work.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@^1.9.0"
       ],
       "registryDependencies": [
         "utils",
@@ -4075,7 +4078,7 @@
       "title": "Kilt Checkbox",
       "description": "Checkbox (ui/checkbox.tsx, $I): 16px square, 3px radius, 0.5px border-3 on input ground; checked/indeterminate fill primary with a 12px check (checkmark-1) in primary-foreground. Disabled opacity .55. Coarse pointer 44px hit area.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@^1.9.0"
       ],
       "registryDependencies": [
         "utils",
@@ -4109,7 +4112,7 @@
       "title": "Kilt Command Palette",
       "description": "⌘K command menu (ui/command-menu.tsx + shared/command-menu-search.tsx), captured live at 720×521: 12px panel radius, popover ground, 44px search input (px 16, placeholder muted-fg-3) with ghost sm 'New thread ⇥' button, 1px border-1 rule, category tabs (h 28, px 10, text-xs medium, selected = secondary ground), list max-h min(400px,60vh) p 6 with groups (28px muted-fg-2 labels, 1px gap) of palette-density Menu Rows (40px), and a 40px footer of key hints. Sits 15dvh from the top; overlay fades 200ms ease-out, panel scales .95→1 over 200ms ease-out-quint.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@^1.9.0"
       ],
       "registryDependencies": [
         "utils",
@@ -4177,7 +4180,7 @@
       "title": "Kilt Dialog",
       "description": "Modal (ui/dialog.tsx): max-w 512 (lg), 12px panel radius, 0.5px border-2, popover ground, shadow-overlay. Header grid px 20 pt 16 with title (text-base or text-xl, medium, balance) and ghost icon-sm close; description text-sm muted-fg-2 mt 4. Body px 20, gap 16 py 20 (compact gap 12 py 16). Footer flex end gap 8 px 20 pb 16. Opens with overlay fade 200ms ease-out and panel scale .95→1 200ms ease-out-quint; exits 150ms.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@^1.9.0"
       ],
       "registryDependencies": [
         "utils",
@@ -4245,7 +4248,7 @@
       "title": "Kilt Input",
       "description": "Single-line text field (ui/input.tsx, cva Aat). variant default (input ground + border-2 hairline), ghost (inline rename: transparent until hover/focus), blank. size xs 24 / sm 28 / base 32 (default). font mono for ids/paths. state for specimens: focus ring, invalid (destructive border), disabled.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@^1.9.0"
       ],
       "registryDependencies": [
         "utils",
@@ -4308,7 +4311,7 @@
       "title": "Kilt Menu",
       "description": "Menu / dropdown popup surface (ui/menu.tsx, XL = jL + KEt): popover ground, 8px radius, 0.5px border-2, shadow-overlay, p 4, min-w 128, max-h min(60dvh, available). Fill the rows slot with Menu Row, Menu Label and Menu Separator. Opens scale .97→1 + fade, 150ms ease-out-quint.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@^1.9.0"
       ],
       "registryDependencies": [
         "utils",
@@ -4497,7 +4500,7 @@
       "title": "Kilt Popover",
       "description": "Popover surface (ui/popover.tsx, qEt default): popover ground, 8px radius, 0.5px border-2, p 8, shadow-overlay; optional 10px rotated arrow with border on the trigger side. Opens scale .97→1 + fade, 150ms ease-out-quint, exit 120ms.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@^1.9.0"
       ],
       "registryDependencies": [
         "utils",
@@ -4530,7 +4533,7 @@
       "title": "Kilt Preview Card",
       "description": "Hover card (ui/preview-card.tsx): popover surface, w 288 (also 320 / 384), p 12, flex column, max-h available height. Opens after ~350ms hover with scale .97→1 + fade 150ms ease-out-quint. Used for PR chips, thread links, avatars.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@^1.9.0"
       ],
       "registryDependencies": [
         "utils",
@@ -4686,7 +4689,7 @@
       "title": "Kilt Switch",
       "description": "Toggle (ui/switch.tsx): 28×16 pill, 0.5px border-2 on muted, 1.5px inset; 12px thumb in primary-foreground with plate shadow slides 12px, 150ms ease-out-quint. Checked = primary track, transparent border.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@^1.9.0"
       ],
       "registryDependencies": [
         "utils",
@@ -4749,7 +4752,7 @@
       "title": "Kilt Toast",
       "description": "Sonner toast body (ui/sonner.tsx Toast): 382px wide, popover ground, 8px radius, 0.5px border-2, shadow-overlay, p 16, gap 8. 16px status icon (success / destructive / warning-fg / info / muted-fg-2), title text-sm medium, description text-sm muted-fg-2 (mt 2), actions row mt 10 gap 8 (solid xs + ghost xs). 20px dismiss X at right 16 / top 14 in muted-fg-3. Height changes animate 200ms ease-out-quint; stacked bottom-right.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@^1.9.0"
       ],
       "registryDependencies": [
         "utils",
@@ -4783,7 +4786,7 @@
       "title": "Kilt Tooltip",
       "description": "Hover label for icon buttons (ui/tooltip.tsx): popover ground, 0.5px border-2, shadow-overlay, 6px radius, px 8 py 4, text-xs medium, max-w 320, optional chip Kbd shortcut (gap 6). Opens after ~350ms, animate-tooltip-in/out.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@^1.9.0"
       ],
       "registryDependencies": [
         "utils",

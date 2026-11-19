@@ -321,7 +321,10 @@ describe("editable fields carry the touch size", () => {
   const collect = (dir) => {
     for (const name of readdirSync(dir)) {
       const p = join(dir, name);
-      if (statSync(p).isDirectory()) collect(p);
+      // Kilt fields size from the CDS tokens (data-density="touch"), not the FF ladder.
+      if (statSync(p).isDirectory()) {
+        if (!p.endsWith(join("registry", "kilt"))) collect(p);
+      }
       else if (/\.tsx?$/.test(name)) sources.push(p);
     }
   };

@@ -157,7 +157,7 @@ export const kiltTokens = {
   "sh-row-open": { group: "elevation", cssVar: "--kilt-sh-row-open", dark: "none", light: "inset 0 0 0 1px rgb(0 0 0 / .08)", touch: "none" },
   "sh-overlay": { group: "elevation", cssVar: "--kilt-sh-overlay", dark: "0 3px 8px rgb(0 0 0 / .13), 0 2px 5px rgb(0 0 0 / .13), 0 1px 1px rgb(0 0 0 / .13)", light: "0 6px 18px rgb(0 0 0 / .03), 0 3px 9px rgb(0 0 0 / .04), 0 1px 1px rgb(0 0 0 / .05)", touch: "0 3px 8px rgb(0 0 0 / .13), 0 2px 5px rgb(0 0 0 / .13), 0 1px 1px rgb(0 0 0 / .13)" },
   "sh-composer": { group: "elevation", cssVar: "--kilt-sh-composer", dark: "0 3px 8px rgb(0 0 0 / .09), 0 2px 5px rgb(0 0 0 / .09), 0 1px 1px rgb(0 0 0 / .1)", light: "0 4px 12px rgb(0 0 0 / .025), 0 2px 6px rgb(0 0 0 / .03), 0 1px 1px rgb(0 0 0 / .04)", touch: "0 3px 8px rgb(0 0 0 / .09), 0 2px 5px rgb(0 0 0 / .09), 0 1px 1px rgb(0 0 0 / .1)" },
-  "sh-sheet": { group: "elevation", cssVar: "--kilt-sh-sheet", dark: "var(--sh-overlay)", light: "0 9px 48px rgb(0 0 0 / .08), 0 6px 24px rgb(0 0 0 / .1), 0 1px 1px rgb(0 0 0 / .04)", touch: "var(--sh-overlay)" },
+  "sh-sheet": { group: "elevation", cssVar: "--kilt-sh-sheet", dark: "var(--kilt-sh-overlay)", light: "0 9px 48px rgb(0 0 0 / .08), 0 6px 24px rgb(0 0 0 / .1), 0 1px 1px rgb(0 0 0 / .04)", touch: "var(--kilt-sh-overlay)" },
   "duration-fast": { group: "duration", cssVar: "--kilt-duration-fast", dark: "150ms", light: "150ms", touch: "150ms" },
   "duration-base": { group: "duration", cssVar: "--kilt-duration-base", dark: "200ms", light: "200ms", touch: "200ms" },
   "duration-slow": { group: "duration", cssVar: "--kilt-duration-slow", dark: "300ms", light: "300ms", touch: "300ms" },
@@ -196,5 +196,5 @@ export const kiltMotion = {
   "shift-pane-from": { cssVar: "--kilt-shift-pane-from", value: "4px" },
 } as const;
 
-/** `var(--kilt-…)` for a token, typed so a typo fails the build. */
+/** A token's CSS var() reference, typed so a typo fails the build. */
 export const token = (name: KiltTokenName) => `var(${kiltTokens[name].cssVar})` as const;

@@ -482,3 +482,9 @@
   --kilt-scale-toast-from: 0.8; /* Toast enter scale */
   --kilt-shift-pane-from: 4px; /* Right pane enter offset */
 }
+
+/* Component hooks: override per subtree. */
+:root {
+  --kilt-focus-ring: var(--kilt-color-ring);
+  --kilt-composer-surface: var(--kilt-color-card);
+}

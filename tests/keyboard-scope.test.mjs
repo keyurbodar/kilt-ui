@@ -12,8 +12,8 @@ import { join, relative } from "node:path";
 import ts from "typescript";
 import { inKeyboardScope, KEYBOARD_SCOPE_SELECTOR } from "../lib/keyboard-scope.ts";
 
-// Under jsdom, Vite serves this file from a `/@fs` URL; strip that prefix.
-const repoRoot = new URL("..", import.meta.url).pathname.replace(/^\/@fs/, "");
+// Vitest runs from the repo root; under jsdom import.meta.url is a served URL, not a path.
+const repoRoot = process.cwd();
 const SITE_DIRS = ["app", "lib", "components", "hooks"];
 const KEY_EVENTS = new Set(["keydown", "keyup", "keypress"]);
 const PAGE_TARGETS = new Set([

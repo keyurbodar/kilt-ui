@@ -371,7 +371,11 @@ describe("readStack on a project", () => {
 
 describe("the stack script keeps up with the registry", () => {
   const registry = JSON.parse(readFileSync(join(root, "registry.json"), "utf8"));
-  const files = registry.items.flatMap((item) => (item.files ?? []).map((f) => ({ item: item.name, ...f })));
+  // Kilt items install under components/kilt/ as their own family; the stack
+  // script only fingerprints FF code.
+  const files = registry.items
+    .filter((item) => !item.categories?.includes("kilt"))
+    .flatMap((item) => (item.files ?? []).map((f) => ({ item: item.name, ...f })));
 
   it("recognizes every registry ui file as FF code once installed", () => {
     const missed = files

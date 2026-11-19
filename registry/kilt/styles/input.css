@@ -10,7 +10,7 @@
 .kilt-input[data-variant="ghost"] .kilt-input__ph {color:var(--kilt-color-foreground)}
 .kilt-input[data-variant="ghost"]::placeholder {color:var(--kilt-color-foreground)}
 .kilt-input[data-variant="ghost"]:hover, .kilt-input[data-variant="ghost"][data-state="hover"], .kilt-input[data-variant="ghost"]:is([data-state="focus"], :focus-visible) {border-color:var(--kilt-color-border-2);background:var(--kilt-color-input)}
-.kilt-input:is([data-state="focus"], :focus-visible) {outline:1px solid var(--focus-ring,var(--kilt-color-ring));outline-offset:-1px}
+.kilt-input:is([data-state="focus"], :focus-visible) {outline:1px solid var(--kilt-focus-ring,var(--kilt-color-ring));outline-offset:-1px}
 .kilt-input:is([data-state="invalid"], [aria-invalid="true"], [data-invalid]) {border-color:var(--kilt-color-destructive)}
 .kilt-input:is([data-state="disabled"], :disabled, [data-disabled], [aria-disabled="true"]) {cursor:not-allowed;opacity:.55}
 .kilt-input[data-size="xs"] {height:var(--kilt-spacing-control-xs);padding:0 6px;font-size:var(--kilt-text-xs)}
