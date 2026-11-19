@@ -29,7 +29,7 @@ import { fileURLToPath } from "node:url";
  *  160/240/120 match the spring tiers and their exits; 180 is the button's
  *  press release; 60 is the fast exit). Anything else is off the system —
  *  Tailwind's bare `transition` class is 150ms, the usual culprit. */
-export const DURATION_TOKENS_MS = [0, 60, 80, 120, 160, 180, 240];
+export const DURATION_TOKENS_MS = [0, 60, 80, 100, 120, 160, 180, 240];
 
 /** The size ladder: default controls are 36px (`h-9`), compact 28px (`h-7`). */
 export const LADDER_PX = [28, 36];
