@@ -146,6 +146,16 @@ export function SiteSidebar() {
                 <NewDot />
               </SidebarMenuButton>
             </SidebarMenuItem>
+            {[
+              ["/kilt/system", "Kilt system"],
+              ["/kilt/devin", "Devin system"],
+            ].map(([href, label]) => (
+              <SidebarMenuItem key={href}>
+                <SidebarMenuButton render={<Link href={href} />} isActive={pathname === href}>
+                  {label}
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
           </SidebarMenu>
         </SidebarGroup>
 

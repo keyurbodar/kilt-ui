@@ -43,7 +43,6 @@ import {
   type Modes,
   maxFavorites,
   modeKeys,
-  parseEntries,
   preferredRoute,
   priceLabel,
   type RouteOption,

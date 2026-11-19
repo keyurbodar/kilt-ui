@@ -498,7 +498,6 @@ const AVATAR_SIZE = 20;
 function AuthorAvatar({ className }: { size?: number; className?: string }) {
   const size = AVATAR_SIZE;
   return (
-    // eslint-disable-next-line @next/next/no-img-element -- a 16px avatar, served as is
     <img
       src="/micka.png"
       alt=""

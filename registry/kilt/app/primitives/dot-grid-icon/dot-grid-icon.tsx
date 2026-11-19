@@ -89,7 +89,10 @@ function animateDots(svg: SVGSVGElement, state: DotGridIconState) {
 
   const sync = () => {
     const paused = !inView || chat?.getAttribute("aria-hidden") === "true";
-    for (const a of animations) paused ? a.pause() : a.play();
+    for (const a of animations) {
+      if (paused) a.pause();
+      else a.play();
+    }
   };
 
   const stopReduced = onReducedMotionChange((reduced) => {

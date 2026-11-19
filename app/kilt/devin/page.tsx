@@ -1,4 +1,4 @@
-import { ActionButton, MessageActions, SuggestionOption, SuggestionPopup, Worklog, WorklogStep } from "@/registry/kilt/devin/transcript";
+import { ActionButton, MessageActions, SessionRow, SuggestionOption, SuggestionPopup, Worklog, WorklogStep } from "@/registry/kilt/devin/transcript";
 import type { Metadata } from "@/lib/metadata";
 
 export const metadata: Metadata = { title: "Devin system — Kilt" };
@@ -21,6 +21,10 @@ export default function KiltDevinPage() {
           Work log, message actions and composer suggestion menus, sized from app.devin.ai.
         </p>
       </header>
+      <section className="flex w-[300px] flex-col gap-0.5 rounded-xl border p-3">
+        <SessionRow title="Build Kilt UI library" meta="Working" working active />
+        <SessionRow title="Fix registry drift" meta="Waiting for review" />
+      </section>
       <section className="kilt-dv-turn flex flex-col gap-3 rounded-xl border p-6">
         <Worklog>
           {steps.map(([label, duration]) => (

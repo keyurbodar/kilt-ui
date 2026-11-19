@@ -4,7 +4,7 @@
 // [data-color-theme] block of light-dark() pairs over --kilt-color-* tokens, so
 // it switches mode with the same color-scheme the CDS tokens use.
 
-import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 

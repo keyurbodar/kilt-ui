@@ -11,7 +11,7 @@ export default function KiltIndex() {
           The Capy Design System on Base UI. Every component is compiled from the CDS Doop canvas, so its
           markup, tokens and states match the source 1:1. Fluid Functionalism components stay available under /docs.
         </p>
-        <pre className="mt-4 overflow-x-auto rounded-lg border border-border p-3 text-sm">
+        <pre className="mt-4 overflow-x-auto rounded-lg border border-border p-3 text-site-body">
           <code>npx shadcn@latest add {KILT_SITE_URL}/r/kilt.json</code>
         </pre>
       </div>
@@ -20,7 +20,7 @@ export default function KiltIndex() {
           <li key={c.slug}>
             <Link href={`/kilt/${c.slug}`} className="block rounded-lg border border-border p-3 hover:bg-hover">
               <span className="text-foreground">{c.name}</span>
-              <span className="mt-1 block truncate text-sm text-muted-foreground">{c.signature}</span>
+              <span className="mt-1 block truncate text-site-body text-muted-foreground">{c.signature}</span>
             </Link>
           </li>
         ))}

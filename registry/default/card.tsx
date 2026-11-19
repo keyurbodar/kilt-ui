@@ -744,7 +744,6 @@ function CardMedia({ logo, logoAlt, icon: Icon, size = 22, className }: CardMedi
         {logos.map((src, i) => (
           <span key={i} className="inline-flex items-center gap-1.5">
             {i > 0 && <span aria-hidden className="w-2 h-px bg-border" />}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={src}
               alt={logoAlt ?? ""}
@@ -796,7 +795,6 @@ interface CardImageProps {
 function CardImage({ src, alt, className }: CardImageProps) {
   const { orientation } = useContext(CardContext);
   return (
-    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}
       alt={alt ?? ""}

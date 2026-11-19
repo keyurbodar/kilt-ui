@@ -194,7 +194,6 @@ function FileThumbnail({ file, size, radius, className }: FileThumbnailProps) {
       }}
     >
       {previewUrl ? (
-        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={previewUrl}
           alt={name}

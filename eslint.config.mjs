@@ -172,6 +172,7 @@ export default [
   {
     ignores: [
       ".claude/**",
+      ".next/**",
       "dist/**",
       "node_modules/**",
       "public/r/**",
@@ -244,6 +245,23 @@ export default [
     files: ["registry/**/*.{ts,tsx}"],
     rules: {
       "@typescript-eslint/no-unused-vars": ["error", {}],
+    },
+  },
+  {
+    // Kilt's generated token map and the vendored Kiki app layer name Kilt's own
+    // --kilt-* roles, not the /compare shadcn theme this rule guards.
+    files: ["registry/kilt/tokens.ts", "registry/kilt/app/**/*.{ts,tsx}"],
+    rules: { "no-restricted-syntax": "off" },
+  },
+  {
+    // Vendored Kiki app layer: kept as upstream wrote it until it is ported to Kilt primitives.
+    files: ["registry/kilt/app/**/*.{ts,tsx}"],
+    rules: {
+      "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "^_", argsIgnorePattern: "^_", ignoreRestSiblings: true }],
+      "react-hooks/set-state-in-effect": "warn",
+      "react-hooks/refs": "warn",
+      "react-hooks/purity": "warn",
+      "react-hooks/rules-of-hooks": "warn",
     },
   },
 ];

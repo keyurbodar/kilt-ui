@@ -11,14 +11,14 @@ export function KiltDocPage({ entry }: { entry: KiltCatalogEntry }) {
   return (
     <div className="flex flex-col gap-8">
       <div>
-        <Link href="/kilt" className="text-sm text-muted-foreground hover:text-foreground">
+        <Link href="/kilt" className="text-site-body text-muted-foreground hover:text-foreground">
           Kilt
         </Link>
         <h1 className="mt-2 text-site-display text-foreground leading-none">{entry.name}</h1>
         <p className="mt-2 text-site-body text-muted-foreground">{entry.description}</p>
       </div>
       <div className="flex items-center justify-between gap-4">
-        <code className="min-w-0 truncate text-sm text-muted-foreground">{kiltInstallCommand(entry.slug)}</code>
+        <code className="min-w-0 truncate text-site-body text-muted-foreground">{kiltInstallCommand(entry.slug)}</code>
         <CopyPromptButton prompt={kiltInstallPrompt(entry.name, entry.slug)} />
       </div>
       <section
@@ -30,7 +30,7 @@ export function KiltDocPage({ entry }: { entry: KiltCatalogEntry }) {
       {entry.props.length > 0 && (
         <section>
           <h2 className="text-site-body text-foreground">CDS props</h2>
-          <table className="mt-3 w-full text-left text-sm">
+          <table className="mt-3 w-full text-left text-site-body">
             <thead className="text-muted-foreground">
               <tr>
                 <th className="py-2 pr-4 font-normal">Prop</th>
