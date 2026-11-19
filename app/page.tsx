@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/lib/router";
 import { componentList } from "@/lib/docs/components";
 import { BentoGrid } from "@/app/components/bento-grid";
 import { Button } from "@/registry/radix/button";

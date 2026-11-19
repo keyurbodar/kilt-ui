@@ -1,0 +1,74 @@
+{
+  "id": "c4wckw9m88",
+  "name": "Activity Line",
+  "signature": "Activity Line(state: rest|hover|open = rest, label: text)",
+  "description": "Collapsed run summary between messages (activity-line): centred button min-h 28, gap 6, py 4, text-xs muted-fg-2 tabular ('Worked for 54s'); hover turns it foreground and fades in the trailing chevron (150ms ease-out-quint). 0.5px border-2 rules grow from the label (scale-x, 200ms ease-out-quint) when the activity panel is open.",
+  "usage": "<doop-use component=\"Activity Line\" state=\"rest\" label=\"…\"></doop-use>",
+  "instances": 8,
+  "code": {
+    "path": "packages/web/src/features/thread/activity-line.tsx"
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "state",
+      "type": "enum",
+      "default": "rest",
+      "options": [
+        "rest",
+        "hover",
+        "open"
+      ]
+    },
+    {
+      "name": "label",
+      "type": "text"
+    }
+  ],
+  "slots": [],
+  "template": "<div class=\"al2\" data-doop-part=\"olkw\"><span class=\"rl l\" data-doop-part=\"xqkn\"></span><span class=\"bt\" data-doop-part=\"qnth\"><span data-doop-prop=\"label\" data-doop-part=\"vumy\">Worked for 54s</span><span class=\"cv\" data-doop-part=\"lrff\"><svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"iuef\"><path d=\"M9 4L14.8787 9.87866C16.0503 11.0502 16.0503 12.9497 14.8787 14.1213L9 20\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"tzpo\"></path></svg></span></span><span class=\"rl r\" data-doop-part=\"xrrw\"></span></div>",
+  "css": ".al2 {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;display:flex;width:100%;align-items:center;justify-content:center;gap:12px}\n.al2 .rl {flex:1;min-width:0;border-top:var(--spacing-hairline) solid var(--color-border-2);transform:scaleX(0);transition:transform 200ms cubic-bezier(.23,1,.32,1)}\n.al2 .rl.l {transform-origin:right}\n.al2 .rl.r {transform-origin:left}\n.al2[data-state=\"open\"] .rl {transform:scaleX(1)}\n.al2 .bt {display:flex;min-height:28px;min-width:0;align-items:center;gap:6px;padding:4px 0;font-size:var(--text-xs);font-weight:var(--font-weight-normal);color:var(--color-muted-foreground-2);cursor:pointer;user-select:none;font-variant-numeric:tabular-nums;transition:color 100ms;letter-spacing:var(--tracking-normal)}\n.al2 .cv {display:flex;opacity:0;transition:opacity 150ms cubic-bezier(.23,1,.32,1)}\n.al2 .cv svg {width:var(--spacing-icon-xs);height:var(--spacing-icon-xs)}\n.al2 .bt:hover, .al2[data-state=\"hover\"] .bt, .al2[data-state=\"open\"] .bt {color:var(--color-foreground)}\n.al2 .bt:hover .cv, .al2[data-state=\"hover\"] .cv, .al2[data-state=\"open\"] .cv {opacity:1}",
+  "parts": [
+    {
+      "key": "olkw",
+      "tag": "div",
+      "class": "al2"
+    },
+    {
+      "key": "xrrw",
+      "tag": "span",
+      "class": "rl r"
+    },
+    {
+      "key": "qnth",
+      "tag": "span",
+      "class": "bt"
+    },
+    {
+      "key": "lrff",
+      "tag": "span",
+      "class": "cv"
+    },
+    {
+      "key": "iuef",
+      "tag": "svg"
+    },
+    {
+      "key": "tzpo",
+      "tag": "path"
+    },
+    {
+      "key": "vumy",
+      "tag": "span",
+      "text_prop": "label"
+    },
+    {
+      "key": "xqkn",
+      "tag": "span",
+      "class": "rl l"
+    }
+  ],
+  "main_frame_id": "sDEoilcI2j",
+  "main_image_url": "/i/sDEoilcI2j.png?scale=2",
+  "updated_at": "2026-11-17T02:53:14.879Z"
+}

@@ -1,0 +1,166 @@
+/*
+ * Layer 2: semantic tokens.
+ * Tailwind utilities (bg-card, text-muted-foreground-2, border-border-2, ...)
+ * resolve to these, and these resolve to the theme variables (--bg, --fg,
+ * --primary, ...) that each theme in themes/ sets. Themes never touch this file.
+ */
+
+@theme static {
+  /* Surfaces */
+  --color-background: var(--bg);
+  --color-chrome: var(--chrome);
+  --color-panel: var(--panel);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-popover: var(--popover);
+  --color-popover-hover: var(--popover-hover);
+  --color-input: var(--input);
+  --color-button: var(--button);
+  --color-button-hover: var(--button-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-section: var(--section);
+  --color-composer-ground: var(--composer-ground);
+  --color-muted: var(--muted);
+  --color-overlay: var(--overlay);
+  --color-overlay-fg: var(--overlay-fg);
+  --color-overlay-media: var(--overlay-media);
+  --color-device-glass: var(--device-glass);
+
+  /* Text */
+  --color-foreground: var(--fg);
+  --color-muted-foreground: var(--muted-foreground-1);
+  --color-muted-foreground-1: var(--muted-foreground-1);
+  --color-muted-foreground-2: var(--muted-foreground-2);
+  --color-muted-foreground-3: var(--muted-foreground-3);
+  --color-tab-inactive-foreground: var(--tab-inactive-foreground);
+  --color-tab-hover-foreground: var(--tab-hover-foreground);
+  --color-icon-muted: var(--icon-muted);
+
+  /* Borders */
+  --color-border: var(--border-1);
+  --color-border-1: var(--border-1);
+  --color-border-2: var(--border-2);
+  --color-border-3: var(--border-3);
+
+  /* Accent */
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+  --color-primary-foreground: var(--primary-text);
+  --color-primary-20: color-mix(in oklch, var(--primary) 20%, transparent);
+  --color-ring: var(--ring);
+
+  /* State */
+  --color-destructive: var(--destructive);
+  --color-warning: var(--warning);
+  --color-warning-fg: var(--warning-fg);
+  --color-attention: var(--attention);
+  --color-progress: var(--progress);
+  --color-success: var(--success);
+  --color-info: var(--info);
+  --color-complete: var(--complete);
+  --color-purple: var(--purple);
+  --color-pink: var(--pink);
+  --color-orange: var(--orange);
+  --color-lime: var(--lime);
+
+  /* Diff and charts */
+  --color-diff-add: var(--diff-add);
+  --color-diff-del: var(--diff-del);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+  --color-chart-8: var(--chart-8);
+  --color-chart-other: var(--chart-other);
+
+  /* Elevation and fills */
+  --shadow-card: var(--sh-card);
+  --gradient-skeleton: linear-gradient(
+    90deg,
+    var(--card-hover) 0%,
+    var(--secondary) 50%,
+    var(--card-hover) 100%
+  );
+  --gradient-skeleton-darker: linear-gradient(
+    90deg,
+    var(--secondary) 0%,
+    var(--muted) 50%,
+    var(--secondary) 100%
+  );
+  --gradient-progress-edge: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 36%,
+    var(--primary) 50%,
+    transparent 64%,
+    transparent 100%
+  );
+}
+
+/*
+ * A [data-theme-preview] subtree renders another theme in place (theme picker
+ * cards), so the colour utilities re-resolve against that subtree's variables.
+ */
+[data-theme-preview] {
+  --color-background: var(--bg);
+  --color-chrome: var(--chrome);
+  --color-foreground: var(--fg);
+  --color-panel: var(--panel);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-popover: var(--popover);
+  --color-popover-hover: var(--popover-hover);
+  --color-input: var(--input);
+  --color-button: var(--button);
+  --color-button-hover: var(--button-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-section: var(--section);
+  --color-composer-ground: var(--composer-ground);
+  --color-muted: var(--muted);
+  --color-overlay: var(--overlay);
+  --color-overlay-fg: var(--overlay-fg);
+  --color-overlay-media: var(--overlay-media);
+  --color-muted-foreground: var(--muted-foreground-1);
+  --color-muted-foreground-1: var(--muted-foreground-1);
+  --color-muted-foreground-2: var(--muted-foreground-2);
+  --color-muted-foreground-3: var(--muted-foreground-3);
+  --color-tab-inactive-foreground: var(--tab-inactive-foreground);
+  --color-tab-hover-foreground: var(--tab-hover-foreground);
+  --color-icon-muted: var(--icon-muted);
+  --color-border: var(--border-1);
+  --color-border-1: var(--border-1);
+  --color-border-2: var(--border-2);
+  --color-border-3: var(--border-3);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-text);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-warning: var(--warning);
+  --color-warning-fg: var(--warning-fg);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-attention: var(--attention);
+  --color-progress: var(--progress);
+  --color-success: var(--success);
+  --color-info: var(--info);
+  --color-complete: var(--complete);
+  --color-purple: var(--purple);
+  --color-pink: var(--pink);
+  --color-orange: var(--orange);
+  --color-lime: var(--lime);
+  --color-diff-add: var(--diff-add);
+  --color-diff-del: var(--diff-del);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+  --color-chart-8: var(--chart-8);
+  --color-chart-other: var(--chart-other);
+}

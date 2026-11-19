@@ -1,0 +1,62 @@
+{
+  "id": "cnlydvsr53",
+  "name": "User Message",
+  "signature": "User Message(text: text, footer: boolean = false)",
+  "description": "The person's turn (user-message): right-aligned bubble, max-w 77%, 8px card radius, secondary ground, px 12 py 8, markdown text 13/1.5, wraps anywhere. Message rows are py 8 with gap 6. The Message Footer rail floats 22px above its top-right corner on hover.",
+  "usage": "<doop-use component=\"User Message\" text=\"…\"></doop-use>",
+  "instances": 4,
+  "code": {
+    "path": "packages/web/src/features/thread/user-message.tsx"
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "text",
+      "type": "text"
+    },
+    {
+      "name": "footer",
+      "type": "boolean",
+      "default": "false"
+    }
+  ],
+  "slots": [],
+  "template": "<div class=\"um\" data-doop-part=\"hqdy\"><div class=\"rail\" data-doop-part=\"fxru\"><div class=\"bb\" data-doop-part=\"vebr\"><div class=\"md\" data-doop-prop=\"text\" data-doop-part=\"denk\">Let's also capture the command palette fully, with every tab and the empty state.</div></div><div class=\"ft\" data-doop-if=\"footer\" data-doop-part=\"ignt\"><doop-use component=\"crs73ui594\" data-doop-part=\"vkfm\"></doop-use></div></div></div>",
+  "css": ".um {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;display:flex;min-width:0;flex-direction:column;gap:6px;padding:8px 0;align-items:flex-end;width:100%}\n.um .rail {position:relative;display:flex;max-width:77%;min-width:0;flex-direction:column;gap:6px;align-items:flex-end}\n.um .bb {max-width:100%;min-width:0;border-radius:var(--radius-lg);background:var(--color-secondary);padding:8px 12px;overflow-wrap:anywhere}\n.um .md {font-size:var(--text-markdown);line-height:var(--leading-normal);color:var(--color-foreground)}\n.um .ft {position:absolute;right:0;top:-30px}",
+  "parts": [
+    {
+      "key": "hqdy",
+      "tag": "div",
+      "class": "um"
+    },
+    {
+      "key": "fxru",
+      "tag": "div",
+      "class": "rail"
+    },
+    {
+      "key": "ignt",
+      "tag": "div",
+      "class": "ft"
+    },
+    {
+      "key": "vkfm",
+      "tag": "doop-use",
+      "component": "crs73ui594"
+    },
+    {
+      "key": "vebr",
+      "tag": "div",
+      "class": "bb"
+    },
+    {
+      "key": "denk",
+      "tag": "div",
+      "class": "md",
+      "text_prop": "text"
+    }
+  ],
+  "main_frame_id": "ecIO2AhHF9",
+  "main_image_url": "/i/ecIO2AhHF9.png?scale=2",
+  "updated_at": "2026-11-17T02:53:14.710Z"
+}

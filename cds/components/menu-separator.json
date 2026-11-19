@@ -1,0 +1,26 @@
+{
+  "id": "c6if4neitz",
+  "name": "Menu Separator",
+  "signature": "Menu Separator()",
+  "description": "1px border-1 rule between menu groups (menu-separator, LL): -mx 4, my 4. Hidden when first, last or doubled.",
+  "usage": "<doop-use component=\"Menu Separator\"></doop-use>",
+  "instances": 5,
+  "code": {
+    "path": "packages/web/src/ui/menu.tsx"
+  },
+  "rev": 1,
+  "props": [],
+  "slots": [],
+  "template": "<div class=\"ms\" role=\"separator\" data-doop-part=\"hhwd\"></div>",
+  "css": ".ms {margin:4px -4px;height:1px;background:var(--color-border-1)}",
+  "parts": [
+    {
+      "key": "hhwd",
+      "tag": "div",
+      "class": "ms"
+    }
+  ],
+  "main_frame_id": "IwH0T6mgGw",
+  "main_image_url": "/i/IwH0T6mgGw.png?scale=2",
+  "updated_at": "2026-11-17T02:45:53.751Z"
+}

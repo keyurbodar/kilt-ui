@@ -15,7 +15,9 @@ describe("root overscroll", () => {
   });
 
   it("the root layout doesn't add it as a utility either", () => {
-    const layout = readFileSync(join(process.cwd(), "app/layout.tsx"), "utf8");
-    expect(layout).not.toMatch(/overscroll-(?:y-|x-)?(?:none|contain)/);
+    for (const file of ["index.html", "src/root.tsx"]) {
+      const layout = readFileSync(join(process.cwd(), file), "utf8");
+      expect(layout, file).not.toMatch(/overscroll-(?:y-|x-)?(?:none|contain)/);
+    }
   });
 });

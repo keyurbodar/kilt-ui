@@ -1,7 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import type { ComponentType } from "react";
+import { type ComponentType, lazy, Suspense } from "react";
 import { usePreviewPlayback } from "@/lib/docs/preview-playback";
 
 // ---------------------------------------------------------------------------
@@ -50,36 +49,26 @@ export const SHOWCASE_PREVIEW_SLUGS = new Set([
   "tooltip",
 ]);
 
-const ShowcasePreview = dynamic(
-  () =>
-    import("@/app/components/bento-previews").then(({ previewMap }) => {
-      function ShowcasePreview({ slug }: { slug: string }) {
-        const Preview = previewMap[slug];
-        return Preview ? <Preview /> : null;
-      }
-      return ShowcasePreview;
-    }),
-  { ssr: false }
+const ShowcasePreview = lazy(() =>
+  import("@/app/components/bento-previews").then(({ previewMap }) => ({
+    default: function ShowcasePreview({ slug }: { slug: string }) {
+      const Preview = previewMap[slug];
+      return Preview ? <Preview /> : null;
+    },
+  }))
 );
 
-const FluidHoverPreview = dynamic(
-  () =>
-    import("@/app/docs/fluid-hover/demos").then(({ PlainVsFluidPreview }) => {
-      function FluidHoverPreview() {
-        return <PlainVsFluidPreview paused={!usePreviewPlayback()} />;
-      }
-      return FluidHoverPreview;
-    }),
-  { ssr: false }
+const FluidHoverPreview = lazy(() =>
+  import("@/app/docs/fluid-hover/demos").then(({ PlainVsFluidPreview }) => ({
+    default: function FluidHoverPreview() {
+      return <PlainVsFluidPreview paused={!usePreviewPlayback()} />;
+    },
+  }))
 );
 
-const SizesPreview = dynamic(() => import("@/app/docs/sizes/toolbar-demo").then((m) => m.ToolbarDemo), {
-  ssr: false,
-});
+const SizesPreview = lazy(() => import("@/app/docs/sizes/toolbar-demo").then((m) => ({ default: m.ToolbarDemo })));
 
-const SkillPreview = dynamic(() => import("@/app/docs/skill/examples").then((m) => m.TabsExample), {
-  ssr: false,
-});
+const SkillPreview = lazy(() => import("@/app/docs/skill/examples").then((m) => ({ default: m.TabsExample })));
 
 /** System pages have no Showcase tile: their own page's demo stands in. */
 const SYSTEM_PREVIEWS: Record<string, ComponentType> = {
@@ -95,7 +84,7 @@ export function hasPreview(slug: string): boolean {
 /** The preview for a slug, fetched the first time it renders. */
 export function ChangelogPreview({ slug }: { slug: string }) {
   const System = SYSTEM_PREVIEWS[slug];
-  return System ? <System /> : <ShowcasePreview slug={slug} />;
+  return <Suspense fallback={null}>{System ? <System /> : <ShowcasePreview slug={slug} />}</Suspense>;
 }
 
 /** Stage padding by slug, where a preview needs more room than the default

@@ -1,0 +1,82 @@
+{
+  "id": "cql6p6wf4h",
+  "name": "Sidebar Mode Toggle",
+  "signature": "Sidebar Mode Toggle(mode: captains|threads = threads)",
+  "description": "Captains / Threads switch at the top of the sidebar (shared/sidebar-mode-toggle.tsx): 8px radius, 0.5px border-2, secondary ground, p 2, gap 2; 26×24 icon buttons with 14px glyphs; the selected one sits on a sliding card-ground thumb with shadow-card.",
+  "usage": "<doop-use component=\"Sidebar Mode Toggle\" mode=\"captains\"></doop-use>",
+  "instances": 5,
+  "code": {
+    "path": "packages/web/src/shared/sidebar-mode-toggle.tsx"
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "mode",
+      "type": "enum",
+      "default": "threads",
+      "options": [
+        "captains",
+        "threads"
+      ]
+    }
+  ],
+  "slots": [],
+  "template": "<div class=\"smt\" data-doop-part=\"fdlv\"><span class=\"b a\" data-doop-part=\"yfrk\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" data-doop-part=\"uifc\"><path d=\"M6 12V8C6 7.44772 6.44772 7 7 7H17C17.5523 7 18 7.44772 18 8V12M3 20L6.41857 19.2403M6.41857 19.2403L6.84921 19.1446C7.27784 19.0494 7.72216 19.0494 8.15079 19.1446L11.3492 19.8554C11.7778 19.9506 12.2222 19.9506 12.6508 19.8554L15.8492 19.1446C16.2778 19.0494 16.7222 19.0494 17.1508 19.1446L17.5814 19.2403M6.41857 19.2403C5.48385 17.9577 4.90622 16.8218 4.52949 15.6017C4.08185 14.1519 5.10707 12.7232 6.57904 12.3552L11.2724 11.1819C11.7501 11.0625 12.2499 11.0625 12.7276 11.1819L17.421 12.3552C18.8929 12.7232 19.9181 14.1519 19.4705 15.6017C19.0938 16.8218 18.5162 17.9577 17.5814 19.2403M17.5814 19.2403L21 20M10 7V3H14V7\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"zxnf\"></path></svg></span><span class=\"b c\" data-doop-part=\"dxfs\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" data-doop-part=\"hoeo\"><path d=\"M10 6L20 6\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-doop-part=\"dnxn\"></path><circle cx=\"4.5\" cy=\"6\" r=\"1.5\" fill=\"currentColor\" data-doop-part=\"jnjg\"></circle><path d=\"M10 12L20 12\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-doop-part=\"qbmg\"></path><circle cx=\"4.5\" cy=\"12\" r=\"1.5\" fill=\"currentColor\" data-doop-part=\"zslk\"></circle><path d=\"M10 18L20 18\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-doop-part=\"ivlr\"></path><circle cx=\"4.5\" cy=\"18\" r=\"1.5\" fill=\"currentColor\" data-doop-part=\"eicn\"></circle></svg></span></div>",
+  "css": ".smt {position:relative;display:inline-flex;align-items:center;gap:2px;border-radius:var(--radius-lg);border:var(--spacing-hairline) solid var(--color-border-2);background:var(--color-secondary);padding:2px;--sh-card:0 0 0 1px rgb(0 0 0/.3)}\n:where([data-doop-theme=\"light\"]) .smt {--sh-card:0 0 0 .5px rgb(0 0 0/.11)}\n.smt .b {position:relative;display:inline-flex;width:26px;height:24px;align-items:center;justify-content:center;border-radius:var(--radius-md);color:var(--color-muted-foreground-1);cursor:pointer;transition:color 100ms}\n.smt .b svg {width:var(--spacing-icon-sm);height:var(--spacing-icon-sm)}\n.smt[data-mode=\"captains\"] .a, .smt[data-mode=\"threads\"] .c {background:var(--color-card);box-shadow:var(--sh-card);color:var(--color-foreground)}",
+  "parts": [
+    {
+      "key": "fdlv",
+      "tag": "div",
+      "class": "smt"
+    },
+    {
+      "key": "dxfs",
+      "tag": "span",
+      "class": "b c"
+    },
+    {
+      "key": "hoeo",
+      "tag": "svg"
+    },
+    {
+      "key": "eicn",
+      "tag": "circle"
+    },
+    {
+      "key": "ivlr",
+      "tag": "path"
+    },
+    {
+      "key": "zslk",
+      "tag": "circle"
+    },
+    {
+      "key": "qbmg",
+      "tag": "path"
+    },
+    {
+      "key": "jnjg",
+      "tag": "circle"
+    },
+    {
+      "key": "dnxn",
+      "tag": "path"
+    },
+    {
+      "key": "yfrk",
+      "tag": "span",
+      "class": "b a"
+    },
+    {
+      "key": "uifc",
+      "tag": "svg"
+    },
+    {
+      "key": "zxnf",
+      "tag": "path"
+    }
+  ],
+  "main_frame_id": "Tpvh6D2w-u",
+  "main_image_url": "/i/Tpvh6D2w-u.png?scale=2",
+  "updated_at": "2026-11-17T02:53:59.925Z"
+}

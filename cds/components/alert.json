@@ -1,0 +1,162 @@
+{
+  "id": "cohpq8b7b7",
+  "name": "Alert",
+  "signature": "Alert(color: neutral|accent|danger|warning|success|info = warning, title: text, description: text, action: boolean = false) slots: action",
+  "description": "Inline callout (ui/alert.tsx, cva _e): card ground, 8px radius, 0.5px border-1, shadow-card, p 16, text-sm. Leading 16px icon absolute at 16/16 in the intent colour, text indented 26px. Title medium leading 16; description muted-fg-1. With an action the alert becomes a 2-col grid, gap-x 16.",
+  "usage": "<doop-use component=\"Alert\" color=\"neutral\" title=\"…\" description=\"…\"><template slot=\"action\">…</template></doop-use>",
+  "instances": 6,
+  "code": {
+    "path": "packages/web/src/ui",
+    "snippet": "Source file is not named in the bundle; the classes are copied from cva _e in ui-*.js."
+  },
+  "rev": 2,
+  "props": [
+    {
+      "name": "color",
+      "type": "enum",
+      "default": "warning",
+      "options": [
+        "neutral",
+        "accent",
+        "danger",
+        "warning",
+        "success",
+        "info"
+      ]
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "action",
+      "type": "boolean",
+      "default": "false"
+    }
+  ],
+  "slots": [
+    {
+      "name": "action",
+      "suggested": [
+        "Button"
+      ]
+    }
+  ],
+  "template": "<div class=\"al\" data-doop-part=\"fjum\"><span class=\"si si-success\" data-doop-if=\"color=success\" data-doop-part=\"ocan\"><svg class=\"\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"gqho\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM15.774 10.1333C16.1237 9.70582 16.0607 9.0758 15.6332 8.72607C15.2058 8.37635 14.5758 8.43935 14.226 8.86679L10.4258 13.5116L9.20711 12.2929C8.81658 11.9024 8.18342 11.9024 7.79289 12.2929C7.40237 12.6834 7.40237 13.3166 7.79289 13.7071L9.79289 15.7071C9.99267 15.9069 10.2676 16.0129 10.5498 15.9988C10.832 15.9847 11.095 15.8519 11.274 15.6333L15.774 10.1333Z\" fill=\"currentColor\" data-doop-part=\"iypd\"></path></svg></span><span class=\"si si-error\" data-doop-if=\"color=danger\" data-doop-part=\"xmfi\"><svg class=\"\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"hzex\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM9.70711 8.29289C9.31658 7.90237 8.68342 7.90237 8.29289 8.29289C7.90237 8.68342 7.90237 9.31658 8.29289 9.70711L10.5858 12L8.29289 14.2929C7.90237 14.6834 7.90237 15.3166 8.29289 15.7071C8.68342 16.0976 9.31658 16.0976 9.70711 15.7071L12 13.4142L14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L13.4142 12L15.7071 9.70711C16.0976 9.31658 16.0976 8.68342 15.7071 8.29289C15.3166 7.90237 14.6834 7.90237 14.2929 8.29289L12 10.5858L9.70711 8.29289Z\" fill=\"currentColor\" data-doop-part=\"nqhx\"></path></svg></span><span class=\"si si-warning\" data-doop-if=\"color=warning\" data-doop-part=\"nzfn\"><svg class=\"\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"pved\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 14.5996C11.3373 14.5996 10.7998 15.1371 10.7998 15.7998C10.7999 16.4624 11.3373 17 12 17C12.6627 17 13.2001 16.4625 13.2002 15.7998C13.2002 15.1371 12.6627 14.5996 12 14.5996ZM12 7C11.4477 7 11 7.44772 11 8V12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12V8C13 7.44772 12.5523 7 12 7Z\" fill=\"currentColor\" data-doop-part=\"nfxh\"></path></svg></span><span class=\"si si-info\" data-doop-if=\"color=info\" data-doop-part=\"rxla\"><svg class=\"\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"aivh\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM10 11C10 10.4477 10.4477 10 11 10H12C12.5523 10 13 10.4477 13 11V16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16V12C10.4477 12 10 11.5523 10 11ZM12 7C11.4477 7 11 7.44772 11 8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8C13 7.44772 12.5523 7 12 7Z\" fill=\"currentColor\" data-doop-part=\"brut\"></path></svg></span><span class=\"si si-accent\" data-doop-if=\"color=accent\" data-doop-part=\"qzcc\"><svg class=\"\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"htgz\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM10 11C10 10.4477 10.4477 10 11 10H12C12.5523 10 13 10.4477 13 11V16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16V12C10.4477 12 10 11.5523 10 11ZM12 7C11.4477 7 11 7.44772 11 8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8C13 7.44772 12.5523 7 12 7Z\" fill=\"currentColor\" data-doop-part=\"bxym\"></path></svg></span><span class=\"si si-default\" data-doop-if=\"color=neutral\" data-doop-part=\"yjep\"><svg class=\"\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"agmt\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM10 11C10 10.4477 10.4477 10 11 10H12C12.5523 10 13 10.4477 13 11V16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16V12C10.4477 12 10 11.5523 10 11ZM12 7C11.4477 7 11 7.44772 11 8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8C13 7.44772 12.5523 7 12 7Z\" fill=\"currentColor\" data-doop-part=\"lbpt\"></path></svg></span><div class=\"tx\" data-doop-part=\"rdon\"><h5 class=\"t\" data-doop-prop=\"title\" data-doop-part=\"cqmz\">Setup is out of date</h5><div class=\"d\" data-doop-prop=\"description\" data-doop-part=\"pmkb\">The project's machine Setup changed since this snapshot. Rebuild to pick it up.</div></div><div class=\"ac\" data-doop-if=\"action\" data-doop-slot=\"action\" data-doop-slot-suggest=\"Button\" data-doop-part=\"uzog\"></div></div>",
+  "css": ".al {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;--sh-card:0 0 0 1px rgb(0 0 0/.3);--sh-plate:0 .5px 1px 1px rgb(0 0 0/.3);--sh-overlay:0 3px 8px rgb(0 0 0/.13),0 2px 5px rgb(0 0 0/.13),0 1px 1px rgb(0 0 0/.13);position:relative;width:100%;border-radius:var(--radius-lg);border:var(--spacing-hairline) solid var(--color-border-1);background:var(--color-card);padding:16px;font-size:var(--text-sm);box-shadow:var(--sh-card);color:var(--color-foreground);display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;align-items:center}\n:where([data-doop-theme=\"light\"]) .al {--sh-card:0 0 0 .5px rgb(0 0 0/.11);--sh-plate:0 1px 2px rgb(0 0 0/.05);--sh-overlay:0 6px 18px rgb(0 0 0/.03),0 3px 9px rgb(0 0 0/.04),0 1px 1px rgb(0 0 0/.05);}\n.al .si {position:absolute;left:16px;top:16px;display:flex;color:var(--intent-text,var(--color-muted-foreground-1))}\n.al .si svg {width:var(--spacing-icon-base);height:var(--spacing-icon-base)}\n.al .tx {padding-left:26px;min-width:0}\n.al .t {margin:0 0 4px;font-size:var(--text-sm);font-weight:var(--font-weight-medium);line-height:16px;overflow-wrap:break-word}\n.al .d {font-size:var(--text-sm);font-weight:var(--font-weight-normal);overflow-wrap:break-word;color:var(--color-muted-foreground-1);line-height:var(--leading-normal)}\n.al[data-color=\"accent\"] {--intent-text:var(--color-primary-ink)}\n.al[data-color=\"danger\"] {--intent-text:var(--color-destructive)}\n.al[data-color=\"warning\"] {--intent-text:var(--color-warning-fg)}\n.al[data-color=\"success\"] {--intent-text:color-mix(in oklch,var(--color-success) 72%,white)}\n:where([data-doop-theme=\"light\"]) .al[data-color=\"success\"] {--intent-text:var(--color-success)}\n.al[data-color=\"info\"] {--intent-text:var(--color-info)}",
+  "parts": [
+    {
+      "key": "fjum",
+      "tag": "div",
+      "class": "al"
+    },
+    {
+      "key": "uzog",
+      "tag": "div",
+      "class": "ac",
+      "slot": "action"
+    },
+    {
+      "key": "rdon",
+      "tag": "div",
+      "class": "tx"
+    },
+    {
+      "key": "pmkb",
+      "tag": "div",
+      "class": "d",
+      "text_prop": "description"
+    },
+    {
+      "key": "cqmz",
+      "tag": "h5",
+      "class": "t",
+      "text_prop": "title"
+    },
+    {
+      "key": "yjep",
+      "tag": "span",
+      "class": "si si-default"
+    },
+    {
+      "key": "agmt",
+      "tag": "svg"
+    },
+    {
+      "key": "lbpt",
+      "tag": "path"
+    },
+    {
+      "key": "qzcc",
+      "tag": "span",
+      "class": "si si-accent"
+    },
+    {
+      "key": "htgz",
+      "tag": "svg"
+    },
+    {
+      "key": "bxym",
+      "tag": "path"
+    },
+    {
+      "key": "rxla",
+      "tag": "span",
+      "class": "si si-info"
+    },
+    {
+      "key": "aivh",
+      "tag": "svg"
+    },
+    {
+      "key": "brut",
+      "tag": "path"
+    },
+    {
+      "key": "nzfn",
+      "tag": "span",
+      "class": "si si-warning"
+    },
+    {
+      "key": "pved",
+      "tag": "svg"
+    },
+    {
+      "key": "nfxh",
+      "tag": "path"
+    },
+    {
+      "key": "xmfi",
+      "tag": "span",
+      "class": "si si-error"
+    },
+    {
+      "key": "hzex",
+      "tag": "svg"
+    },
+    {
+      "key": "nqhx",
+      "tag": "path"
+    },
+    {
+      "key": "ocan",
+      "tag": "span",
+      "class": "si si-success"
+    },
+    {
+      "key": "gqho",
+      "tag": "svg"
+    },
+    {
+      "key": "iypd",
+      "tag": "path"
+    }
+  ],
+  "main_frame_id": "t9SCLrJdvi",
+  "main_image_url": "/i/t9SCLrJdvi.png?scale=2",
+  "updated_at": "2026-11-17T02:53:32.843Z"
+}

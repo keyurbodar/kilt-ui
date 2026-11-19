@@ -58,3 +58,6 @@ next-env.d.ts
 
 # preset parity test: generated installs, written out to be imported
 /tests/.parity
+dist/
+.wrangler/
+.dev.vars

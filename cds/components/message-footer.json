@@ -1,0 +1,84 @@
+{
+  "id": "crs73ui594",
+  "name": "Message Footer",
+  "signature": "Message Footer(time: text)",
+  "description": "Hover rail on a chat message (message-footer): h 28, gap 2, 6px radius, 0.5px border-2, card ground, shadow-sm, px 2. Timestamp text-xs muted-fg-2 tabular px 6, then 24px ghost icon buttons with 12px glyphs (Copy, Reply, options). Hidden (opacity 0) until the message rail is hovered or focused; always visible on touch.",
+  "usage": "<doop-use component=\"Message Footer\" time=\"…\"></doop-use>",
+  "instances": 3,
+  "code": {
+    "path": "packages/web/src/features/thread/message-footer.tsx"
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "time",
+      "type": "text"
+    }
+  ],
+  "slots": [],
+  "template": "<div class=\"mf\" data-doop-part=\"jafh\"><span class=\"tm\" data-doop-prop=\"time\" data-doop-part=\"uzjr\">9:57 PM</span><span class=\"ib\" data-doop-part=\"dbup\"><svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"hndo\"><path d=\"M9 9V5.25C9 4.00736 10.0074 3 11.25 3H18.75C19.9926 3 21 4.00736 21 5.25V12.75C21 13.9926 19.9926 15 18.75 15H15M12.75 9H5.25C4.00736 9 3 10.0074 3 11.25V18.75C3 19.9926 4.00736 21 5.25 21H12.75C13.9926 21 15 19.9926 15 18.75V11.25C15 10.0074 13.9926 9 12.75 9Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"tfeq\"></path></svg></span><span class=\"ib\" data-doop-part=\"ufgv\"><svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"tyqk\"><path d=\"M2.23598 11.2833L9.30253 4.40271C9.93624 3.78568 11.0001 4.23469 11.0001 5.11918V7.99977C11.0001 8.27591 11.228 8.49935 11.5041 8.50341C19.4593 8.6202 21.9154 11.5656 21.998 19.5722C21.9991 19.6777 21.8568 19.7147 21.8087 19.6208C20.4299 16.9313 19.1878 15.5583 11.5051 15.5016C11.2289 15.4996 11.0001 15.7236 11.0001 15.9998V18.8804C11.0001 19.7648 9.93624 20.2139 9.30252 19.5968L2.23598 12.7162C1.8328 12.3237 1.8328 11.6759 2.23598 11.2833Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\" data-doop-part=\"plpo\"></path></svg></span><span class=\"ib\" data-doop-part=\"bmpi\"><svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"nesm\"><path d=\"M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"admf\"></path><path d=\"M20 13C20.5523 13 21 12.5523 21 12C21 11.4477 20.5523 11 20 11C19.4477 11 19 11.4477 19 12C19 12.5523 19.4477 13 20 13Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"vosp\"></path><path d=\"M4 13C4.55228 13 5 12.5523 5 12C5 11.4477 4.55228 11 4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"hboe\"></path></svg></span></div>",
+  "css": ".mf {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;display:inline-flex;height:28px;align-items:center;gap:2px;border-radius:var(--radius-md);border:var(--spacing-hairline) solid var(--color-border-2);background:var(--color-card);padding:0 2px;box-shadow:0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a}\n.mf .tm {flex-shrink:0;font-size:var(--text-xs);white-space:nowrap;color:var(--color-muted-foreground-2);font-variant-numeric:tabular-nums;user-select:none;padding:0 6px;letter-spacing:var(--tracking-normal)}\n.mf .ib {display:inline-flex;width:var(--spacing-control-xs);height:var(--spacing-control-xs);align-items:center;justify-content:center;border-radius:var(--radius-md);color:var(--color-muted-foreground-1);cursor:pointer;transition:color 100ms,background-color 100ms}\n.mf .ib:hover {color:var(--color-foreground);background:var(--color-secondary)}\n.mf .ib svg {width:var(--spacing-icon-xs);height:var(--spacing-icon-xs)}",
+  "parts": [
+    {
+      "key": "jafh",
+      "tag": "div",
+      "class": "mf"
+    },
+    {
+      "key": "bmpi",
+      "tag": "span",
+      "class": "ib"
+    },
+    {
+      "key": "nesm",
+      "tag": "svg"
+    },
+    {
+      "key": "hboe",
+      "tag": "path"
+    },
+    {
+      "key": "vosp",
+      "tag": "path"
+    },
+    {
+      "key": "admf",
+      "tag": "path"
+    },
+    {
+      "key": "ufgv",
+      "tag": "span",
+      "class": "ib"
+    },
+    {
+      "key": "tyqk",
+      "tag": "svg"
+    },
+    {
+      "key": "plpo",
+      "tag": "path"
+    },
+    {
+      "key": "dbup",
+      "tag": "span",
+      "class": "ib"
+    },
+    {
+      "key": "hndo",
+      "tag": "svg"
+    },
+    {
+      "key": "tfeq",
+      "tag": "path"
+    },
+    {
+      "key": "uzjr",
+      "tag": "span",
+      "class": "tm",
+      "text_prop": "time"
+    }
+  ],
+  "main_frame_id": "XbQw-2C9JE",
+  "main_image_url": "/i/XbQw-2C9JE.png?scale=2",
+  "updated_at": "2026-11-17T02:53:14.555Z"
+}

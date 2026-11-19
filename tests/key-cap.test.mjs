@@ -11,7 +11,8 @@ import { describe, expect, it } from "vitest";
 const ROOT = new URL("..", import.meta.url).pathname;
 const DIRS = ["app", "components", "lib", "registry"];
 const KEY_CAP = "registry/default/lib/key-cap.tsx";
-const SKIP = [KEY_CAP, "components/shadcn/", "lib/docs/prompt-entries.ts"];
+// Kilt ships the CDS Kbd as its own component.
+const SKIP = [KEY_CAP, "components/shadcn/", "lib/docs/prompt-entries.ts", "registry/kilt/"];
 
 function sourceFiles(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {

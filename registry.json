@@ -3757,6 +3757,1135 @@
       "categories": [
         "components"
       ]
+    },
+    {
+      "name": "kilt-tokens",
+      "type": "registry:file",
+      "title": "Kilt Tokens",
+      "description": "Typed CDS tokens (@property), light/dark/touch themes, motion values and the live overlay layer every Kilt component imports.",
+      "files": [
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        },
+        {
+          "path": "registry/kilt/tokens.ts",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.ts"
+        },
+        {
+          "path": "registry/kilt/styles/live.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/live.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-icons",
+      "type": "registry:file",
+      "title": "Kilt Icons",
+      "description": "The SVG glyphs drawn in the CDS component templates, as React components.",
+      "registryDependencies": [
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/icons.tsx",
+          "type": "registry:file",
+          "target": "components/kilt/icons.tsx"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-themes",
+      "type": "registry:file",
+      "title": "Kilt Themes",
+      "description": "Capy's 13 colour presets and the Explore wallpaper themes as [data-color-theme] blocks over the kilt tokens.",
+      "registryDependencies": [
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/themes.css",
+          "type": "registry:file",
+          "target": "components/kilt/themes.css"
+        },
+        {
+          "path": "registry/kilt/themes.ts",
+          "type": "registry:file",
+          "target": "components/kilt/themes.ts"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-icon",
+      "type": "registry:ui",
+      "title": "Kilt Icon",
+      "description": "Capy's 350-glyph icon sprite on a 24px grid, rendered with <use>. Serve the sprite at /kilt/icons.svg.",
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/icon.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/icon.tsx"
+        },
+        {
+          "path": "registry/kilt/icon-ids.ts",
+          "type": "registry:file",
+          "target": "components/kilt/icon-ids.ts"
+        },
+        {
+          "path": "public/kilt/icons.svg",
+          "type": "registry:file",
+          "target": "public/kilt/icons.svg"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-activity-line",
+      "type": "registry:ui",
+      "title": "Kilt Activity Line",
+      "description": "Collapsed run summary between messages (activity-line): centred button min-h 28, gap 6, py 4, text-xs muted-fg-2 tabular ('Worked for 54s'); hover turns it foreground and fades in the trailing chevron (150ms ease-out-quint). 0.5px border-2 rules grow from the label (scale-x, 200ms ease-out-quint) when the activity panel is open.",
+      "registryDependencies": [
+        "utils",
+        "kilt-icons",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/activity-line.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/activity-line.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/activity-line.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/activity-line.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-agent-message",
+      "type": "registry:ui",
+      "title": "Kilt Agent Message",
+      "description": "Capy's turn (agent-message): no bubble; full-width markdown sections with gap 1.5em (1.25em on mobile), py 8. Body text 13/1.5 in foreground, strong 560, inline code in mono on secondary. Each section has its own hover rail (Message Footer).",
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/agent-message.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/agent-message.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/agent-message.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/agent-message.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-alert",
+      "type": "registry:ui",
+      "title": "Kilt Alert",
+      "description": "Inline callout (ui/alert.tsx, cva _e): card ground, 8px radius, 0.5px border-1, shadow-card, p 16, text-sm. Leading 16px icon absolute at 16/16 in the intent colour, text indented 26px. Title medium leading 16; description muted-fg-1. With an action the alert becomes a 2-col grid, gap-x 16.",
+      "registryDependencies": [
+        "utils",
+        "kilt-icons",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/alert.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/alert.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/alert.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/alert.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-badge",
+      "type": "registry:ui",
+      "title": "Kilt Badge",
+      "description": "Pill status/count label (ui/badge.tsx, cva ICt). variant default (plate on --button), ghost (text only), filled (solid colour). color: neutral, accent, danger, warning, success, info, purple, pink, orange, lime. size base 24 / sm 20 / xs 18 / count 16 (bold 11px numbers).",
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/badge.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/badge.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/badge.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-button",
+      "type": "registry:ui",
+      "title": "Kilt Button",
+      "description": "Every clickable action in Capy (ui/button.tsx, cva Xk). variant: solid (default plate), soft, ghost (toolbar/icon actions), outline, link, bare, inverse, segmented (inside a Segmented track). intent: neutral/accent (send, primary CTA)/danger. size: xs 24 (message actions), sm 28 (default; top-bar), base 32, lg 44, icon-xs/sm/base square. state is for specimens only; real hover/active/focus also work.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/button.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/button.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/button.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/button.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-captain-avatar",
+      "type": "registry:ui",
+      "title": "Kilt Captain Avatar",
+      "description": "A Captain's avatar: a preset capybara (or uploaded image) on its chosen background colour. Always set background; Capy's default is capy-avatar-1 on #ffffff ('None'), and new Captains get a random preset on a random palette colour. Sizes: 2xs 10 · xs 16 (pane tabs, palette rows) · sm 24 · base 32 (sidebar Captain rows) · xl 48 · 2xl 80. Radius is --radius-xs up to sm, --radius-sm from base.",
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/captain-avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/captain-avatar.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/captain-avatar.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/captain-avatar.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-card",
+      "type": "registry:ui",
+      "title": "Kilt Card",
+      "description": "Container (ui/card.tsx, cva Ej). variant default (card ground, 8px radius, card-hairline + shadow-card), interactive (hover card-hover, clickable), panel (12px radius, panel ground; settings/overview panes), ghost. Header/footer use 0.5px border-1 rules with px16 py12; content p16. rows=true divides children with 0.5px border-1.",
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/card.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/card.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/card.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/card.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-checkbox",
+      "type": "registry:ui",
+      "title": "Kilt Checkbox",
+      "description": "Checkbox (ui/checkbox.tsx, $I): 16px square, 3px radius, 0.5px border-3 on input ground; checked/indeterminate fill primary with a 12px check (checkmark-1) in primary-foreground. Disabled opacity .55. Coarse pointer 44px hit area.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "kilt-icons",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/checkbox.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/checkbox.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/checkbox.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-command-palette",
+      "type": "registry:ui",
+      "title": "Kilt Command Palette",
+      "description": "⌘K command menu (ui/command-menu.tsx + shared/command-menu-search.tsx), captured live at 720×521: 12px panel radius, popover ground, 44px search input (px 16, placeholder muted-fg-3) with ghost sm 'New thread ⇥' button, 1px border-1 rule, category tabs (h 28, px 10, text-xs medium, selected = secondary ground), list max-h min(400px,60vh) p 6 with groups (28px muted-fg-2 labels, 1px gap) of palette-density Menu Rows (40px), and a 40px footer of key hints. Sits 15dvh from the top; overlay fades 200ms ease-out, panel scales .95→1 over 200ms ease-out-quint.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "kilt-button",
+        "kilt-icons",
+        "kilt-kbd",
+        "kilt-menu-row",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/command-palette.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/command-palette.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/command-palette.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/command-palette.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-composer",
+      "type": "registry:ui",
+      "title": "Kilt Composer",
+      "description": "Message composer (composer): 8px card radius, composer-surface/card ground, p 12, shadow-composer, 0.5px gradient hairline (border-2 → border-1). Field min-h 64 / max-h 224, p 4, text-base, placeholder muted-fg-3 'Ask anything, / for commands, @ for context'. Toolbar (pt 4, gap 8): ghost icon-sm Add to message + Thread configuration, ghost sm model picker (accent 14px glyph, model, muted-fg-2 effort, muted-fg-3 chevron), and a solid accent icon-sm Voice input / send at the end.",
+      "registryDependencies": [
+        "utils",
+        "kilt-icons",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/composer.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/composer.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/composer.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/composer.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-dialog",
+      "type": "registry:ui",
+      "title": "Kilt Dialog",
+      "description": "Modal (ui/dialog.tsx): max-w 512 (lg), 12px panel radius, 0.5px border-2, popover ground, shadow-overlay. Header grid px 20 pt 16 with title (text-base or text-xl, medium, balance) and ghost icon-sm close; description text-sm muted-fg-2 mt 4. Body px 20, gap 16 py 20 (compact gap 12 py 16). Footer flex end gap 8 px 20 pb 16. Opens with overlay fade 200ms ease-out and panel scale .95→1 200ms ease-out-quint; exits 150ms.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "kilt-icons",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/dialog.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/dialog.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/dialog.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-dither",
+      "type": "registry:ui",
+      "title": "Kilt Dither",
+      "description": "Capy's WebGL dither (Paper Shaders): procedural Dither, WallpaperBackdrop with grain/vignette, and the shared on-screen shader clock.",
+      "dependencies": [
+        "@paper-design/shaders",
+        "@paper-design/shaders-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/dither.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/dither.tsx"
+        },
+        {
+          "path": "registry/kilt/effects.css",
+          "type": "registry:file",
+          "target": "components/kilt/effects.css"
+        },
+        {
+          "path": "registry/kilt/textures/grain.svg",
+          "type": "registry:file",
+          "target": "components/kilt/textures/grain.svg"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-input",
+      "type": "registry:ui",
+      "title": "Kilt Input",
+      "description": "Single-line text field (ui/input.tsx, cva Aat). variant default (input ground + border-2 hairline), ghost (inline rename: transparent until hover/focus), blank. size xs 24 / sm 28 / base 32 (default). font mono for ids/paths. state for specimens: focus ring, invalid (destructive border), disabled.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/input.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/input.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/input.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/input.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-kbd",
+      "type": "registry:ui",
+      "title": "Kilt Kbd",
+      "description": "Keyboard shortcut glyph (ui/kbd.tsx, cva Jht). variant default = bare text; chip = 16px tile on secondary (menus, tooltips, palette footer); on-fill = inside a solid button.",
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/kbd.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/kbd.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/kbd.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/kbd.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-menu",
+      "type": "registry:ui",
+      "title": "Kilt Menu",
+      "description": "Menu / dropdown popup surface (ui/menu.tsx, XL = jL + KEt): popover ground, 8px radius, 0.5px border-2, shadow-overlay, p 4, min-w 128, max-h min(60dvh, available). Fill the rows slot with Menu Row, Menu Label and Menu Separator. Opens scale .97→1 + fade, 150ms ease-out-quint.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "kilt-menu-row",
+        "kilt-menu-label",
+        "kilt-menu-separator",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/menu.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/menu.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/menu.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/menu.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-menu-label",
+      "type": "registry:ui",
+      "title": "Kilt Menu Label",
+      "description": "Group heading inside a menu (menu-label, BL): min-h 22, px 8, text-xs medium muted-fg-2, mt 4 except first.",
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/menu-label.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/menu-label.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/menu-label.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/menu-label.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-menu-row",
+      "type": "registry:ui",
+      "title": "Kilt Menu Row",
+      "description": "One row in a menu, select, combobox or command palette (ui/menu.tsx, cva ML). density default 28 (menus), rich (auto, min 36, two-line), palette 40 (⌘K rows, 16px icon, 8px radius). intent danger tints text and highlight. Leading icon sits in a 14px icon-muted lane; trailing shortcut is muted-fg-1.",
+      "registryDependencies": [
+        "utils",
+        "kilt-icons",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/menu-row.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/menu-row.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/menu-row.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/menu-row.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-menu-separator",
+      "type": "registry:ui",
+      "title": "Kilt Menu Separator",
+      "description": "1px border-1 rule between menu groups (menu-separator, LL): -mx 4, my 4. Hidden when first, last or doubled.",
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/menu-separator.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/menu-separator.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/menu-separator.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/menu-separator.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-message-footer",
+      "type": "registry:ui",
+      "title": "Kilt Message Footer",
+      "description": "Hover rail on a chat message (message-footer): h 28, gap 2, 6px radius, 0.5px border-2, card ground, shadow-sm, px 2. Timestamp text-xs muted-fg-2 tabular px 6, then 24px ghost icon buttons with 12px glyphs (Copy, Reply, options). Hidden (opacity 0) until the message rail is hovered or focused; always visible on touch.",
+      "registryDependencies": [
+        "utils",
+        "kilt-icons",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/message-footer.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/message-footer.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/message-footer.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/message-footer.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-pane-tab",
+      "type": "registry:ui",
+      "title": "Kilt Pane Tab",
+      "description": "Tab in a pane header (features/thread/pane/tab-strip.tsx): a ghost sm Button (h 28, px 8, text-xs medium, gap 6) with a 14px icon or 16px avatar. Selected = secondary ground + foreground; selected in the unfocused pane = secondary at 50% + muted-fg-1. Tabs sit 2px apart in a 44px header with a 0.5px border-1 bottom rule, px 8.",
+      "registryDependencies": [
+        "utils",
+        "kilt-icons",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/pane-tab.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/pane-tab.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/pane-tab.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/pane-tab.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-popover",
+      "type": "registry:ui",
+      "title": "Kilt Popover",
+      "description": "Popover surface (ui/popover.tsx, qEt default): popover ground, 8px radius, 0.5px border-2, p 8, shadow-overlay; optional 10px rotated arrow with border on the trigger side. Opens scale .97→1 + fade, 150ms ease-out-quint, exit 120ms.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/popover.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/popover.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/popover.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/popover.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-preview-card",
+      "type": "registry:ui",
+      "title": "Kilt Preview Card",
+      "description": "Hover card (ui/preview-card.tsx): popover surface, w 288 (also 320 / 384), p 12, flex column, max-h available height. Opens after ~350ms hover with scale .97→1 + fade 150ms ease-out-quint. Used for PR chips, thread links, avatars.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/preview-card.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/preview-card.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/preview-card.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/preview-card.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-project-chip",
+      "type": "registry:ui",
+      "title": "Kilt Project Chip",
+      "description": "Two-letter project mark (shared/sidebar-threads.tsx): 14px square, 3px radius, mono plan-chip text (10px), semibold, tracking-tighter; chart colour at 15% ground with the full chart colour as text.",
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/project-chip.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/project-chip.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/project-chip.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/project-chip.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-sidebar-mode-toggle",
+      "type": "registry:ui",
+      "title": "Kilt Sidebar Mode Toggle",
+      "description": "Captains / Threads switch at the top of the sidebar (shared/sidebar-mode-toggle.tsx): 8px radius, 0.5px border-2, secondary ground, p 2, gap 2; 26×24 icon buttons with 14px glyphs; the selected one sits on a sliding card-ground thumb with shadow-card.",
+      "registryDependencies": [
+        "utils",
+        "kilt-icons",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/sidebar-mode-toggle.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/sidebar-mode-toggle.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/sidebar-mode-toggle.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/sidebar-mode-toggle.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-sidebar-section-header",
+      "type": "registry:ui",
+      "title": "Kilt Sidebar Section Header",
+      "description": "Collapsible group heading in the sidebar list (Working, Waiting, folders): h 28 (--spacing-sidebar-section-header), 6px radius, px 8, gap 6, text-xs muted-fg-2 (foreground on hover), count in muted-fg-3 tabular, 12px chevron in muted-fg-3. Groups sit 12px apart (--spacing-sidebar-section-gap).",
+      "registryDependencies": [
+        "utils",
+        "kilt-icons",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/sidebar-section-header.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/sidebar-section-header.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/sidebar-section-header.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/sidebar-section-header.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-sidebar-thread-row",
+      "type": "registry:ui",
+      "title": "Kilt Sidebar Thread Row",
+      "description": "One thread in the sidebar list (sidebar-thread-row): h 52, 6px radius, px 8 py 6, gap 10; hover = secondary ground. Line 1 (h 20, gap 8): title text-base/20 at foreground 90% (100% on hover), fading out on the right, plus relative time text-xs muted-fg-1 tabular. Line 2 (h 16, gap 6, text-xs muted-fg-2): Project Chip at 80% opacity, project name, then machine glyph + machine name at 80% opacity.",
+      "registryDependencies": [
+        "utils",
+        "kilt-icons",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/sidebar-thread-row.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/sidebar-thread-row.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/sidebar-thread-row.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/sidebar-thread-row.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-switch",
+      "type": "registry:ui",
+      "title": "Kilt Switch",
+      "description": "Toggle (ui/switch.tsx): 28×16 pill, 0.5px border-2 on muted, 1.5px inset; 12px thumb in primary-foreground with plate shadow slides 12px, 150ms ease-out-quint. Checked = primary track, transparent border.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/switch.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/switch.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/switch.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/switch.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-textarea",
+      "type": "registry:ui",
+      "title": "Kilt Textarea",
+      "description": "Multi-line field (ui/textarea.tsx, cva yhn). variant default (input ground, px 10 py 6, text-sm), blank (auto-sizing, no chrome, e.g. composer), editor (card ground, mono code-block text, line-height 1.5, for file editing).",
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/textarea.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/textarea.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/textarea.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-toast",
+      "type": "registry:ui",
+      "title": "Kilt Toast",
+      "description": "Sonner toast body (ui/sonner.tsx Toast): 382px wide, popover ground, 8px radius, 0.5px border-2, shadow-overlay, p 16, gap 8. 16px status icon (success / destructive / warning-fg / info / muted-fg-2), title text-sm medium, description text-sm muted-fg-2 (mt 2), actions row mt 10 gap 8 (solid xs + ghost xs). 20px dismiss X at right 16 / top 14 in muted-fg-3. Height changes animate 200ms ease-out-quint; stacked bottom-right.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "kilt-icons",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/toast.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/toast.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/toast.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/toast.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-tooltip",
+      "type": "registry:ui",
+      "title": "Kilt Tooltip",
+      "description": "Hover label for icon buttons (ui/tooltip.tsx): popover ground, 0.5px border-2, shadow-overlay, 6px radius, px 8 py 4, text-xs medium, max-w 320, optional chip Kbd shortcut (gap 6). Opens after ~350ms, animate-tooltip-in/out.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/tooltip.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/tooltip.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/tooltip.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt-user-message",
+      "type": "registry:ui",
+      "title": "Kilt User Message",
+      "description": "The person's turn (user-message): right-aligned bubble, max-w 77%, 8px card radius, secondary ground, px 12 py 8, markdown text 13/1.5, wraps anywhere. Message rows are py 8 with gap 6. The Message Footer rail floats 22px above its top-right corner on hover.",
+      "registryDependencies": [
+        "utils",
+        "kilt-tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/kilt/user-message.tsx",
+          "type": "registry:ui",
+          "target": "components/kilt/user-message.tsx"
+        },
+        {
+          "path": "registry/kilt/styles/user-message.css",
+          "type": "registry:file",
+          "target": "components/kilt/styles/user-message.css"
+        },
+        {
+          "path": "registry/kilt/tokens.css",
+          "type": "registry:file",
+          "target": "components/kilt/tokens.css"
+        }
+      ],
+      "categories": [
+        "kilt"
+      ]
+    },
+    {
+      "name": "kilt",
+      "type": "registry:block",
+      "title": "Kilt",
+      "description": "Every Kilt component: the Capy Design System on Base UI.",
+      "registryDependencies": [
+        "kilt-icon",
+        "kilt-activity-line",
+        "kilt-agent-message",
+        "kilt-alert",
+        "kilt-badge",
+        "kilt-button",
+        "kilt-captain-avatar",
+        "kilt-card",
+        "kilt-checkbox",
+        "kilt-command-palette",
+        "kilt-composer",
+        "kilt-dialog",
+        "kilt-dither",
+        "kilt-input",
+        "kilt-kbd",
+        "kilt-menu",
+        "kilt-menu-label",
+        "kilt-menu-row",
+        "kilt-menu-separator",
+        "kilt-message-footer",
+        "kilt-pane-tab",
+        "kilt-popover",
+        "kilt-preview-card",
+        "kilt-project-chip",
+        "kilt-sidebar-mode-toggle",
+        "kilt-sidebar-section-header",
+        "kilt-sidebar-thread-row",
+        "kilt-switch",
+        "kilt-textarea",
+        "kilt-toast",
+        "kilt-tooltip",
+        "kilt-user-message"
+      ],
+      "files": [],
+      "categories": [
+        "kilt"
+      ]
     }
   ]
 }

@@ -1,0 +1,126 @@
+{
+  "id": "cdz245v82j",
+  "name": "Sidebar Thread Row",
+  "signature": "Sidebar Thread Row(state: default|hover|active = default, title: text, time: text, project: text, machine: text) slots: chip",
+  "description": "One thread in the sidebar list (sidebar-thread-row): h 52, 6px radius, px 8 py 6, gap 10; hover = secondary ground. Line 1 (h 20, gap 8): title text-base/20 at foreground 90% (100% on hover), fading out on the right, plus relative time text-xs muted-fg-1 tabular. Line 2 (h 16, gap 6, text-xs muted-fg-2): Project Chip at 80% opacity, project name, then machine glyph + machine name at 80% opacity.",
+  "usage": "<doop-use component=\"Sidebar Thread Row\" state=\"default\" title=\"…\" time=\"…\" project=\"…\"><template slot=\"chip\">…</template></doop-use>",
+  "instances": 12,
+  "code": {
+    "path": "packages/web/src/shared/sidebar-threads.tsx"
+  },
+  "rev": 2,
+  "props": [
+    {
+      "name": "state",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "hover",
+        "active"
+      ]
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "time",
+      "type": "text"
+    },
+    {
+      "name": "project",
+      "type": "text"
+    },
+    {
+      "name": "machine",
+      "type": "text"
+    }
+  ],
+  "slots": [
+    {
+      "name": "chip",
+      "suggested": [
+        "Project Chip"
+      ]
+    }
+  ],
+  "template": "<div class=\"sr\" data-doop-part=\"jrsx\"><span class=\"col\" data-doop-part=\"phur\"><span class=\"l1\" data-doop-part=\"iifh\"><span class=\"tt\" data-doop-prop=\"title\" data-doop-part=\"smld\">Create Kiki design system tokens</span><span class=\"tm\" data-doop-prop=\"time\" data-doop-part=\"urkz\">30s</span></span><span class=\"l2\" data-doop-part=\"yomi\"><span class=\"pc\" data-doop-slot=\"chip\" data-doop-slot-suggest=\"Project Chip\" data-doop-part=\"imry\"><doop-use component=\"cl489iggr4\" data-doop-part=\"oevt\"></doop-use></span><span class=\"pn\" data-doop-prop=\"project\" data-doop-part=\"pbva\">Home</span><span class=\"mc\" data-doop-part=\"itpe\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" data-doop-part=\"ytzl\"><path d=\"M2 16H22V17.5C22 18.8807 20.8807 20 19.5 20H4.5C3.11929 20 2 18.8807 2 17.5V16Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\" stroke-linejoin=\"round\" data-doop-part=\"ovmr\"></path><path d=\"M20 15.75V7C20 5.34315 18.6569 4 17 4H7C5.34315 4 4 5.34315 4 7V15.75\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\" stroke-linejoin=\"round\" data-doop-part=\"tmpf\"></path></svg><span data-doop-prop=\"machine\" data-doop-part=\"rxqs\">build</span></span></span></span></div>",
+  "css": ".sr {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;display:flex;gap:10px;border-radius:var(--radius-md);padding:6px 8px;height:52px;align-items:flex-start;transition:background-color 100ms;cursor:pointer;user-select:none;width:100%}\n.sr:hover, .sr[data-state=\"hover\"] {background:var(--color-secondary)}\n.sr[data-state=\"active\"] {background:var(--color-secondary)}\n.sr .col {display:flex;min-width:0;flex:1;flex-direction:column;gap:4px}\n.sr .l1 {display:flex;height:20px;min-width:0;align-items:center;gap:8px}\n.sr .tt {min-width:0;flex:1;overflow:hidden;white-space:nowrap;font-size:var(--text-base);line-height:20px;font-weight:var(--font-weight-normal);color:color-mix(in srgb,var(--color-foreground) 90%,transparent);-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent);letter-spacing:var(--tracking-tight)}\n.sr:hover .tt, .sr[data-state=\"hover\"] .tt, .sr[data-state=\"active\"] .tt {color:var(--color-foreground)}\n.sr .tm {flex-shrink:0;font-size:var(--text-xs);color:var(--color-muted-foreground-1);font-variant-numeric:tabular-nums;letter-spacing:var(--tracking-normal)}\n.sr .l2 {display:flex;height:16px;min-width:0;align-items:center;gap:6px;font-size:var(--text-xs);color:var(--color-muted-foreground-2);letter-spacing:var(--tracking-normal)}\n.sr .pc {display:flex;flex-shrink:0;opacity:.8}\n.sr .pn {min-width:0;flex:1;overflow:hidden;white-space:nowrap}\n.sr .mc {display:flex;max-width:60%;min-width:0;flex-shrink:0;align-items:center;gap:6px;opacity:.8}\n.sr .mc svg {width:12px;height:12px;flex-shrink:0}",
+  "parts": [
+    {
+      "key": "jrsx",
+      "tag": "div",
+      "class": "sr"
+    },
+    {
+      "key": "phur",
+      "tag": "span",
+      "class": "col"
+    },
+    {
+      "key": "yomi",
+      "tag": "span",
+      "class": "l2"
+    },
+    {
+      "key": "itpe",
+      "tag": "span",
+      "class": "mc"
+    },
+    {
+      "key": "rxqs",
+      "tag": "span",
+      "text_prop": "machine"
+    },
+    {
+      "key": "ytzl",
+      "tag": "svg"
+    },
+    {
+      "key": "tmpf",
+      "tag": "path"
+    },
+    {
+      "key": "ovmr",
+      "tag": "path"
+    },
+    {
+      "key": "pbva",
+      "tag": "span",
+      "class": "pn",
+      "text_prop": "project"
+    },
+    {
+      "key": "imry",
+      "tag": "span",
+      "class": "pc",
+      "slot": "chip"
+    },
+    {
+      "key": "oevt",
+      "tag": "doop-use",
+      "component": "cl489iggr4"
+    },
+    {
+      "key": "iifh",
+      "tag": "span",
+      "class": "l1"
+    },
+    {
+      "key": "urkz",
+      "tag": "span",
+      "class": "tm",
+      "text_prop": "time"
+    },
+    {
+      "key": "smld",
+      "tag": "span",
+      "class": "tt",
+      "text_prop": "title"
+    }
+  ],
+  "main_frame_id": "FLnuGdyefM",
+  "main_image_url": "/i/FLnuGdyefM.png?scale=2",
+  "updated_at": "2026-11-17T02:55:04.973Z"
+}

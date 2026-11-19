@@ -121,6 +121,10 @@ export const CUSTOM_ITEMS = new Set([
   "textarea",
   "thinking-indicator",
   "thinking-steps",
+  // Kilt items (scripts/kilt/build-cds.mjs) depend on each other by name.
+  ...JSON.parse(readFileSync(new URL("../registry.json", import.meta.url), "utf-8"))
+    .items.map((i) => i.name)
+    .filter((n) => n.startsWith("kilt")),
 ]);
 
 /**
@@ -380,4 +384,13 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       console.error(err);
       process.exit(1);
     });
+}
+
+// Which items exist at /r/ and /r/base/, for the Worker's /changelog.md
+// install lines (lib/changelog/install.ts), which cannot read the disk.
+{
+  const names = async (dir) => (await readdir(dir)).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)).sort();
+  const root = new URL("../public/r/", import.meta.url).pathname;
+  const files = { items: await names(root), base: await names(join(root, "base")) };
+  await writeFile(new URL("../lib/registry-files.gen.json", import.meta.url), JSON.stringify(files, null, 2) + "\n");
 }

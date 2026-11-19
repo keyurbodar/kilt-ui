@@ -56,7 +56,7 @@ describe("the starter Copy prompt", () => {
   it("leads with the one command, carrying every setting in its slug", () => {
     const command = starterCommand(settings);
     expect(command).toBe(
-      "npx shadcn@latest create -n my-app -t next https://www.fluidfunctionalism.com/r/starter/radix-pill-compact-phosphor-dark.json",
+      "npx shadcn@latest create -n my-app -t next https://www.fluidfunctionalism.com/r/starter/radix-pill-compact-phosphor.json",
     );
     expect(prompt).toContain(command);
   });
@@ -67,7 +67,7 @@ describe("the starter Copy prompt", () => {
   });
 
   it("offers the setup install for an app that already exists", () => {
-    expect(prompt).toContain("https://www.fluidfunctionalism.com/r/setup/radix-pill-compact-phosphor-dark.json --overwrite");
+    expect(prompt).toContain("https://www.fluidfunctionalism.com/r/setup/radix-pill-compact-phosphor.json --overwrite");
     expect(prompt).toContain("<FluidRoot>");
   });
 

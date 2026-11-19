@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useEffect, forwardRef, type HTMLAttributes } from "react";
-import Link from "next/link";
 import { useNavMenu } from "@/components/ui/nav-menu";
 import type { IconComponent } from "@/lib/icon-context";
 import { cn } from "@/lib/utils";
@@ -49,7 +48,7 @@ const NavItem = forwardRef<HTMLAnchorElement, NavItemProps>(
     const tabIdx = isActiveRoute ? 0 : activeRouteExists ? -1 : index === 0 ? 0 : -1;
 
     return (
-      <Link
+      <a
         ref={(node) => {
           (
             internalRef as React.MutableRefObject<HTMLAnchorElement | null>
@@ -120,7 +119,7 @@ const NavItem = forwardRef<HTMLAnchorElement, NavItemProps>(
             ) : null}
           </span>
         </span>
-      </Link>
+      </a>
     );
   }
 );

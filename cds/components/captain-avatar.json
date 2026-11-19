@@ -1,0 +1,57 @@
+{
+  "id": "cnjxzthr7d",
+  "name": "Captain Avatar",
+  "signature": "Captain Avatar(size: 2xs|xs|sm|base|xl|2xl = sm, background: text, avatar: image)",
+  "description": "A Captain's avatar: a preset capybara (or uploaded image) on its chosen background colour. Always set background; Capy's default is capy-avatar-1 on #ffffff ('None'), and new Captains get a random preset on a random palette colour. Sizes: 2xs 10 · xs 16 (pane tabs, palette rows) · sm 24 · base 32 (sidebar Captain rows) · xl 48 · 2xl 80. Radius is --radius-xs up to sm, --radius-sm from base.",
+  "usage": "<doop-use component=\"Captain Avatar\" size=\"2xs\" background=\"…\" avatar=\"…\"></doop-use>",
+  "instances": 94,
+  "code": {
+    "name": "CaptainAvatar",
+    "path": "packages/web/src (bundle index-*.js, component Xz)",
+    "snippet": "span[role=img] class 'flex shrink-0 items-center justify-center overflow-hidden leading-none' + vPt[size] {2xs:'size-2.5 rounded-(--radius-inner) text-[9px]', xs:'size-4 rounded-(--radius-inner) text-2xs', sm:'size-6 rounded-(--radius-inner) text-xs', base:'size-8 rounded-(--radius-sm) text-sm', xl:'size-12 rounded-(--radius-sm) text-2xl', '2xl':'size-20 rounded-(--radius-sm) text-4xl'}; style={{background: avatar.background}}; child img 'size-full object-cover select-none' src=/avatars/${preset}.png. Default {kind:'preset', value:'capy-avatar-1', background:'#ffffff'}."
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "size",
+      "type": "enum",
+      "default": "sm",
+      "options": [
+        "2xs",
+        "xs",
+        "sm",
+        "base",
+        "xl",
+        "2xl"
+      ],
+      "description": "Capy's vPt size map."
+    },
+    {
+      "name": "background",
+      "type": "text",
+      "description": "One of the 12 palette colours (None #ffffff, Sapphire Blue #4471D0, Galaxy Purple #AE69B1, Blushing Pink #CE7492, Capy Brown #AC6A51, Godmode Red #B44D45, Pelican Orange #EF722A, Yuzu Yellow #E0A033, Olive Hay #AAA344, Grass Green #77AD40, Envious Emerald #5AAB6B) or a custom hex."
+    },
+    {
+      "name": "avatar",
+      "type": "image",
+      "description": "Preset /avatars/capy-avatar-{1,2,3,5,6,7,8}.png or an upload."
+    }
+  ],
+  "slots": [],
+  "template": "<span class=\"cav\" role=\"img\" data-doop-prop=\"--bg:background\" data-doop-part=\"znlx\"><img data-doop-prop=\"src:avatar\" src=\"https://doop.design/a/grlpOpk__G.png\" alt=\"\" data-doop-part=\"dwos\"></span>",
+  "css": ".cav {--bg:#ffffff;display:flex;flex-shrink:0;align-items:center;justify-content:center;overflow:hidden;line-height:1;background:var(--bg);width:24px;height:24px;border-radius:var(--radius-xs)}\n.cav img {width:100%;height:100%;object-fit:cover;user-select:none;display:block}\n.cav[data-size=\"2xs\"] {width:10px;height:10px;border-radius:var(--radius-xs)}\n.cav[data-size=\"xs\"] {width:16px;height:16px;border-radius:var(--radius-xs)}\n.cav[data-size=\"sm\"] {width:24px;height:24px;border-radius:var(--radius-xs)}\n.cav[data-size=\"base\"] {width:32px;height:32px;border-radius:var(--radius-sm)}\n.cav[data-size=\"xl\"] {width:48px;height:48px;border-radius:var(--radius-sm)}\n.cav[data-size=\"2xl\"] {width:80px;height:80px;border-radius:var(--radius-sm)}",
+  "parts": [
+    {
+      "key": "znlx",
+      "tag": "span",
+      "class": "cav"
+    },
+    {
+      "key": "dwos",
+      "tag": "img"
+    }
+  ],
+  "main_frame_id": "ZuILADX4li",
+  "main_image_url": "/i/ZuILADX4li.png?scale=2",
+  "updated_at": "2026-11-17T03:22:06.975Z"
+}

@@ -1,0 +1,177 @@
+{
+  "id": "cy81wr2sus",
+  "name": "Toast",
+  "signature": "Toast(type: default|success|error|warning|info = success, title: text, description: text, actions: boolean = false)",
+  "description": "Sonner toast body (ui/sonner.tsx Toast): 382px wide, popover ground, 8px radius, 0.5px border-2, shadow-overlay, p 16, gap 8. 16px status icon (success / destructive / warning-fg / info / muted-fg-2), title text-sm medium, description text-sm muted-fg-2 (mt 2), actions row mt 10 gap 8 (solid xs + ghost xs). 20px dismiss X at right 16 / top 14 in muted-fg-3. Height changes animate 200ms ease-out-quint; stacked bottom-right.",
+  "usage": "<doop-use component=\"Toast\" type=\"default\" title=\"…\" description=\"…\"></doop-use>",
+  "instances": 6,
+  "code": {
+    "path": "packages/web/src/ui/sonner.tsx"
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "type",
+      "type": "enum",
+      "default": "success",
+      "options": [
+        "default",
+        "success",
+        "error",
+        "warning",
+        "info"
+      ]
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "actions",
+      "type": "boolean",
+      "default": "false"
+    }
+  ],
+  "slots": [],
+  "template": "<div class=\"ts\" data-doop-part=\"bqrg\"><div class=\"ct\" data-doop-part=\"tmqs\"><div class=\"row\" data-doop-part=\"zhnl\"><div class=\"ic\" data-doop-part=\"xmfw\"><span class=\"si si-success\" data-doop-if=\"type=success\" data-doop-part=\"srkc\"><svg class=\"\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"tprn\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM15.774 10.1333C16.1237 9.70582 16.0607 9.0758 15.6332 8.72607C15.2058 8.37635 14.5758 8.43935 14.226 8.86679L10.4258 13.5116L9.20711 12.2929C8.81658 11.9024 8.18342 11.9024 7.79289 12.2929C7.40237 12.6834 7.40237 13.3166 7.79289 13.7071L9.79289 15.7071C9.99267 15.9069 10.2676 16.0129 10.5498 15.9988C10.832 15.9847 11.095 15.8519 11.274 15.6333L15.774 10.1333Z\" fill=\"currentColor\" data-doop-part=\"bbej\"></path></svg></span><span class=\"si si-error\" data-doop-if=\"type=error\" data-doop-part=\"dwyd\"><svg class=\"\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"ivvt\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM9.70711 8.29289C9.31658 7.90237 8.68342 7.90237 8.29289 8.29289C7.90237 8.68342 7.90237 9.31658 8.29289 9.70711L10.5858 12L8.29289 14.2929C7.90237 14.6834 7.90237 15.3166 8.29289 15.7071C8.68342 16.0976 9.31658 16.0976 9.70711 15.7071L12 13.4142L14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L13.4142 12L15.7071 9.70711C16.0976 9.31658 16.0976 8.68342 15.7071 8.29289C15.3166 7.90237 14.6834 7.90237 14.2929 8.29289L12 10.5858L9.70711 8.29289Z\" fill=\"currentColor\" data-doop-part=\"lonv\"></path></svg></span><span class=\"si si-warning\" data-doop-if=\"type=warning\" data-doop-part=\"vrcx\"><svg class=\"\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"rmsg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 14.5996C11.3373 14.5996 10.7998 15.1371 10.7998 15.7998C10.7999 16.4624 11.3373 17 12 17C12.6627 17 13.2001 16.4625 13.2002 15.7998C13.2002 15.1371 12.6627 14.5996 12 14.5996ZM12 7C11.4477 7 11 7.44772 11 8V12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12V8C13 7.44772 12.5523 7 12 7Z\" fill=\"currentColor\" data-doop-part=\"tker\"></path></svg></span><span class=\"si si-info\" data-doop-if=\"type=info\" data-doop-part=\"pjmo\"><svg class=\"\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"rrdy\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM10 11C10 10.4477 10.4477 10 11 10H12C12.5523 10 13 10.4477 13 11V16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16V12C10.4477 12 10 11.5523 10 11ZM12 7C11.4477 7 11 7.44772 11 8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8C13 7.44772 12.5523 7 12 7Z\" fill=\"currentColor\" data-doop-part=\"kvlg\"></path></svg></span><span class=\"si si-default\" data-doop-if=\"type=default\" data-doop-part=\"ceon\"><svg class=\"\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"cwis\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM10 11C10 10.4477 10.4477 10 11 10H12C12.5523 10 13 10.4477 13 11V16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16V12C10.4477 12 10 11.5523 10 11ZM12 7C11.4477 7 11 7.44772 11 8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8C13 7.44772 12.5523 7 12 7Z\" fill=\"currentColor\" data-doop-part=\"vokc\"></path></svg></span></div><div class=\"bd\" data-doop-part=\"jffz\"><p class=\"t\" data-doop-prop=\"title\" data-doop-part=\"klan\">Pull request opened</p><div class=\"d\" data-doop-if=\"description\" data-doop-prop=\"description\" data-doop-part=\"jxvs\">kiki-design#14 is ready for review.</div><div class=\"ac\" data-doop-if=\"actions\" data-doop-part=\"tsei\"><doop-use component=\"ceuibhjcbs\" data-doop-part=\"tsea\" label=\"View\" size=\"xs\"></doop-use><doop-use component=\"ceuibhjcbs\" data-doop-part=\"buph\" label=\"Dismiss\" size=\"xs\" variant=\"ghost\"></doop-use></div></div></div></div><button class=\"x\" type=\"button\" aria-label=\"Dismiss notification\" data-doop-part=\"ared\"><svg class=\"\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"zrqd\"><path d=\"M6.5 6.5L17.5 17.5M17.5 6.5L6.5 17.5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"zlcg\"></path></svg></button></div>",
+  "css": ".ts {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;--sh-card:0 0 0 1px rgb(0 0 0/.3);--sh-plate:0 .5px 1px 1px rgb(0 0 0/.3);--sh-overlay:0 3px 8px rgb(0 0 0/.13),0 2px 5px rgb(0 0 0/.13),0 1px 1px rgb(0 0 0/.13);position:relative;display:flex;width:382px;align-items:flex-start;gap:8px;overflow:hidden;border-radius:var(--radius-lg);border:var(--spacing-hairline) solid var(--color-border-2);background:var(--color-popover);padding:16px;font-size:var(--text-sm);box-shadow:var(--sh-overlay);color:var(--color-foreground)}\n:where([data-doop-theme=\"light\"]) .ts {--sh-card:0 0 0 .5px rgb(0 0 0/.11);--sh-plate:0 1px 2px rgb(0 0 0/.05);--sh-overlay:0 6px 18px rgb(0 0 0/.03),0 3px 9px rgb(0 0 0/.04),0 1px 1px rgb(0 0 0/.05);}\n.ts .ct {position:relative;min-width:0;flex:1}\n.ts .row {display:flex;width:100%;min-width:0;align-items:flex-start;gap:8px;padding-right:32px}\n.ts .ic {display:flex;height:16px;align-items:center}\n.ts .ic svg {width:var(--spacing-icon-base);height:var(--spacing-icon-base);display:block}\n.ts .si-success {color:var(--color-success)}\n.ts .si-error {color:var(--color-destructive)}\n.ts .si-warning {color:var(--color-warning-fg)}\n.ts .si-info {color:var(--color-info)}\n.ts .si-default {color:var(--color-muted-foreground-2)}\n.ts .bd {min-width:0;flex:1}\n.ts .t {margin:0;min-width:0;font-size:var(--text-sm);font-weight:var(--font-weight-medium);color:var(--color-foreground);line-height:16px}\n.ts .d {margin-top:2px;font-size:var(--text-sm);font-weight:var(--font-weight-normal);color:var(--color-muted-foreground-2);line-height:var(--leading-normal)}\n.ts .ac {margin-top:10px;display:flex;align-items:center;gap:8px}\n.ts .x {position:absolute;right:16px;top:14px;display:inline-flex;width:20px;height:20px;align-items:center;justify-content:center;border-radius:var(--radius-sm);color:var(--color-muted-foreground-3);background:none;border:0;padding:0;cursor:pointer;transition:color 100ms,background-color 100ms}\n.ts .x:hover {background:var(--color-secondary);color:var(--color-foreground)}\n.ts .x svg {width:var(--spacing-icon-sm);height:var(--spacing-icon-sm)}",
+  "parts": [
+    {
+      "key": "bqrg",
+      "tag": "div",
+      "class": "ts"
+    },
+    {
+      "key": "ared",
+      "tag": "button",
+      "class": "x"
+    },
+    {
+      "key": "zrqd",
+      "tag": "svg"
+    },
+    {
+      "key": "zlcg",
+      "tag": "path"
+    },
+    {
+      "key": "tmqs",
+      "tag": "div",
+      "class": "ct"
+    },
+    {
+      "key": "zhnl",
+      "tag": "div",
+      "class": "row"
+    },
+    {
+      "key": "jffz",
+      "tag": "div",
+      "class": "bd"
+    },
+    {
+      "key": "tsei",
+      "tag": "div",
+      "class": "ac"
+    },
+    {
+      "key": "buph",
+      "tag": "doop-use",
+      "component": "ceuibhjcbs"
+    },
+    {
+      "key": "tsea",
+      "tag": "doop-use",
+      "component": "ceuibhjcbs"
+    },
+    {
+      "key": "jxvs",
+      "tag": "div",
+      "class": "d",
+      "text_prop": "description"
+    },
+    {
+      "key": "klan",
+      "tag": "p",
+      "class": "t",
+      "text_prop": "title"
+    },
+    {
+      "key": "xmfw",
+      "tag": "div",
+      "class": "ic"
+    },
+    {
+      "key": "ceon",
+      "tag": "span",
+      "class": "si si-default"
+    },
+    {
+      "key": "cwis",
+      "tag": "svg"
+    },
+    {
+      "key": "vokc",
+      "tag": "path"
+    },
+    {
+      "key": "pjmo",
+      "tag": "span",
+      "class": "si si-info"
+    },
+    {
+      "key": "rrdy",
+      "tag": "svg"
+    },
+    {
+      "key": "kvlg",
+      "tag": "path"
+    },
+    {
+      "key": "vrcx",
+      "tag": "span",
+      "class": "si si-warning"
+    },
+    {
+      "key": "rmsg",
+      "tag": "svg"
+    },
+    {
+      "key": "tker",
+      "tag": "path"
+    },
+    {
+      "key": "dwyd",
+      "tag": "span",
+      "class": "si si-error"
+    },
+    {
+      "key": "ivvt",
+      "tag": "svg"
+    },
+    {
+      "key": "lonv",
+      "tag": "path"
+    },
+    {
+      "key": "srkc",
+      "tag": "span",
+      "class": "si si-success"
+    },
+    {
+      "key": "tprn",
+      "tag": "svg"
+    },
+    {
+      "key": "bbej",
+      "tag": "path"
+    }
+  ],
+  "main_frame_id": "Nc5t2ol_n5",
+  "main_image_url": "/i/Nc5t2ol_n5.png?scale=2",
+  "updated_at": "2026-11-17T02:53:15.677Z"
+}

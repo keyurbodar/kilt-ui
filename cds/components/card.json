@@ -1,0 +1,115 @@
+{
+  "id": "cmcj4ez7np",
+  "name": "Card",
+  "signature": "Card(variant: default|interactive|panel|ghost = default, rows: false|true = false, state: default|hover|focus = default, header: boolean = true, title: text, body: text, footer: boolean = false) slots: content, actions",
+  "description": "Container (ui/card.tsx, cva Ej). variant default (card ground, 8px radius, card-hairline + shadow-card), interactive (hover card-hover, clickable), panel (12px radius, panel ground; settings/overview panes), ghost. Header/footer use 0.5px border-1 rules with px16 py12; content p16. rows=true divides children with 0.5px border-1.",
+  "usage": "<doop-use component=\"Card\" variant=\"default\" rows=\"false\" state=\"default\" title=\"…\"><template slot=\"content\">…</template><template slot=\"actions\">…</template></doop-use>",
+  "instances": 6,
+  "code": {
+    "path": "packages/web/src/ui/card.tsx"
+  },
+  "rev": 2,
+  "props": [
+    {
+      "name": "variant",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "interactive",
+        "panel",
+        "ghost"
+      ]
+    },
+    {
+      "name": "rows",
+      "type": "enum",
+      "default": "false",
+      "options": [
+        "false",
+        "true"
+      ]
+    },
+    {
+      "name": "state",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "hover",
+        "focus"
+      ]
+    },
+    {
+      "name": "header",
+      "type": "boolean",
+      "default": "true"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "footer",
+      "type": "boolean",
+      "default": "false"
+    }
+  ],
+  "slots": [
+    {
+      "name": "content",
+      "suggested": []
+    },
+    {
+      "name": "actions",
+      "suggested": [
+        "Button"
+      ]
+    }
+  ],
+  "template": "<div class=\"card\" data-doop-part=\"taap\"><div class=\"hd\" data-doop-if=\"header\" data-doop-part=\"zgbn\"><div class=\"tt\" data-doop-prop=\"title\" data-doop-part=\"emvj\">Card title</div></div><div class=\"ct\" data-doop-slot=\"content\" data-doop-part=\"shbo\"><div class=\"body\" data-doop-prop=\"body\" data-doop-part=\"itrt\">Card content sits on a 16px inset.</div></div><div class=\"ft\" data-doop-if=\"footer\" data-doop-slot=\"actions\" data-doop-slot-suggest=\"Button\" data-doop-part=\"ibom\"></div></div>",
+  "css": ".card {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;--sh-card:0 0 0 1px rgb(0 0 0/.3);--sh-plate:0 .5px 1px 1px rgb(0 0 0/.3);--sh-overlay:0 3px 8px rgb(0 0 0/.13),0 2px 5px rgb(0 0 0/.13),0 1px 1px rgb(0 0 0/.13);display:flex;flex-direction:column;overflow:clip;color:var(--color-foreground);font-size:var(--text-sm)}\n:where([data-doop-theme=\"light\"]) .card {--sh-card:0 0 0 .5px rgb(0 0 0/.11);--sh-plate:0 1px 2px rgb(0 0 0/.05);--sh-overlay:0 6px 18px rgb(0 0 0/.03),0 3px 9px rgb(0 0 0/.04),0 1px 1px rgb(0 0 0/.05);}\n.card[data-variant=\"default\"], .card[data-variant=\"interactive\"] {background:var(--color-card);border-radius:.5rem;border:var(--spacing-hairline) solid var(--color-card-hairline);box-shadow:var(--sh-card)}\n.card[data-variant=\"interactive\"] {cursor:pointer;user-select:none;transition:background-color 100ms}\n.card[data-variant=\"interactive\"]:hover, .card[data-variant=\"interactive\"][data-state=\"hover\"] {background:var(--color-card-hover)}\n.card[data-state=\"focus\"] {outline:1px solid var(--focus-ring,var(--color-ring));outline-offset:-1px}\n.card[data-variant=\"panel\"] {background:var(--color-panel);border-radius:var(--radius-xl);border:var(--spacing-hairline) solid var(--color-card-hairline);box-shadow:var(--sh-card)}\n.card[data-variant=\"ghost\"] {background:transparent;border-radius:.5rem}\n.card .hd {display:flex;align-items:center;gap:8px;border-bottom:var(--spacing-hairline) solid var(--color-border-1);padding:12px 16px}\n.card .tt {font-size:var(--text-base);font-weight:var(--font-weight-medium);letter-spacing:var(--tracking-tight)}\n.card .ct {padding:16px;color:var(--color-muted-foreground-1)}\n.card[data-rows=\"true\"] .ct {padding:0}\n.card[data-rows=\"true\"] .ct > * + * {border-top:var(--spacing-hairline) solid var(--color-border-1)}\n.card .ft {display:flex;align-items:center;justify-content:flex-end;gap:8px;border-top:var(--spacing-hairline) solid var(--color-border-1);padding:12px 16px}",
+  "parts": [
+    {
+      "key": "taap",
+      "tag": "div",
+      "class": "card"
+    },
+    {
+      "key": "ibom",
+      "tag": "div",
+      "class": "ft",
+      "slot": "actions"
+    },
+    {
+      "key": "shbo",
+      "tag": "div",
+      "class": "ct",
+      "slot": "content"
+    },
+    {
+      "key": "itrt",
+      "tag": "div",
+      "class": "body",
+      "text_prop": "body"
+    },
+    {
+      "key": "zgbn",
+      "tag": "div",
+      "class": "hd"
+    },
+    {
+      "key": "emvj",
+      "tag": "div",
+      "class": "tt",
+      "text_prop": "title"
+    }
+  ],
+  "main_frame_id": "QXmTNowE29",
+  "main_image_url": "/i/QXmTNowE29.png?scale=2",
+  "updated_at": "2026-11-17T02:45:53.462Z"
+}

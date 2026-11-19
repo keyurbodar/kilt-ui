@@ -6,7 +6,6 @@ import { slideVariants, useSlideDirection } from "@/lib/docs/slide-direction";
 import { useCardArt } from "@/lib/docs/playgrounds/card";
 import { accentHexOf, accentSwatches, useAccent } from "@/lib/docs/accent";
 import { CarouselDots } from "@/registry/default/carousel-dots";
-import Image from "next/image";
 import { useIcon, useIcons } from "@/lib/icon-context";
 import { fontWeights } from "@/lib/font-weight";
 import { useNarrowFrame } from "@/lib/use-narrow-frame";
@@ -1077,7 +1076,7 @@ function SidebarPreview() {
             <SidebarMenu size="compact" aria-label="User">
               <SidebarMenuItem>
                 <SidebarMenuButton>
-                  <Image
+                  <img
                     src="/micka.png"
                     alt=""
                     width={20}

@@ -1,0 +1,230 @@
+.diff-comment-markers {
+  min-width: 0;
+}
+
+.diff-comment-marker-buttons {
+  position: absolute;
+  right: calc(var(--spacing) * 2);
+  bottom: 100%;
+  display: flex;
+  gap: var(--spacing);
+  height: calc(var(--text-code-block) * 1.2);
+  background: none;
+}
+
+.diff-comment-markers[data-placement="block"] > .diff-comment-marker-buttons {
+  position: relative;
+  right: auto;
+  justify-content: flex-end;
+}
+
+.diff-comment-marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--spacing) * 5);
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: none;
+  color: var(--muted-foreground-1);
+  cursor: pointer;
+}
+
+.diff-comment-marker:hover,
+.diff-comment-marker[aria-expanded="true"] {
+  color: var(--fg);
+}
+
+.diff-comment-marker[aria-expanded="true"] .diff-comment-marker-icon {
+  border-color: var(--border-3);
+  background-image: linear-gradient(var(--secondary), var(--secondary));
+}
+
+/* biome-ignore lint/style/noDescendingSpecificity: Capy's own stylesheet order, kept rule for rule */
+.diff-comment-marker-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--spacing) * 5);
+  height: calc(var(--spacing) * 5);
+  overflow: hidden;
+  border: var(--border-width-hairline) solid var(--border-2);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.diff-comment-marker-icon > svg {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+}
+
+.diff-comment-marker-stack {
+  width: auto;
+  gap: var(--spacing);
+}
+
+.diff-comment-marker-stack > * {
+  transition: opacity var(--duration-base) ease-in-out;
+}
+
+.diff-comment-marker-stack[data-popup-open] > * {
+  opacity: 0;
+  transition-duration: var(--duration-slow);
+}
+
+.diff-comment-marker-stack-icons {
+  display: grid;
+  place-items: center;
+}
+
+/* biome-ignore lint/style/noDescendingSpecificity: Capy's own stylesheet order, kept rule for rule */
+.diff-comment-marker-stack-icons > * {
+  grid-area: 1 / 1;
+}
+
+.diff-comment-marker-stack-icons > :first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.diff-comment-marker-stack-icons > :last-child {
+  translate: 0 calc(var(--spacing) * 0.75);
+}
+
+.diff-comment-marker-fan {
+  --diff-comment-target: var(--h-control-xs);
+  --diff-comment-gap: var(--spacing);
+  max-height: var(--available-height);
+  overflow: hidden;
+  transition: opacity var(--duration-slow) ease-in-out;
+  translate: calc(
+      (var(--spacing) * 5 - var(--diff-comment-target)) /
+      2 -
+      var(--spacing) *
+      0.5
+    )
+    calc(
+      (var(--text-code-block) * 1.2 - var(--diff-comment-target)) /
+      2 -
+      var(--spacing) *
+      0.5
+    );
+}
+
+.diff-comment-marker-fan[data-starting-style],
+.diff-comment-marker-fan[data-ending-style] {
+  scale: 1;
+}
+
+.diff-comment-marker-fan[data-ending-style] {
+  pointer-events: none;
+  transition-duration: var(--duration-base);
+}
+
+.diff-comment-marker-fan-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--diff-comment-gap);
+  max-height: inherit;
+  padding: calc(var(--spacing) * 0.5);
+  overflow-y: auto;
+}
+
+.diff-comment-marker-fan .diff-comment-marker {
+  flex-shrink: 0;
+  width: var(--diff-comment-target);
+  height: var(--diff-comment-target);
+}
+
+.diff-comment-marker-fan .diff-comment-marker:first-child {
+  z-index: 1;
+}
+
+/* biome-ignore lint/style/noDescendingSpecificity: Capy's own stylesheet order, kept rule for rule */
+.diff-comment-marker-fan .diff-comment-marker-icon {
+  transform: translate(0);
+  transition:
+    transform var(--duration-slow) ease-in-out,
+    opacity var(--duration-slow) ease-in-out;
+}
+
+.diff-comment-marker-fan:is([data-starting-style], [data-ending-style])
+  .diff-comment-marker-icon {
+  transform: translate(
+    0,
+    calc(
+      min(var(--diff-comment-index), 1) *
+      var(--spacing) *
+      0.75 -
+      var(--diff-comment-index) *
+      (var(--diff-comment-target) + var(--diff-comment-gap))
+    )
+  );
+}
+
+.diff-comment-marker-fan:is([data-starting-style], [data-ending-style])
+  .diff-comment-marker:nth-child(n + 3)
+  .diff-comment-marker-icon {
+  opacity: 0;
+}
+
+/* biome-ignore lint/style/noDescendingSpecificity: Capy's own stylesheet order, kept rule for rule */
+.diff-comment-marker-fan[data-ending-style] .diff-comment-marker-icon {
+  transition-duration: var(--duration-base);
+}
+
+.diff-comment-marker-fan:is([data-instant], [data-motion="instant"]),
+/* biome-ignore lint/style/noDescendingSpecificity: Capy's own stylesheet order, kept rule for rule */
+.diff-comment-marker-fan:is([data-instant], [data-motion="instant"])
+.diff-comment-marker-icon,
+.diff-comment-marker-stack[data-motion="instant"] > * {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diff-comment-marker-fan,
+  .diff-comment-marker-fan .diff-comment-marker-icon,
+  .diff-comment-marker-stack > * {
+    transition: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .diff-comment-marker-fan {
+    --diff-comment-target: calc(var(--spacing) * 11);
+    --diff-comment-gap: 0;
+  }
+
+  .diff-comment-marker::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, calc(var(--spacing) * 11));
+    height: max(100%, calc(var(--spacing) * 11));
+    content: "";
+    translate: -50% -50%;
+  }
+}
+
+.diff-comment-marker-count {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xs);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.diff-comment-marker-high {
+  color: var(--destructive);
+}
+
+.diff-comment-marker-medium {
+  color: var(--warning-fg);
+}
+
+.diff-comment-marker-note {
+  color: var(--muted-foreground-2);
+}

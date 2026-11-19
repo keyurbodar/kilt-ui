@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../registry/kilt/app/theme.css";
 
 @custom-variant dark (&:is(.dark *));
 

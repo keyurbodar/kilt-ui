@@ -1,0 +1,86 @@
+{
+  "id": "ctqndjftia",
+  "name": "Pane Tab",
+  "signature": "Pane Tab(state: default|selected|selected-unfocused = default, label: text) slots: icon",
+  "description": "Tab in a pane header (features/thread/pane/tab-strip.tsx): a ghost sm Button (h 28, px 8, text-xs medium, gap 6) with a 14px icon or 16px avatar. Selected = secondary ground + foreground; selected in the unfocused pane = secondary at 50% + muted-fg-1. Tabs sit 2px apart in a 44px header with a 0.5px border-1 bottom rule, px 8.",
+  "usage": "<doop-use component=\"Pane Tab\" state=\"default\" label=\"…\"><template slot=\"icon\">…</template></doop-use>",
+  "instances": 9,
+  "code": {
+    "path": "packages/web/src/features/thread/pane/tab-strip.tsx"
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "state",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "selected",
+        "selected-unfocused"
+      ]
+    },
+    {
+      "name": "label",
+      "type": "text"
+    }
+  ],
+  "slots": [
+    {
+      "name": "icon",
+      "suggested": []
+    }
+  ],
+  "template": "<span class=\"ptab\" data-doop-part=\"vaij\"><span class=\"pi\" data-doop-slot=\"icon\" data-doop-part=\"oreq\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" data-doop-part=\"xmcx\"><path d=\"M10 6L20 6\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-doop-part=\"uhmr\"></path><circle cx=\"4.5\" cy=\"6\" r=\"1.5\" fill=\"currentColor\" data-doop-part=\"ijmh\"></circle><path d=\"M10 12L20 12\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-doop-part=\"mudb\"></path><circle cx=\"4.5\" cy=\"12\" r=\"1.5\" fill=\"currentColor\" data-doop-part=\"kcaj\"></circle><path d=\"M10 18L20 18\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-doop-part=\"tnlw\"></path><circle cx=\"4.5\" cy=\"18\" r=\"1.5\" fill=\"currentColor\" data-doop-part=\"ohia\"></circle></svg></span><span class=\"pl\" data-doop-prop=\"label\" data-doop-part=\"gwgu\">Overview</span></span>",
+  "css": ".ptab {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;display:inline-flex;height:var(--spacing-control-sm);align-items:center;gap:6px;padding:0 8px;border-radius:var(--radius-md);border:var(--spacing-hairline) solid transparent;font-size:var(--text-xs);font-weight:var(--font-weight-medium);white-space:nowrap;color:var(--color-muted-foreground-1);cursor:pointer;user-select:none;transition:color 100ms,background-color 100ms}\n.ptab:hover {color:var(--color-foreground);background:var(--color-secondary)}\n.ptab[data-state=\"selected\"] {background:var(--color-secondary);color:var(--color-foreground)}\n.ptab[data-state=\"selected-unfocused\"] {background:color-mix(in srgb,var(--color-secondary) 50%,transparent);color:var(--color-muted-foreground-1)}\n.ptab .pi {display:flex;width:var(--spacing-icon-sm);height:var(--spacing-icon-sm);align-items:center;justify-content:center;margin-left:-2px}\n.ptab .pi svg {width:var(--spacing-icon-sm);height:var(--spacing-icon-sm)}",
+  "parts": [
+    {
+      "key": "vaij",
+      "tag": "span",
+      "class": "ptab"
+    },
+    {
+      "key": "gwgu",
+      "tag": "span",
+      "class": "pl",
+      "text_prop": "label"
+    },
+    {
+      "key": "oreq",
+      "tag": "span",
+      "class": "pi",
+      "slot": "icon"
+    },
+    {
+      "key": "xmcx",
+      "tag": "svg"
+    },
+    {
+      "key": "ohia",
+      "tag": "circle"
+    },
+    {
+      "key": "tnlw",
+      "tag": "path"
+    },
+    {
+      "key": "kcaj",
+      "tag": "circle"
+    },
+    {
+      "key": "mudb",
+      "tag": "path"
+    },
+    {
+      "key": "ijmh",
+      "tag": "circle"
+    },
+    {
+      "key": "uhmr",
+      "tag": "path"
+    }
+  ],
+  "main_frame_id": "eFgpofEZTD",
+  "main_image_url": "/i/eFgpofEZTD.png?scale=2",
+  "updated_at": "2026-11-17T03:00:15.695Z"
+}

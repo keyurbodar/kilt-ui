@@ -1,0 +1,51 @@
+{
+  "id": "cxw868xqg5",
+  "name": "Tooltip",
+  "signature": "Tooltip(label: text, keys: text, shortcut: boolean = true)",
+  "description": "Hover label for icon buttons (ui/tooltip.tsx): popover ground, 0.5px border-2, shadow-overlay, 6px radius, px 8 py 4, text-xs medium, max-w 320, optional chip Kbd shortcut (gap 6). Opens after ~350ms, animate-tooltip-in/out.",
+  "usage": "<doop-use component=\"Tooltip\" label=\"…\" keys=\"…\"></doop-use>",
+  "instances": 4,
+  "code": {
+    "path": "packages/web/src/ui/tooltip.tsx"
+  },
+  "rev": 2,
+  "props": [
+    {
+      "name": "label",
+      "type": "text"
+    },
+    {
+      "name": "keys",
+      "type": "text"
+    },
+    {
+      "name": "shortcut",
+      "type": "boolean",
+      "default": "true"
+    }
+  ],
+  "slots": [],
+  "template": "<div class=\"tt\" data-doop-part=\"jrzu\"><span data-doop-prop=\"label\" data-doop-part=\"tbpu\">New thread</span><kbd class=\"k\" data-doop-if=\"shortcut\" data-doop-prop=\"keys\" data-doop-part=\"pldk\">⌘N</kbd></div>",
+  "css": ".tt {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;--sh-card:0 0 0 1px rgb(0 0 0/.3);--sh-plate:0 .5px 1px 1px rgb(0 0 0/.3);--sh-overlay:0 3px 8px rgb(0 0 0/.13),0 2px 5px rgb(0 0 0/.13),0 1px 1px rgb(0 0 0/.13);display:flex;align-items:center;gap:6px;width:fit-content;max-width:320px;border-radius:var(--radius-md);background:var(--color-popover);border:var(--spacing-hairline) solid var(--color-border-2);box-shadow:var(--sh-overlay);padding:4px 8px;font-size:var(--text-xs);font-weight:var(--font-weight-medium);text-wrap:balance;color:var(--color-foreground);letter-spacing:var(--tracking-normal)}\n:where([data-doop-theme=\"light\"]) .tt {--sh-card:0 0 0 .5px rgb(0 0 0/.11);--sh-plate:0 1px 2px rgb(0 0 0/.05);--sh-overlay:0 6px 18px rgb(0 0 0/.03),0 3px 9px rgb(0 0 0/.04),0 1px 1px rgb(0 0 0/.05);}\n.tt .k {display:inline-flex;align-items:center;justify-content:center;height:16px;min-width:16px;border-radius:var(--radius-sm);background:var(--color-secondary);padding:0 4px;margin-right:-2px;font-family:var(--font-sans);font-size:var(--text-xs);font-weight:var(--font-weight-normal);color:var(--color-muted-foreground-1);white-space:nowrap}",
+  "parts": [
+    {
+      "key": "jrzu",
+      "tag": "div",
+      "class": "tt"
+    },
+    {
+      "key": "pldk",
+      "tag": "kbd",
+      "class": "k",
+      "text_prop": "keys"
+    },
+    {
+      "key": "tbpu",
+      "tag": "span",
+      "text_prop": "label"
+    }
+  ],
+  "main_frame_id": "cXb5hIxqL9",
+  "main_image_url": "/i/cXb5hIxqL9.png?scale=2",
+  "updated_at": "2026-11-17T02:45:53.843Z"
+}

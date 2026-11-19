@@ -18,7 +18,7 @@ import { DUAL_FLAVOR_SLUGS } from "@/lib/install-url";
 import { docMetadata } from "@/lib/docs/metadata";
 import { UNLISTED_SLUGS } from "@/lib/docs/components";
 import { plainDescription } from "@/lib/docs/install-brief";
-import robots from "@/app/robots";
+import { robots } from "@/lib/docs/robots";
 
 const root = new URL("..", import.meta.url).pathname;
 const docsDir = join(root, "app/docs");

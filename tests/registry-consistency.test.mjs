@@ -254,6 +254,7 @@ describe("shipped CSS variables reach installers", () => {
     /^--tw-/, // Tailwind internal custom properties
     /^--anchor-/, // Base UI popup positioning
     /^--available-/, // Base UI popup available-size
+    /^--transform-origin$/, // Base UI popup transform origin
     /^--scroll-area-thumb-/, // Base UI ScrollArea thumb metrics
   ];
 

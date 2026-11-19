@@ -1,0 +1,137 @@
+{
+  "id": "ceuibhjcbs",
+  "name": "Button",
+  "signature": "Button(variant: solid|soft|ghost|outline|link|bare|inverse|segmented = solid, intent: neutral|accent|danger = neutral, size: xs|sm|base|lg|icon-xs|icon-sm|icon-base = sm, shape: default|segment-start|segment-end = default, state: default|hover|active|focus|selected|disabled = default, icon-start: boolean = false, label: text, icon-end: boolean = false)",
+  "description": "Every clickable action in Capy (ui/button.tsx, cva Xk). variant: solid (default plate), soft, ghost (toolbar/icon actions), outline, link, bare, inverse, segmented (inside a Segmented track). intent: neutral/accent (send, primary CTA)/danger. size: xs 24 (message actions), sm 28 (default; top-bar), base 32, lg 44, icon-xs/sm/base square. state is for specimens only; real hover/active/focus also work.",
+  "usage": "<doop-use component=\"Button\" variant=\"solid\" intent=\"neutral\" size=\"xs\" shape=\"default\"></doop-use>",
+  "instances": 124,
+  "code": {
+    "path": "packages/web/src/ui",
+    "snippet": "Source file is not named in the bundle; the classes are copied from cva Xk in index-*.js."
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "variant",
+      "type": "enum",
+      "default": "solid",
+      "options": [
+        "solid",
+        "soft",
+        "ghost",
+        "outline",
+        "link",
+        "bare",
+        "inverse",
+        "segmented"
+      ]
+    },
+    {
+      "name": "intent",
+      "type": "enum",
+      "default": "neutral",
+      "options": [
+        "neutral",
+        "accent",
+        "danger"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "default": "sm",
+      "options": [
+        "xs",
+        "sm",
+        "base",
+        "lg",
+        "icon-xs",
+        "icon-sm",
+        "icon-base"
+      ]
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "segment-start",
+        "segment-end"
+      ]
+    },
+    {
+      "name": "state",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "hover",
+        "active",
+        "focus",
+        "selected",
+        "disabled"
+      ],
+      "description": "Static state for specimen sheets"
+    },
+    {
+      "name": "icon-start",
+      "type": "boolean",
+      "default": "false"
+    },
+    {
+      "name": "label",
+      "type": "text"
+    },
+    {
+      "name": "icon-end",
+      "type": "boolean",
+      "default": "false"
+    }
+  ],
+  "slots": [],
+  "template": "<button class=\"btn\" type=\"button\" data-doop-part=\"zhgn\"><span data-doop-if=\"icon-start\" class=\"i0\" data-doop-part=\"fufj\"><svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"ovxi\"><path d=\"M12 5.5V12M12 12V18.5M12 12H5.5M12 12H18.5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-doop-part=\"fchv\"></path></svg></span><span class=\"lbl\" data-doop-prop=\"label\" data-doop-part=\"debq\">New thread</span><span data-doop-if=\"icon-end\" class=\"i1\" data-doop-part=\"oouu\"><svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"efab\"><path d=\"M8 10L10.9393 12.9393C11.5251 13.5251 12.4749 13.5251 13.0607 12.9393L16 10\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"rsdc\"></path></svg></span></button>",
+  "css": ".btn {--sh-plate:0 .5px 1px 1px rgb(0 0 0/.3);--sh-card:0 0 0 1px rgb(0 0 0/.3);--sh-overlay:0 3px 8px rgb(0 0 0/.13),0 2px 5px rgb(0 0 0/.13),0 1px 1px rgb(0 0 0/.13);position:relative;display:inline-flex;align-items:center;justify-content:center;width:fit-content;flex-shrink:0;white-space:nowrap;border-radius:var(--radius-md);text-box-trim:trim-both;border:var(--spacing-hairline) solid transparent;font-family:var(--font-sans);font-weight:var(--font-weight-medium);letter-spacing:var(--tracking-snug);transition:color 100ms cubic-bezier(.4,0,.2,1),background-color 100ms cubic-bezier(.4,0,.2,1),border-color 100ms cubic-bezier(.4,0,.2,1);outline:none;user-select:none;cursor:pointer;-webkit-font-smoothing:antialiased;box-sizing:border-box}\n:where([data-doop-theme=\"light\"]) .btn {--sh-plate:0 1px 2px rgb(0 0 0/.05);--sh-card:0 0 0 .5px rgb(0 0 0/.11);--sh-overlay:0 6px 18px rgb(0 0 0/.03),0 3px 9px rgb(0 0 0/.04),0 1px 1px rgb(0 0 0/.05);}\n.btn svg {pointer-events:none;flex-shrink:0}\n.btn:focus-visible, .btn[data-state=\"focus\"] {outline:1px solid var(--focus-ring,var(--color-ring));outline-offset:-1px}\n.btn[data-state=\"disabled\"] {pointer-events:none;cursor:not-allowed;opacity:.55}\n.btn[data-intent=\"accent\"] {--intent-bg:var(--color-primary);--intent-bg-soft:var(--color-primary-soft);--intent-bg-soft-hover:var(--color-primary-soft-hover);--intent-text:var(--color-primary-ink);--intent-text-on-bg:var(--color-primary-foreground);--intent-text-hover:var(--color-primary-ink);--intent-border:var(--color-border-2);--intent-border-solid:color-mix(in oklch,var(--color-primary) 80%,black);--intent-highlight:oklch(1 0 0/.12);--intent-bg-hover:var(--color-primary-soft);--intent-bg-solid-hover:color-mix(in oklch,var(--color-primary) 92%,black)}\n.btn[data-intent=\"danger\"] {--intent-bg:var(--color-destructive);--intent-bg-soft:var(--color-destructive-soft);--intent-bg-soft-hover:var(--color-destructive-soft-hover);--intent-text:var(--color-destructive);--intent-text-on-bg:var(--color-destructive-foreground);--intent-text-hover:var(--color-destructive);--intent-border:var(--color-border-2);--intent-border-solid:color-mix(in oklch,var(--color-destructive) 80%,black);--intent-highlight:oklch(1 0 0/.12);--intent-bg-hover:var(--color-destructive-soft);--intent-bg-solid-hover:color-mix(in oklch,var(--color-destructive) 92%,white)}\n.btn[data-variant=\"solid\"] {background:var(--intent-bg,var(--color-button));border-color:var(--intent-border-solid,var(--intent-border,var(--color-border-2)));color:var(--intent-text-on-bg,var(--color-foreground));--focus-ring:var(--intent-text-on-bg,var(--color-ring));box-shadow:inset 0 1px var(--intent-highlight,var(--color-highlight-top)),var(--sh-plate)}\n.btn[data-variant=\"solid\"]:hover, .btn[data-variant=\"solid\"][data-state=\"hover\"] {background:var(--intent-bg-solid-hover,var(--color-button-hover))}\n.btn[data-variant=\"solid\"]:active, .btn[data-variant=\"solid\"][data-state=\"active\"] {box-shadow:none;filter:brightness(.97)}\n.btn[data-variant=\"soft\"] {background:var(--intent-bg-soft,var(--color-secondary));color:var(--intent-text,var(--color-foreground))}\n.btn[data-variant=\"soft\"]:hover, .btn[data-variant=\"soft\"][data-state=\"hover\"] {background:var(--intent-bg-soft-hover,var(--color-secondary-hover))}\n.btn[data-variant=\"ghost\"], .btn[data-variant=\"bare\"] {background:transparent;color:var(--intent-text,var(--color-muted-foreground-1))}\n.btn[data-variant=\"ghost\"]:hover, .btn[data-variant=\"ghost\"][data-state=\"hover\"] {color:var(--intent-text-hover,var(--color-foreground));background:var(--intent-bg-hover,var(--color-secondary))}\n.btn[data-variant=\"ghost\"][data-state=\"selected\"] {background:var(--color-secondary);color:var(--color-foreground)}\n.btn[data-variant=\"bare\"]:hover, .btn[data-variant=\"bare\"][data-state=\"hover\"], .btn[data-variant=\"bare\"][data-state=\"selected\"] {color:var(--intent-text-hover,var(--color-foreground))}\n.btn[data-variant=\"outline\"] {background:transparent;border-color:var(--intent-border,var(--color-border-2));color:var(--intent-text,var(--color-foreground))}\n.btn[data-variant=\"outline\"]:hover, .btn[data-variant=\"outline\"][data-state=\"hover\"] {background:var(--intent-bg-hover,var(--color-secondary))}\n.btn[data-variant=\"link\"] {background:transparent;color:var(--intent-text,var(--color-text-link));text-underline-offset:2px}\n.btn[data-variant=\"link\"]:hover, .btn[data-variant=\"link\"][data-state=\"hover\"] {text-decoration:underline}\n.btn[data-variant=\"link\"][data-state=\"disabled\"], .btn[data-variant=\"bare\"][data-state=\"disabled\"] {opacity:.4}\n.btn[data-variant=\"inverse\"] {background:var(--intent-bg,var(--color-inverse));color:var(--intent-text-on-bg,var(--color-inverse-text))}\n.btn[data-variant=\"inverse\"]:hover, .btn[data-variant=\"inverse\"][data-state=\"hover\"] {background:var(--intent-bg-solid-hover,var(--color-inverse-hover))}\n.btn[data-variant=\"inverse\"][data-state=\"disabled\"] {opacity:.5}\n.btn[data-variant=\"segmented\"] {background:transparent;color:var(--intent-text,var(--color-segmented-foreground))}\n.btn[data-variant=\"segmented\"]:hover, .btn[data-variant=\"segmented\"][data-state=\"hover\"] {color:var(--intent-text-hover,var(--color-foreground))}\n.btn[data-variant=\"segmented\"][data-state=\"selected\"] {background:var(--intent-bg,var(--color-card));color:var(--intent-text-hover,var(--color-foreground));box-shadow:var(--sh-card)}\n.btn:not([data-variant=\"solid\"]):not([data-variant=\"inverse\"]):active, .btn:not([data-variant=\"solid\"]):not([data-variant=\"inverse\"])[data-state=\"active\"] {filter:brightness(.97)}\n.btn[data-variant=\"inverse\"]:active, .btn[data-variant=\"inverse\"][data-state=\"active\"] {filter:brightness(.95)}\n.btn[data-size=\"xs\"] {height:var(--spacing-control-xs);padding:0 8px;font-size:var(--text-xs);gap:6px}\n.btn[data-size=\"sm\"] {height:var(--spacing-control-sm);padding:0 8px;font-size:var(--text-xs);gap:6px}\n.btn[data-size=\"base\"] {height:var(--spacing-control-base);padding:0 10px;font-size:var(--text-sm);gap:8px}\n.btn[data-size=\"lg\"] {height:var(--spacing-control-lg);padding:0 16px;font-size:var(--text-sm);gap:8px}\n.btn[data-size=\"xs\"] svg {width:var(--spacing-icon-xs);height:var(--spacing-icon-xs)}\n.btn[data-size=\"sm\"] svg {width:var(--spacing-icon-sm);height:var(--spacing-icon-sm)}\n.btn[data-size=\"base\"] svg, .btn[data-size=\"lg\"] svg {width:var(--spacing-icon-base);height:var(--spacing-icon-base)}\n.btn[data-size=\"xs\"] svg:first-child, .btn[data-size=\"sm\"] svg:first-child, .btn[data-size=\"base\"] svg:first-child, .btn[data-size=\"lg\"] svg:first-child {margin-left:-2px}\n.btn[data-size=\"xs\"] svg:last-child, .btn[data-size=\"sm\"] svg:last-child, .btn[data-size=\"base\"] svg:last-child, .btn[data-size=\"lg\"] svg:last-child {margin-right:-2px}\n.btn[data-size^=\"icon\"] .lbl {display:none}\n.btn[data-size=\"icon-xs\"] {width:var(--spacing-control-xs);height:var(--spacing-control-xs);padding:0}\n.btn[data-size=\"icon-sm\"] {width:var(--spacing-control-sm);height:var(--spacing-control-sm);padding:0}\n.btn[data-size=\"icon-base\"] {width:var(--spacing-control-base);height:var(--spacing-control-base);padding:0}\n.btn[data-size=\"icon-xs\"] svg {width:var(--spacing-icon-xs);height:var(--spacing-icon-xs)}\n.btn[data-size=\"icon-sm\"] svg {width:var(--spacing-icon-sm);height:var(--spacing-icon-sm)}\n.btn[data-size=\"icon-base\"] svg {width:var(--spacing-icon-base);height:var(--spacing-icon-base)}\n.btn[data-shape=\"segment-start\"] {border-top-right-radius:0;border-bottom-right-radius:0;border-right-width:0;box-shadow:none}\n.btn[data-shape=\"segment-end\"] {border-top-left-radius:0;border-bottom-left-radius:0;box-shadow:none}\n.btn .i0, .btn .i1 {display:contents}",
+  "parts": [
+    {
+      "key": "zhgn",
+      "tag": "button",
+      "class": "btn"
+    },
+    {
+      "key": "oouu",
+      "tag": "span",
+      "class": "i1"
+    },
+    {
+      "key": "efab",
+      "tag": "svg"
+    },
+    {
+      "key": "rsdc",
+      "tag": "path"
+    },
+    {
+      "key": "debq",
+      "tag": "span",
+      "class": "lbl",
+      "text_prop": "label"
+    },
+    {
+      "key": "fufj",
+      "tag": "span",
+      "class": "i0"
+    },
+    {
+      "key": "ovxi",
+      "tag": "svg"
+    },
+    {
+      "key": "fchv",
+      "tag": "path"
+    }
+  ],
+  "main_frame_id": "UBPoApyp40",
+  "main_image_url": "/i/UBPoApyp40.png?scale=2",
+  "updated_at": "2026-11-17T02:53:31.977Z"
+}

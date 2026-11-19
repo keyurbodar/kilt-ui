@@ -1,0 +1,323 @@
+/*
+ * Custom utilities Capy's stylesheet defines outside Tailwind's defaults, and
+ * the theme aliases they need. Values come from Capy's production stylesheet.
+ */
+
+@theme inline {
+  --shadow-plate: var(--sh-plate);
+  --shadow-overlay: var(--sh-overlay);
+  --shadow-row-open: var(--sh-row-open);
+  --shadow-composer: var(--sh-composer);
+  --shadow-sheet: var(--sh-sheet);
+}
+
+:root,
+[data-theme-preview] {
+  --mask-fade-ramp-default: 16px;
+  --mask-fade-ramp-toolbar: 24px;
+}
+
+@utility mask-fade-l {
+  mask-image: linear-gradient(
+    to left,
+    black calc(100% - var(--mask-fade-ramp, var(--mask-fade-ramp-default))),
+    transparent 100%
+  );
+}
+
+/* Capy's clipped corner on a pinned Captain's avatar, so the presence dot
+ * sits in a notch instead of on the face. Values are Capy's own. */
+@utility mask-notch-br {
+  mask-image:
+    radial-gradient(circle at 100% 100%, transparent 5.75px, black 6.25px),
+    conic-gradient(
+      from 90deg at calc(100% - 12px) calc(100% - 12px),
+      transparent 90deg,
+      black 0deg
+    );
+  mask-composite: add, add;
+}
+
+@utility outline-ring-inset {
+  outline: 1px solid var(--focus-ring, var(--ring));
+  outline-offset: -1px;
+}
+
+/*
+ * Capy's scrollbars, from its production stylesheet: a thin native bar with a
+ * muted thumb over a transparent track, set on every element rather than on the
+ * handful of scroll containers we remembered. The thumb is half the muted
+ * colour in light and a third of the muted foreground in dark, and the
+ * transcript's own scroller keeps its bar invisible until the pointer is over
+ * it, the list is drifting, or a drag is in flight. `.scrollbar-mini` is Capy's
+ * escape hatch — where the engine still has ::-webkit-scrollbar, the platform's
+ * own bar is drawn at its own width with a 1.5px thumb instead of the thin one.
+ */
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--muted) transparent;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    * {
+      scrollbar-color: color-mix(in oklch, var(--muted) 50%, transparent)
+        transparent;
+    }
+  }
+
+  .dark * {
+    scrollbar-color: var(--muted-foreground-2) transparent;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .dark * {
+      scrollbar-color: color-mix(
+          in oklch,
+          var(--muted-foreground-2) 30%,
+          transparent
+        )
+        transparent;
+    }
+  }
+
+  @media (hover: hover) and (width >= 768px) {
+    .chat-scroller {
+      scrollbar-color: transparent transparent;
+    }
+
+    .chat-scroller:is(:hover, :active, [data-scrolling]) {
+      scrollbar-color: var(--muted) transparent;
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .chat-scroller:is(:hover, :active, [data-scrolling]) {
+        scrollbar-color: color-mix(in oklch, var(--muted) 50%, transparent)
+          transparent;
+      }
+    }
+
+    .dark .chat-scroller:is(:hover, :active, [data-scrolling]) {
+      scrollbar-color: var(--muted-foreground-2) transparent;
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .dark .chat-scroller:is(:hover, :active, [data-scrolling]) {
+        scrollbar-color: color-mix(
+            in oklch,
+            var(--muted-foreground-2) 30%,
+            transparent
+          )
+          transparent;
+      }
+    }
+  }
+}
+
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@supports selector(::-webkit-scrollbar) {
+  .scrollbar-mini {
+    scrollbar-width: auto;
+    scrollbar-color: auto;
+  }
+}
+
+.scrollbar-mini::-webkit-scrollbar {
+  width: 1.5px;
+}
+
+.scrollbar-mini::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-mini::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground-3);
+  border-radius: 9999px;
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  .scrollbar-mini::-webkit-scrollbar-thumb {
+    background: color-mix(in oklch, var(--muted-foreground-3) 45%, transparent);
+  }
+}
+
+/*
+ * The sticky hairline that appears under a scrolled header. It fades in over
+ * the first --scroll-divider-ramp of the timeline the caller names in
+ * --scroll-divider-timeline; without one it follows the nearest scroller.
+ */
+@utility scroll-divider-t {
+  z-index: 1;
+  background: var(--border-1);
+  opacity: 0;
+  flex: 0 0 auto;
+  height: 1px;
+  margin-bottom: -1px;
+  position: sticky;
+  top: 0px;
+  @supports (animation-timeline: scroll()) {
+    animation-name: _scroll-divider-t;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: var(--scroll-divider-timeline, scroll(nearest block));
+    animation-range: 0 var(--scroll-divider-ramp, 12px);
+  }
+}
+
+/* Right-side fade on clamped text: the ramp covers the last line box only. */
+@utility mask-fade-r-clamp {
+  mask-image:
+    linear-gradient(black, black),
+    linear-gradient(
+      to right,
+      black calc(100% - var(--mask-fade-ramp, var(--mask-fade-ramp-default))),
+      transparent 100%
+    );
+  mask-position:
+    center top,
+    center bottom;
+  mask-size:
+    100% calc(100% - 1lh),
+    100% 1lh;
+  mask-repeat: no-repeat;
+}
+
+@utility truncate-start {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  direction: rtl;
+  overflow: hidden;
+}
+
+@utility mask-fade-r {
+  mask-image: linear-gradient(
+    to right,
+    black calc(100% - var(--mask-fade-ramp, var(--mask-fade-ramp-default))),
+    transparent 100%
+  );
+  @supports (animation-timeline: scroll()) {
+    mask-image: linear-gradient(
+      to right,
+      black calc(100% - var(--_mask-fade-right)),
+      transparent 100%
+    );
+    animation-name: _mask-fade-r;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: scroll(self inline);
+  }
+}
+
+@utility mask-fade-r-scroll {
+  mask-image: linear-gradient(
+    to right,
+    black calc(100% - var(--mask-fade-ramp, var(--mask-fade-ramp-default))),
+    transparent 100%
+  );
+  @variant md {
+    @supports (animation-timeline: scroll()) {
+      mask-image: linear-gradient(
+        to right,
+        black calc(100% - var(--_mask-fade-right)),
+        transparent 100%
+      );
+      animation-name: _mask-fade-r;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+}
+
+/* Added by the composer (B4): values from Capy's production stylesheet. */
+
+@theme inline {
+  --shadow-composer: var(--sh-composer);
+}
+
+@theme static {
+  --spacing-code-inline-x: 3px;
+  --h-menu-group-label: 22px;
+}
+
+@utility scroll-fade-y {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black var(--_scroll-fade-top),
+    black calc(100% - var(--_scroll-fade-bottom)),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black var(--_scroll-fade-top),
+    black calc(100% - var(--_scroll-fade-bottom)),
+    transparent
+  );
+  @supports (animation-timeline: scroll()) {
+    animation-name: _scroll-fade-y;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: scroll(self);
+  }
+}
+
+/* Thread cost series colour (features/thread/cost-badge): one hue per row in --cost-hue. */
+@utility scroll-fade-x {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black var(--_scroll-fade-left),
+    black calc(100% - var(--_scroll-fade-right)),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black var(--_scroll-fade-left),
+    black calc(100% - var(--_scroll-fade-right)),
+    transparent
+  );
+  @supports (animation-timeline: scroll()) {
+    animation-name: _scroll-fade-x;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: scroll(self inline);
+  }
+}
+
+@utility scroll-fade-b {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black calc(100% - var(--_scroll-fade-bottom)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black calc(100% - var(--_scroll-fade-bottom)),
+    transparent 100%
+  );
+  @supports (animation-timeline: scroll()) {
+    animation-name: _scroll-fade-b;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: scroll(self);
+  }
+}
+
+@utility cost-swatch {
+  background-color: light-dark(
+    oklch(0.56 0.14 var(--cost-hue)),
+    oklch(0.74 0.12 var(--cost-hue))
+  );
+}

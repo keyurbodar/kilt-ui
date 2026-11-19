@@ -1,0 +1,399 @@
+/*
+ * Motion: Capy's duration and easing scale, the named animations, and all 26
+ * keyframes in the production bundle. Literal timings Capy uses outside the
+ * scale (exits, staggers, the setup guide) are named here so feature code never
+ * writes a raw duration.
+ */
+
+@theme static {
+  /* Recipe durations measured in the bundle and on the canvas motion sheet */
+  --duration-hover: 0.1s;
+  --duration-collapse: 0.11s;
+  --duration-exit: 0.12s;
+  --duration-tooltip-in: 0.14s;
+  --duration-crossfade-in: 0.16s;
+  --duration-sheet-exit-fade: 0.192s;
+  --duration-waiting-in: 0.2s;
+  --duration-halo: 0.22s;
+  --duration-sheet-exit: 0.24s;
+  --duration-spotlight: 0.32s;
+  --duration-ripple: 1.1s;
+
+  /* Staggers and hover-intent delays */
+  --delay-stagger: 40ms;
+  --delay-stagger-2: 50ms;
+  --delay-stagger-3: 60ms;
+  --delay-waiting-in: 60ms;
+  --delay-intro-step: 70ms;
+  --delay-reveal: 0.11s;
+  --delay-hover-intent: 0.12s;
+  --delay-fast: 0.15s;
+  --delay-ripple: 0.2s;
+  --delay-preview: 0.25s;
+  --delay-status: 0.4s;
+
+  /* Extra curves used by single effects */
+  --ease-pulse: cubic-bezier(0.4, 0, 0.6, 1);
+  --ease-shimmer-lit: cubic-bezier(0.33, 0.67, 0.67, 1);
+  --ease-shimmer-surface: steps(30, end);
+}
+
+@theme static inline {
+  --animate-spin: spin 1s linear infinite;
+  --animate-pulse: pulse 2s var(--ease-pulse) infinite;
+  --animate-skeleton-pulse: skeleton-pulse 2.4s ease-in-out infinite;
+  --animate-tooltip-in: fade-in var(--duration-tooltip-in) var(--ease-out);
+  --animate-tooltip-out: fade-out var(--duration-hover) var(--ease-out) both;
+  --animate-crossfade-in: fade-in var(--duration-crossfade-in) var(--ease-out);
+  --animate-crossfade-out: fade-out var(--duration-hover) var(--ease-out) both;
+  --animate-text-shimmer: text-shimmer-sweep 2s linear infinite;
+  --animate-shimmer-sweep: shimmer-sweep 2s linear infinite;
+  --animate-shimmer-surface: shimmer-surface-sweep 2s
+    var(--ease-shimmer-surface) infinite;
+  --animate-setup-guide-ripple: setup-guide-ripple var(--duration-ripple)
+    var(--ease-out-quint) var(--delay-ripple) 1 both;
+}
+
+/* duration-fast, duration-exit, delay-stagger, ... (Capy's duration utilities) */
+@utility duration-* {
+  --tw-duration: --value(--duration-*);
+  transition-duration: --value(--duration-*);
+}
+
+@utility delay-* {
+  transition-delay: --value(--delay-*);
+}
+
+@property --shimmer-lit {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --_scroll-fade-top {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --_scroll-fade-bottom {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --_scroll-fade-left {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --_scroll-fade-right {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --_mask-fade-right {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --clamp-fade {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --fabric-unmask {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+/* Core */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes skeleton-pulse {
+  0%,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Shimmer and progress */
+
+@keyframes text-shimmer-sweep {
+  0% {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(50%);
+  }
+}
+
+@keyframes shimmer-surface-sweep {
+  0% {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes setup-guide-ripple {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--ring) 45%, transparent);
+  }
+  to {
+    box-shadow: 0 0 0 14px color-mix(in oklch, var(--ring) 0%, transparent);
+  }
+}
+
+/* Scroll-driven edge fades (animation-timeline: scroll()) */
+
+@keyframes _scroll-divider-t {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes _scroll-fade-y {
+  0% {
+    --_scroll-fade-top: 0px;
+    --_scroll-fade-bottom: var(--scroll-fade-ramp, 32px);
+  }
+  1% {
+    --_scroll-fade-top: var(--scroll-fade-ramp, 32px);
+  }
+  99% {
+    --_scroll-fade-bottom: var(--scroll-fade-ramp, 32px);
+  }
+  to {
+    --_scroll-fade-top: var(--scroll-fade-ramp, 32px);
+    --_scroll-fade-bottom: 0px;
+  }
+}
+
+@keyframes _scroll-fade-t {
+  0% {
+    --_scroll-fade-top: 0px;
+  }
+  1% {
+    --_scroll-fade-top: var(--scroll-fade-ramp, 32px);
+  }
+  to {
+    --_scroll-fade-top: var(--scroll-fade-ramp, 32px);
+  }
+}
+
+@keyframes _scroll-fade-b {
+  0% {
+    --_scroll-fade-bottom: var(--scroll-fade-ramp, 32px);
+  }
+  99% {
+    --_scroll-fade-bottom: var(--scroll-fade-ramp, 32px);
+  }
+  to {
+    --_scroll-fade-bottom: 0px;
+  }
+}
+
+@keyframes _scroll-fade-x {
+  0% {
+    --_scroll-fade-left: 0px;
+    --_scroll-fade-right: var(--scroll-fade-ramp, 32px);
+  }
+  1% {
+    --_scroll-fade-left: var(--scroll-fade-ramp, 32px);
+  }
+  99% {
+    --_scroll-fade-right: var(--scroll-fade-ramp, 32px);
+  }
+  to {
+    --_scroll-fade-left: var(--scroll-fade-ramp, 32px);
+    --_scroll-fade-right: 0px;
+  }
+}
+
+@keyframes _scroll-fade-l {
+  0% {
+    --_scroll-fade-left: 0px;
+  }
+  1% {
+    --_scroll-fade-left: var(--scroll-fade-ramp, 32px);
+  }
+  to {
+    --_scroll-fade-left: var(--scroll-fade-ramp, 32px);
+  }
+}
+
+@keyframes _scroll-fade-r {
+  0% {
+    --_scroll-fade-right: var(--scroll-fade-ramp, 32px);
+  }
+  99% {
+    --_scroll-fade-right: var(--scroll-fade-ramp, 32px);
+  }
+  to {
+    --_scroll-fade-right: 0px;
+  }
+}
+
+@keyframes _mask-fade-r {
+  0% {
+    --_mask-fade-right: var(--mask-fade-ramp, 16px);
+  }
+  99% {
+    --_mask-fade-right: var(--mask-fade-ramp, 16px);
+  }
+  to {
+    --_mask-fade-right: 0px;
+  }
+}
+
+/* Terminal cursor */
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    background: var(--term-app-cursor, var(--term-cursor));
+    color: var(--term-app-bg, var(--term-bg));
+  }
+  50% {
+    background: var(--term-cell-bg, transparent);
+    color: var(--term-cell-fg, inherit);
+  }
+}
+
+@keyframes cursor-line-blink {
+  0%,
+  100% {
+    box-shadow: var(--term-cursor-shadow);
+  }
+  50% {
+    box-shadow: none;
+  }
+}
+
+/* Toasts (sonner) */
+
+@keyframes sonner-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes sonner-fade-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes sonner-spin {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.15;
+  }
+}
+
+@keyframes swipe-out-left {
+  0% {
+    transform: var(--y) translateX(var(--swipe-amount-x));
+    opacity: 1;
+  }
+  100% {
+    transform: var(--y) translateX(calc(var(--swipe-amount-x) - 100%));
+    opacity: 0;
+  }
+}
+
+@keyframes swipe-out-right {
+  0% {
+    transform: var(--y) translateX(var(--swipe-amount-x));
+    opacity: 1;
+  }
+  100% {
+    transform: var(--y) translateX(calc(var(--swipe-amount-x) + 100%));
+    opacity: 0;
+  }
+}
+
+@keyframes swipe-out-up {
+  0% {
+    transform: var(--y) translateY(var(--swipe-amount-y));
+    opacity: 1;
+  }
+  100% {
+    transform: var(--y) translateY(calc(var(--swipe-amount-y) - 100%));
+    opacity: 0;
+  }
+}
+
+@keyframes swipe-out-down {
+  0% {
+    transform: var(--y) translateY(var(--swipe-amount-y));
+    opacity: 1;
+  }
+  100% {
+    transform: var(--y) translateY(calc(var(--swipe-amount-y) + 100%));
+    opacity: 0;
+  }
+}

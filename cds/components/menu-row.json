@@ -1,0 +1,174 @@
+{
+  "id": "cbarenupza",
+  "name": "Menu Row",
+  "signature": "Menu Row(density: default|rich|palette = default, intent: neutral|danger = neutral, state: default|highlighted|disabled = default, icon: boolean = true, label: text, description: text, shortcut: boolean = false, meta: text, show-meta: boolean = false, checked: boolean = false) slots: icon, keys",
+  "description": "One row in a menu, select, combobox or command palette (ui/menu.tsx, cva ML). density default 28 (menus), rich (auto, min 36, two-line), palette 40 (⌘K rows, 16px icon, 8px radius). intent danger tints text and highlight. Leading icon sits in a 14px icon-muted lane; trailing shortcut is muted-fg-1.",
+  "usage": "<doop-use component=\"Menu Row\" density=\"default\" intent=\"neutral\" state=\"default\" label=\"…\"><template slot=\"icon\">…</template><template slot=\"keys\">…</template></doop-use>",
+  "instances": 44,
+  "code": {
+    "path": "packages/web/src/ui/menu.tsx",
+    "snippet": "Source file is not named in the bundle; the classes are copied from cva ML in ui/menu.tsx chunk."
+  },
+  "rev": 5,
+  "props": [
+    {
+      "name": "density",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "rich",
+        "palette"
+      ]
+    },
+    {
+      "name": "intent",
+      "type": "enum",
+      "default": "neutral",
+      "options": [
+        "neutral",
+        "danger"
+      ]
+    },
+    {
+      "name": "state",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "highlighted",
+        "disabled"
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "boolean",
+      "default": "true"
+    },
+    {
+      "name": "label",
+      "type": "text"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "shortcut",
+      "type": "boolean",
+      "default": "false"
+    },
+    {
+      "name": "meta",
+      "type": "text"
+    },
+    {
+      "name": "show-meta",
+      "type": "boolean",
+      "default": "false"
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "default": "false"
+    }
+  ],
+  "slots": [
+    {
+      "name": "icon",
+      "suggested": []
+    },
+    {
+      "name": "keys",
+      "suggested": [
+        "Kbd"
+      ]
+    }
+  ],
+  "template": "<div class=\"mr\" data-doop-part=\"dxlm\"><span class=\"ico\" data-doop-if=\"icon\" data-doop-slot=\"icon\" data-doop-part=\"pwhv\"><svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"wvon\"><path d=\"M11 4H8.8C7.11984 4 6.27976 4 5.63803 4.32698C5.07354 4.6146 4.6146 5.07354 4.32698 5.63803C4 6.27976 4 7.11984 4 8.8V15.2C4 16.8802 4 17.7202 4.32698 18.362C4.6146 18.9265 5.07354 19.3854 5.63803 19.673C6.27976 20 7.11984 20 8.8 20H15.2C16.8802 20 17.7202 20 18.362 19.673C18.9265 19.3854 19.3854 18.9265 19.673 18.362C20 17.7202 20 16.8802 20 15.2V13\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"pvlx\"></path><path d=\"M13 11V7.99998L17.5 3.49998C18.3284 2.67156 19.6716 2.67156 20.5 3.49998C21.3284 4.32841 21.3284 5.67155 20.5 6.49998L16 11H13Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"uizp\"></path></svg></span><span class=\"lb\" data-doop-part=\"uxxc\"><span data-doop-prop=\"label\" data-doop-part=\"kqup\">New thread</span><span class=\"ds\" data-doop-if=\"description\" data-doop-prop=\"description\" data-doop-part=\"mobr\">Start in this project</span></span><span class=\"tr\" data-doop-if=\"shortcut\" data-doop-part=\"xsop\"><span class=\"kg\" data-doop-slot=\"keys\" data-doop-slot-suggest=\"Kbd\" data-doop-part=\"ahku\"><kbd class=\"k\" data-doop-part=\"upli\">⌘</kbd><kbd class=\"k\" data-doop-part=\"sbhl\">N</kbd></span></span><span class=\"meta\" data-doop-if=\"show-meta\" data-doop-prop=\"meta\" data-doop-part=\"arrt\">11h</span><span class=\"chk\" data-doop-if=\"checked\" data-doop-part=\"thcn\"><svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-doop-part=\"hrey\"><path d=\"M15 9.5L10.5 15L8.5 13M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-doop-part=\"rdwc\"></path></svg></span></div>",
+  "css": ".mr {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;position:relative;display:flex;width:100%;min-width:0;cursor:pointer;align-items:center;gap:8px;border-radius:var(--radius-md);padding:0 8px;text-align:left;font-size:var(--text-sm);font-weight:var(--font-weight-normal);outline:none;user-select:none;color:var(--color-foreground)}\n.mr svg {pointer-events:none;flex-shrink:0;width:var(--spacing-icon-sm);height:var(--spacing-icon-sm)}\n.mr .ico {display:flex;width:var(--spacing-icon-sm);height:var(--spacing-icon-sm);flex-shrink:0;align-items:center;justify-content:center;color:var(--color-icon-muted)}\n.mr .lb {min-width:0;flex:1;display:flex;flex-direction:column;overflow:hidden;white-space:nowrap}\n.mr .ds {display:none;font-size:var(--text-xs);color:var(--color-muted-foreground-2)}\n.mr[data-density=\"rich\"] .ds {display:block}\n.mr .tr {margin-left:auto;display:flex;flex-shrink:0;align-items:center;gap:6px;font-size:var(--text-sm);color:var(--color-muted-foreground-1)}\n.mr .k {display:inline-flex;align-items:center;justify-content:center;height:16px;min-width:16px;border-radius:var(--radius-sm);background:var(--color-secondary);padding:0 4px;font-family:var(--font-sans);font-size:var(--text-xs);color:var(--color-muted-foreground-1)}\n.mr .chk {margin-left:auto;display:flex;color:var(--color-foreground)}\n.mr[data-density=\"default\"] {height:var(--spacing-menu-row)}\n.mr[data-density=\"rich\"] {height:auto;min-height:36px;padding-top:4px;padding-bottom:4px}\n.mr[data-density=\"palette\"] {height:var(--spacing-palette-row);gap:10px;border-radius:.5rem;padding:0 10px}\n.mr[data-density=\"palette\"] svg, .mr[data-density=\"palette\"] .ico {width:var(--spacing-icon-base);height:var(--spacing-icon-base)}\n.mr:hover, .mr[data-state=\"highlighted\"] {background:var(--menu-row-highlight,var(--color-popover-hover))}\n.mr[data-intent=\"danger\"] {color:var(--color-destructive);--menu-row-highlight:var(--color-destructive-soft)}\n.mr[data-intent=\"danger\"] .ico {color:var(--color-destructive)}\n.mr[data-state=\"disabled\"] {pointer-events:none;opacity:.5}\n.mr[data-density=\"palette\"] .tr {font-size:var(--text-xs);color:var(--color-muted-foreground-2)}\n.mr .kg {display:flex;align-items:center;gap:2px}\n.mr .meta {margin-left:auto;flex-shrink:0;min-width:32px;text-align:right;font-variant-numeric:tabular-nums;font-size:var(--text-xs);color:var(--color-muted-foreground-2)}",
+  "parts": [
+    {
+      "key": "dxlm",
+      "tag": "div",
+      "class": "mr"
+    },
+    {
+      "key": "thcn",
+      "tag": "span",
+      "class": "chk"
+    },
+    {
+      "key": "hrey",
+      "tag": "svg"
+    },
+    {
+      "key": "rdwc",
+      "tag": "path"
+    },
+    {
+      "key": "arrt",
+      "tag": "span",
+      "class": "meta",
+      "text_prop": "meta"
+    },
+    {
+      "key": "xsop",
+      "tag": "span",
+      "class": "tr"
+    },
+    {
+      "key": "ahku",
+      "tag": "span",
+      "class": "kg",
+      "slot": "keys"
+    },
+    {
+      "key": "sbhl",
+      "tag": "kbd",
+      "class": "k"
+    },
+    {
+      "key": "upli",
+      "tag": "kbd",
+      "class": "k"
+    },
+    {
+      "key": "uxxc",
+      "tag": "span",
+      "class": "lb"
+    },
+    {
+      "key": "mobr",
+      "tag": "span",
+      "class": "ds",
+      "text_prop": "description"
+    },
+    {
+      "key": "kqup",
+      "tag": "span",
+      "text_prop": "label"
+    },
+    {
+      "key": "pwhv",
+      "tag": "span",
+      "class": "ico",
+      "slot": "icon"
+    },
+    {
+      "key": "wvon",
+      "tag": "svg"
+    },
+    {
+      "key": "uizp",
+      "tag": "path"
+    },
+    {
+      "key": "pvlx",
+      "tag": "path"
+    }
+  ],
+  "main_frame_id": "aJ74y3a-Fw",
+  "main_image_url": "/i/aJ74y3a-Fw.png?scale=2",
+  "updated_at": "2026-11-17T02:53:32.931Z"
+}

@@ -13,7 +13,6 @@ import {
   type ReactElement,
   type ReactNode,
 } from "react";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { fontWeights } from "@/lib/font-weight";
 import { useShape } from "@/lib/shape-context";
@@ -346,7 +345,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     // activated by keyboard (pointer-events-none only blocks the mouse).
     const overlay = clickable && !disabled ? (
       href ? (
-        <Link
+        <a
           href={href}
           onClick={onClick}
           target={external ? "_blank" : undefined}
@@ -745,7 +744,6 @@ function CardMedia({ logo, logoAlt, icon: Icon, size = 22, className }: CardMedi
         {logos.map((src, i) => (
           <span key={i} className="inline-flex items-center gap-1.5">
             {i > 0 && <span aria-hidden className="w-2 h-px bg-border" />}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={src}
               alt={logoAlt ?? ""}
@@ -797,7 +795,6 @@ interface CardImageProps {
 function CardImage({ src, alt, className }: CardImageProps) {
   const { orientation } = useContext(CardContext);
   return (
-    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}
       alt={alt ?? ""}
@@ -977,7 +974,7 @@ function CardButton({
 
   if (href) {
     return (
-      <Link
+      <a
         href={href}
         onClick={onClick}
         target={external ? "_blank" : undefined}
@@ -986,7 +983,7 @@ function CardButton({
         style={{ fontVariationSettings: fontWeights.normal }}
       >
         {inner}
-      </Link>
+      </a>
     );
   }
 

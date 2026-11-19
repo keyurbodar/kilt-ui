@@ -1,0 +1,54 @@
+{
+  "id": "cxaoznkkfl",
+  "name": "Menu",
+  "signature": "Menu() slots: rows",
+  "description": "Menu / dropdown popup surface (ui/menu.tsx, XL = jL + KEt): popover ground, 8px radius, 0.5px border-2, shadow-overlay, p 4, min-w 128, max-h min(60dvh, available). Fill the rows slot with Menu Row, Menu Label and Menu Separator. Opens scale .97→1 + fade, 150ms ease-out-quint.",
+  "usage": "<doop-use component=\"Menu\"><template slot=\"rows\">…</template></doop-use>",
+  "instances": 2,
+  "code": {
+    "path": "packages/web/src/ui/menu.tsx"
+  },
+  "rev": 2,
+  "props": [],
+  "slots": [
+    {
+      "name": "rows",
+      "suggested": [
+        "Menu Row"
+      ]
+    }
+  ],
+  "template": "<div class=\"menu\" data-doop-slot=\"rows\" data-doop-slot-suggest=\"Menu Row\" data-doop-part=\"zctv\"><doop-use component=\"cbarenupza\" data-doop-part=\"tvoq\" shortcut=\"true\"></doop-use><doop-use component=\"cbarenupza\" data-doop-part=\"nwcz\" label=\"New Captain\"></doop-use><doop-use component=\"c6if4neitz\" data-doop-part=\"qdxk\"></doop-use><doop-use component=\"cbarenupza\" data-doop-part=\"znvi\" intent=\"danger\" label=\"Archive\"></doop-use></div>",
+  "css": ".menu {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;--sh-card:0 0 0 1px rgb(0 0 0/.3);--sh-plate:0 .5px 1px 1px rgb(0 0 0/.3);--sh-overlay:0 3px 8px rgb(0 0 0/.13),0 2px 5px rgb(0 0 0/.13),0 1px 1px rgb(0 0 0/.13);display:flex;flex-direction:column;min-width:128px;overflow:hidden;border-radius:.5rem;border:var(--spacing-hairline) solid var(--color-border-2);background:var(--color-popover);padding:4px;color:var(--color-foreground);box-shadow:var(--sh-overlay)}\n:where([data-doop-theme=\"light\"]) .menu {--sh-card:0 0 0 .5px rgb(0 0 0/.11);--sh-plate:0 1px 2px rgb(0 0 0/.05);--sh-overlay:0 6px 18px rgb(0 0 0/.03),0 3px 9px rgb(0 0 0/.04),0 1px 1px rgb(0 0 0/.05);}",
+  "parts": [
+    {
+      "key": "zctv",
+      "tag": "div",
+      "class": "menu",
+      "slot": "rows"
+    },
+    {
+      "key": "znvi",
+      "tag": "doop-use",
+      "component": "cbarenupza"
+    },
+    {
+      "key": "qdxk",
+      "tag": "doop-use",
+      "component": "c6if4neitz"
+    },
+    {
+      "key": "nwcz",
+      "tag": "doop-use",
+      "component": "cbarenupza"
+    },
+    {
+      "key": "tvoq",
+      "tag": "doop-use",
+      "component": "cbarenupza"
+    }
+  ],
+  "main_frame_id": "xuac6jIsWj",
+  "main_image_url": "/i/xuac6jIsWj.png?scale=2",
+  "updated_at": "2026-11-17T02:45:53.915Z"
+}

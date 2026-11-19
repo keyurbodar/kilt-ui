@@ -1,0 +1,84 @@
+{
+  "id": "csri92flek",
+  "name": "Badge",
+  "signature": "Badge(variant: default|ghost|filled = default, color: neutral|accent|danger|warning|success|info|purple|pink|orange|lime = neutral, size: base|sm|xs|count = base, dot: boolean = false, label: text)",
+  "description": "Pill status/count label (ui/badge.tsx, cva ICt). variant default (plate on --button), ghost (text only), filled (solid colour). color: neutral, accent, danger, warning, success, info, purple, pink, orange, lime. size base 24 / sm 20 / xs 18 / count 16 (bold 11px numbers).",
+  "usage": "<doop-use component=\"Badge\" variant=\"default\" color=\"neutral\" size=\"base\" label=\"…\"></doop-use>",
+  "instances": 46,
+  "code": {
+    "path": "packages/web/src/ui/badge.tsx"
+  },
+  "rev": 1,
+  "props": [
+    {
+      "name": "variant",
+      "type": "enum",
+      "default": "default",
+      "options": [
+        "default",
+        "ghost",
+        "filled"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "enum",
+      "default": "neutral",
+      "options": [
+        "neutral",
+        "accent",
+        "danger",
+        "warning",
+        "success",
+        "info",
+        "purple",
+        "pink",
+        "orange",
+        "lime"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "default": "base",
+      "options": [
+        "base",
+        "sm",
+        "xs",
+        "count"
+      ]
+    },
+    {
+      "name": "dot",
+      "type": "boolean",
+      "default": "false"
+    },
+    {
+      "name": "label",
+      "type": "text"
+    }
+  ],
+  "slots": [],
+  "template": "<span class=\"bdg\" data-doop-part=\"joyo\"><span data-doop-if=\"dot\" class=\"dot\" data-doop-part=\"pnhe\"></span><span data-doop-prop=\"label\" data-doop-part=\"pepc\">Open</span></span>",
+  "css": ".bdg {font-family:var(--font-sans);-webkit-font-smoothing:antialiased;letter-spacing:var(--tracking-snug);box-sizing:border-box;--sh-card:0 0 0 1px rgb(0 0 0/.3);--sh-plate:0 .5px 1px 1px rgb(0 0 0/.3);--sh-overlay:0 3px 8px rgb(0 0 0/.13),0 2px 5px rgb(0 0 0/.13),0 1px 1px rgb(0 0 0/.13);display:inline-flex;align-items:center;justify-content:center;width:fit-content;min-width:32px;border-radius:9999px;font-size:var(--text-xs);font-weight:var(--font-weight-normal);text-box-trim:trim-both;user-select:none;letter-spacing:var(--tracking-normal);--on-fill:var(--color-background)}\n:where([data-doop-theme=\"light\"]) .bdg {--sh-card:0 0 0 .5px rgb(0 0 0/.11);--sh-plate:0 1px 2px rgb(0 0 0/.05);--sh-overlay:0 6px 18px rgb(0 0 0/.03),0 3px 9px rgb(0 0 0/.04),0 1px 1px rgb(0 0 0/.05);--on-fill:var(--color-foreground)}\n.bdg .dot {width:6px;height:6px;border-radius:9999px;background:currentColor;margin-left:-2px}\n.bdg[data-variant=\"default\"] {border:var(--spacing-hairline) solid var(--color-border-2);background:var(--color-button);color:var(--intent-text,var(--color-foreground))}\n.bdg[data-variant=\"ghost\"] {background:transparent;color:var(--intent-text,var(--color-muted-foreground-1))}\n.bdg[data-variant=\"filled\"] {border:var(--spacing-hairline) solid var(--intent-border-solid,var(--color-border-2));background:var(--intent-bg,var(--color-button));color:var(--intent-text-on-bg,var(--color-foreground));box-shadow:inset 0 1px var(--intent-highlight,var(--color-highlight-top)),var(--sh-plate)}\n.bdg[data-color=\"accent\"] {--intent-text:var(--color-primary-ink);--intent-bg:var(--color-primary);--intent-text-on-bg:var(--color-primary-foreground);--intent-border-solid:color-mix(in oklch,var(--color-primary) 80%,black);--intent-highlight:oklch(1 0 0/.12)}\n.bdg[data-color=\"danger\"] {--intent-text:var(--color-destructive);--intent-bg:var(--color-destructive);--intent-text-on-bg:var(--color-destructive-foreground);--intent-border-solid:color-mix(in oklch,var(--color-destructive) 80%,black);--intent-highlight:oklch(1 0 0/.12)}\n.bdg[data-color=\"warning\"] {--intent-text:var(--color-warning-fg);--intent-bg:var(--color-warning);--intent-text-on-bg:var(--on-fill)}\n.bdg[data-color=\"success\"] {--intent-text:color-mix(in oklch,var(--color-success) 72%,white);--intent-bg:var(--color-success);--intent-text-on-bg:var(--on-fill)}\n:where([data-doop-theme=\"light\"]) .bdg[data-color=\"success\"] {--intent-text:var(--color-success)}\n.bdg[data-color=\"info\"] {--intent-text:var(--color-info);--intent-bg:var(--color-info);--intent-text-on-bg:var(--on-fill)}\n.bdg[data-color=\"purple\"] {--intent-text:var(--color-purple);--intent-bg:var(--color-purple);--intent-text-on-bg:var(--on-fill)}\n.bdg[data-color=\"pink\"] {--intent-text:var(--color-pink);--intent-bg:var(--color-pink);--intent-text-on-bg:var(--on-fill)}\n.bdg[data-color=\"orange\"] {--intent-text:var(--color-orange);--intent-bg:var(--color-orange);--intent-text-on-bg:var(--on-fill)}\n.bdg[data-color=\"lime\"] {--intent-text:var(--color-lime);--intent-bg:var(--color-lime);--intent-text-on-bg:var(--on-fill)}\n.bdg[data-size=\"base\"] {height:var(--spacing-badge-base);padding:0 8px;gap:4px}\n.bdg[data-size=\"sm\"] {height:var(--spacing-badge-sm);padding:0 6px;gap:4px}\n.bdg[data-size=\"xs\"] {height:var(--spacing-badge-xs);padding:0 6px;gap:4px}\n.bdg[data-size=\"count\"] {height:var(--spacing-badge-count);min-width:0;padding:0;font-size:var(--text-count-chip);font-weight:var(--font-weight-bold);font-variant-numeric:proportional-nums;text-box-trim:none}\n.bdg[data-variant=\"filled\"][data-size=\"count\"] {min-width:var(--spacing-badge-count);padding:0 4px}",
+  "parts": [
+    {
+      "key": "joyo",
+      "tag": "span",
+      "class": "bdg"
+    },
+    {
+      "key": "pepc",
+      "tag": "span",
+      "text_prop": "label"
+    },
+    {
+      "key": "pnhe",
+      "tag": "span",
+      "class": "dot"
+    }
+  ],
+  "main_frame_id": "H221jOfInS",
+  "main_image_url": "/i/H221jOfInS.png?scale=2",
+  "updated_at": "2026-11-17T02:45:53.135Z"
+}

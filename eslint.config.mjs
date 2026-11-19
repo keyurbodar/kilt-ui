@@ -1,6 +1,5 @@
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
-import nextPlugin from "@next/eslint-plugin-next";
 import reactHooks from "eslint-plugin-react-hooks";
 
 // Tailwind utilities reserved for the canonical-shadcn theme on /compare.
@@ -175,7 +174,6 @@ export default [
       ".claude/**",
       ".next/**",
       "dist/**",
-      "next-env.d.ts",
       "node_modules/**",
       "public/r/**",
       // Generated installs the parity test writes out to import.
@@ -196,12 +194,9 @@ export default [
     },
     plugins: {
       "@typescript-eslint": tsPlugin,
-      "@next/next": nextPlugin,
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
-      ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs["core-web-vitals"].rules,
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {
@@ -245,12 +240,28 @@ export default [
   // `{ key: _key, ...rest }` is a warning there. Registry code drops props
   // with omit() from registry/default/lib/omit.ts instead. Both rules are
   // errors here, so installs open with no warnings either and CI catches a
-  // new one. A plain <img> stays possible with a reasoned disable comment.
+  // new one.
   {
     files: ["registry/**/*.{ts,tsx}"],
     rules: {
       "@typescript-eslint/no-unused-vars": ["error", {}],
-      "@next/next/no-img-element": "error",
+    },
+  },
+  {
+    // Kilt's generated token map and the vendored Kiki app layer name Kilt's own
+    // --kilt-* roles, not the /compare shadcn theme this rule guards.
+    files: ["registry/kilt/tokens.ts", "registry/kilt/app/**/*.{ts,tsx}", "scripts/kilt/kiki-overrides/**/*.{ts,tsx}"],
+    rules: { "no-restricted-syntax": "off" },
+  },
+  {
+    // Vendored Kiki app layer: kept as upstream wrote it until it is ported to Kilt primitives.
+    files: ["registry/kilt/app/**/*.{ts,tsx}"],
+    rules: {
+      "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "^_", argsIgnorePattern: "^_", ignoreRestSiblings: true }],
+      "react-hooks/set-state-in-effect": "warn",
+      "react-hooks/refs": "warn",
+      "react-hooks/purity": "warn",
+      "react-hooks/rules-of-hooks": "warn",
     },
   },
 ];

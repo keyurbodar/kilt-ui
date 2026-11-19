@@ -13,7 +13,7 @@ import {
   type ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/lib/router";
 import { AnimatePresence, animate, motion, useReducedMotion } from "motion/react";
 import { spring } from "@/registry/default/lib/springs";
 import { Button } from "@/registry/radix/button";
@@ -46,6 +46,16 @@ import { showShortcutToast } from "@/lib/docs/settings-toast";
 import { Tooltip } from "@/registry/radix/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useBase, type Base } from "@/lib/base-context";
+import { useKiltAppearance } from "@/lib/kilt/appearance";
+import type { BackdropEffect } from "@/registry/kilt/dither";
+import { kiltThemes, type KiltThemeId } from "@/registry/kilt/themes";
+
+const KILT_EFFECTS: { value: BackdropEffect; label: string }[] = [
+  { value: "dither", label: "Dither" },
+  { value: "grain", label: "Grain" },
+  { value: "vignette", label: "Vignette" },
+  { value: "none", label: "None" },
+];
 import { StarterPromptButton } from "@/app/components/starter-install";
 import { ColorPickerPopover } from "@/registry/default/color-picker";
 import { accentHexOf, accentSwatches, useAccent } from "@/lib/docs/accent";
@@ -488,7 +498,6 @@ const AVATAR_SIZE = 20;
 function AuthorAvatar({ className }: { size?: number; className?: string }) {
   const size = AVATAR_SIZE;
   return (
-    // eslint-disable-next-line @next/next/no-img-element -- a 16px avatar, served as is
     <img
       src="/micka.png"
       alt=""
@@ -534,6 +543,7 @@ export function SettingsContent({ credit = true, inset = true }: { credit?: bool
   const { size, setSize } = useSizeContext();
   const { iconLibrary, setIconLibrary } = useIconLibrary();
   const { base, setBase } = useBase();
+  const kilt = useKiltAppearance();
   const { font, fonts, custom, setFont, browse } = useHeadingFont();
   const accent = useAccent();
   const { mode: hoverMode, setMode: setHoverMode } = useHoverModeSetting();
@@ -564,8 +574,6 @@ export function SettingsContent({ credit = true, inset = true }: { credit?: bool
     fadeInNext();
   }, [menuOpen, putOut, fadeInNext]);
 
-  const MonitorIcon = useIcon("monitor");
-  const SunIcon = useIcon("sun");
   const MoonIcon = useIcon("moon");
   const RectHorizIcon = useIcon("rectangle-horizontal");
   const CircleIcon = useIcon("circle");
@@ -575,8 +583,6 @@ export function SettingsContent({ credit = true, inset = true }: { credit?: bool
   const BaseUiIcon = useIcon("square-library");
 
   const themeOptions = [
-    { label: "System", value: "system" as Theme, icon: MonitorIcon },
-    { label: "Light", value: "light" as Theme, icon: SunIcon },
     { label: "Dark", value: "dark" as Theme, icon: MoonIcon },
   ];
 
@@ -781,6 +787,39 @@ export function SettingsContent({ credit = true, inset = true }: { credit?: bool
                   {o.label}
                 </SelectItem>
               ))}
+            </SelectContent>
+          </Select>
+        </SettingRow>
+        <SettingRow label="Kilt theme" hoverIndex={9} index={kiltThemes.findIndex((t) => t.id === kilt.theme)}>
+          <Select value={kilt.theme} onValueChange={(v) => kilt.update({ theme: v as KiltThemeId })}>
+            <SelectTrigger variant="borderless" className="min-w-0 w-auto px-2 text-site-body" />
+            <SelectContent>
+              {kiltThemes.map((t, i) => (
+                <SelectItem key={t.id} value={t.id} index={i}>
+                  {t.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </SettingRow>
+        <SettingRow label="Backdrop" hoverIndex={10} index={KILT_EFFECTS.findIndex((o) => o.value === kilt.effect)}>
+          <Select value={kilt.effect} onValueChange={(v) => kilt.update({ effect: v as BackdropEffect })}>
+            <SelectTrigger variant="borderless" className="min-w-0 w-auto px-2 text-site-body" />
+            <SelectContent>
+              {KILT_EFFECTS.map((o, i) => (
+                <SelectItem key={o.value} value={o.value} index={i}>
+                  {o.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </SettingRow>
+        <SettingRow label="Density" hoverIndex={11} index={kilt.density === "touch" ? 1 : 0}>
+          <Select value={kilt.density} onValueChange={(v) => kilt.update({ density: v as "default" | "touch" })}>
+            <SelectTrigger variant="borderless" className="min-w-0 w-auto px-2 text-site-body" />
+            <SelectContent>
+              <SelectItem value="default" index={0}>Compact</SelectItem>
+              <SelectItem value="touch" index={1}>Touch</SelectItem>
             </SelectContent>
           </Select>
         </SettingRow>

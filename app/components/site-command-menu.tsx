@@ -11,7 +11,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "@/lib/router";
 import { showSuccessToast } from "@/lib/docs/settings-toast";
 import {
   CommandMenu,

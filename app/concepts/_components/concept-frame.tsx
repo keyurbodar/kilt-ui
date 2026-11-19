@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/lib/router";
 import { type ReactNode } from "react";
 import { NavMenu } from "@/components/ui/nav-menu";
 import { NavItem } from "@/components/ui/nav-item";

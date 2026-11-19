@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from "@/lib/metadata";
 import type { ReactNode } from "react";
 
 // Hidden easter-egg page: kept out of search indexes and off the sidebar nav

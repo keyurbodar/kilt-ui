@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from "@/lib/metadata";
 
 // Concept screens are private, unfinished explorations — keep the whole
 // route group out of search indexes and crawler-followed link graphs. They're

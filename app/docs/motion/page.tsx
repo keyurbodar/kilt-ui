@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import Link from "next/link";
+import { Link } from "@/lib/router";
 import { motion, AnimatePresence, type Transition } from "motion/react";
 import { DocPage, DocSection } from "@/lib/docs/DocPage";
 import { ComponentPreview } from "@/lib/docs/ComponentPreview";
