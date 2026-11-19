@@ -1,0 +1,195 @@
+/*
+ * Layer 3: component tokens.
+ * Values Capy scopes to specific components. Components consume these instead
+ * of primitives when Capy does.
+ */
+
+@theme static {
+  --container-connections-wide: 46rem;
+  --radius-inner: 0.125rem;
+  --radius-button: 0.375rem;
+  --radius-kbd: 0.1875rem;
+  --radius-card: 0.5rem;
+  --radius-overlay: 0.5rem;
+  --radius-panel: 0.75rem;
+  --radius-composer-ground: calc(
+    var(--radius-card) +
+    var(--composer-ground-inset)
+  );
+}
+
+:root,
+[data-theme-preview] {
+  --composer-ground-inset: 0.25rem;
+  --gradient-panel-air: linear-gradient(
+    180deg in oklab,
+    var(--panel) 0%,
+    var(--bg) 100%
+  );
+  --media-box-w: 34rem;
+  --media-box-h: 22.5rem;
+  --composer-editor-tall-max-h: min(40rem, 70dvh);
+  --device-skin-shadow: 0 18px 22px #00000047;
+  --sidebar-pin-face: 48px;
+  --sidebar-pin-cell: 64px;
+  --sidebar-pin-gap-x: 0px;
+  --sidebar-pin-gap-y: 4px;
+  --sidebar-pin-label-gap: 4px;
+  --sidebar-section-gap: 12px;
+  --sidebar-section-header: 28px;
+  --icon-button-pad: 4px;
+  --sidebar-drop-line: 2px;
+  --sidebar-drop-line-gap: 2px;
+  --grid-gap-x: 24px;
+  --grid-gap-y: 32px;
+  --annotation-stroke: 1.5px;
+  --media-comment-marker-w: 3px;
+  --media-comment-marker-pending: 18px;
+  --crop-editor-h: 440px;
+  --crop-editor-scrim: 0 0 0 4000px rgba(0, 0, 0, 0.55);
+  --crop-editor-grid:
+    linear-gradient(to right, rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  /* Skullet's measured skeletons: the fills its bars draw with, held to Capy's
+     own skeleton surfaces (--secondary bars, --card-hover shimmer) so a
+     measured skeleton matches the hand-drawn placeholders it replaces. The
+     radius is Capy's `rounded` on skeleton bars. */
+  --skullet-base: var(--secondary);
+  --skullet-highlight: var(--card-hover);
+  --skullet-radius: var(--spacing);
+  /* Geometry recipes: the row and column scale src/tokens/recipes.css reads. */
+  --menu-w: 208px;
+  /* A message's More menu: Capy's 224px on both the hover rail and the phone. */
+  --menu-w-message: 224px;
+  /* A linked thread's actions menu: Capy's 192px, room for its two rows. */
+  --menu-w-thread-actions: 192px;
+  /* A trigger's filter chip, and the wider one its pattern filter uses. */
+  --filter-chip-w: 224px;
+  --filter-pattern-w: 288px;
+  /* A pull's preview menu: Capy's 384px, room for a service name over its host. */
+  --menu-w-previews: 384px;
+  /* The state mark on a preview chip's globe: the dot, its ring, and how far
+     past the corner it sits. */
+  --status-dot: 8px;
+  --status-dot-ring: 1px;
+  --status-dot-offset: 4px;
+  --status-dot-stroke: 1.5px;
+  /* A message's action row: Copy and More, in flow under the body on a phone. */
+  --message-actions-gap: 2px;
+  --message-actions-pt: 4px;
+  --message-actions-indent: 6px;
+  --row-h-dense: 28px;
+  --row-h-compact: 32px;
+  --row-h: 36px;
+  --row-h-comfy: 40px;
+  --row-h-page: 44px;
+  --row-h-roomy: 48px;
+  --row-h-directory: 50px;
+  --row-indent: 32px;
+  --row-px-tight: 8px;
+  --row-px: 12px;
+  --row-px-loose: 16px;
+  --row-gap-tight: 4px;
+  --row-gap: 8px;
+  --row-align: center;
+  --row-radius: 4px;
+  --col-align-text: start;
+  --col-align-num: end;
+  --col-code-w: max-content;
+  --col-age-w: 24px;
+  --col-icon-w: 16px;
+  --col-avatar-w: 16px;
+  --list-gap: 4px;
+  --list-px: 8px;
+  --list-py: 4px;
+  --badge-gap: 4px;
+  --badge-h: var(--h-badge-base);
+  --badge-min-w: 32px;
+  --badge-px: 8px;
+  --badge-px-sm: 6px;
+  --badge-px-tight: 2px;
+  --badge-icon-overlap: 0px;
+  --dialog-w: 32rem;
+  --dialog-px: 20px;
+  --dialog-pt: 16px;
+  --dialog-pb: 16px;
+  --dialog-py: 16px;
+  --dialog-py-relaxed: 20px;
+  --dialog-gap: 12px;
+  --dialog-gap-relaxed: 16px;
+  --dialog-header-gap: 12px;
+  --dialog-footer-gap: 8px;
+  --menu-row-h: var(--h-menu-row);
+  --menu-row-px: 8px;
+  --menu-row-gap: 8px;
+  --menu-row-icon: var(--icon-sm);
+  --palette-row-icon: var(--icon-base);
+  --palette-row-h: var(--h-palette-row);
+  --palette-row-gap: 10px;
+  --palette-row-px: 10px;
+  --shell-h: 100%;
+  --sidebar-w: 240px;
+  --sidebar-w-min: 240px;
+  --sidebar-w-max: 240px;
+  --sidebar-gap: 0px;
+  --pane-gap: 0px;
+  --pane-header-h: var(--h-control-base);
+  --pane-header-px: 16px;
+  --issue-tree-line-inset: 15px;
+  --issue-tree-line-checked-inset: 39px;
+  --markdown-editor-toolbar-offset: 8px;
+  --markdown-editor-toolbar-half-width: 140px;
+  --markdown-editor-toolbar-clearance: 52px;
+  --markdown-editor-badge-inset: 4px;
+  --markdown-editor-table-menu-lift: 26px;
+  /* Pulls list: measured from the widest `#N` code cell at runtime. */
+  --pull-code-width: 2.25rem;
+}
+
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --shell-top: 0px;
+}
+
+:root[data-tab-strip] {
+  --shell-top: 2.5rem;
+}
+
+/* Thread takeovers (B8, AMA-57): composer takeover card ring and request viewport. */
+:root,
+[data-theme-preview] {
+  --takeover-ring-radius: calc(var(--radius-card) + 1px);
+  --request-viewport-h: min(48dvh, 380px);
+  --request-viewport-h-touch: min(40dvh, 260px);
+}
+
+/* Emoji groups: the contain-intrinsic-size placeholder for a grid that has not been measured yet. */
+:root,
+[data-theme-preview] {
+  --contain-intrinsic-emoji-group: 220px;
+}
+
+/*
+ * Right panel: Capy's default pane width (520px), which the thread's chat
+ * column and the pane's own clamp both read. A resizable
+ * `[data-slot=right-panel-group]` overrides it inline with the user's width.
+ */
+:root,
+[data-theme-preview] {
+  --right-panel-width: 32.5rem;
+}
+
+/* Crew asks (T07): footer width at which the trigger fits its full label. */
+@theme static {
+  --container-crew-asks-footer: 34rem;
+}
+
+/*
+ * File tree: Capy paints an indent guide one physical pixel wide, which is
+ * deliberately not the 0.5px hairline, so the guide reads its own token.
+ */
+:root,
+[data-theme-preview] {
+  --file-tree-indent-guide-w: 1px;
+}
