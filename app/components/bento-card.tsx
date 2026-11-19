@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/lib/router";
 import { type ReactNode, type CSSProperties, createContext } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/registry/default/lib/utils";

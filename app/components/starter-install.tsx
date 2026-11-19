@@ -1,6 +1,5 @@
 "use client";
 
-import { track } from "@vercel/analytics";
 import type { ButtonSize } from "@/registry/radix/button";
 import { CopyPromptButton } from "@/lib/docs/copy-prompt-button";
 import { useHoverMode } from "@/lib/docs/hover-mode";
@@ -42,7 +41,6 @@ export function StarterPromptButton({ size, className }: { size?: ButtonSize; cl
       prompt={buildStarterPrompt(settings, { font, custom, weight }, customAccent, hover)}
       size={size}
       className={className}
-      onCopy={() => track("Starter prompt copied", { base: settings.base, headingFont: font, hover })}
     />
   );
 }

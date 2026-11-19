@@ -3,8 +3,8 @@
 import { inKeyboardScope } from "@/lib/keyboard-scope";
 import { CarouselDots } from "@/registry/default/carousel-dots";
 import { Suspense, useState, useEffect, useLayoutEffect, useRef, useCallback, type ReactNode } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
+import { useRouter, useSearchParams } from "@/lib/router";
+import { Link } from "@/lib/router";
 import { motion } from "motion/react";
 import { componentList } from "@/lib/docs/components";
 import { useReleaseMarks } from "@/lib/changelog/marks";

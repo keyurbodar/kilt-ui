@@ -1,5 +1,5 @@
 /** Where the Kilt registry is served (Cloudflare Workers). */
-export const KILT_SITE_URL = process.env.NEXT_PUBLIC_KILT_SITE_URL ?? "https://kilt-ui.keyurbodar18.workers.dev";
+export const KILT_SITE_URL = import.meta.env.VITE_KILT_SITE_URL ?? "https://kilt-ui.keyurbodar18.workers.dev";
 
 export const kiltInstallUrl = (slug: string) => `${KILT_SITE_URL}/r/kilt-${slug}.json`;
 

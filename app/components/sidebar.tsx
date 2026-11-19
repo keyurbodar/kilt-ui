@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/lib/router";
 import { fontWeights } from "@/lib/font-weight";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/lib/router";
 import {
   Sidebar,
   SidebarContent,

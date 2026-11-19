@@ -13,7 +13,7 @@ import {
   type ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/lib/router";
 import { AnimatePresence, animate, motion, useReducedMotion } from "motion/react";
 import { spring } from "@/registry/default/lib/springs";
 import { Button } from "@/registry/radix/button";

@@ -1,5 +1,4 @@
-import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
-import { tmpdir } from "node:os";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import { parseRelease, releaseEntries, type Inline } from "@/lib/changelog/parse";
@@ -285,11 +284,7 @@ describe("Copy migration prompt", () => {
 
 describe("latestMarks", () => {
   const release = (month: string, body: string) => `---\nmonth: ${month}\ntitle: A month\n---\n\n${body}`;
-  const dirWith = (files: Record<string, string>) => {
-    const dir = mkdtempSync(join(tmpdir(), "ff-marks-"));
-    for (const [name, text] of Object.entries(files)) writeFileSync(join(dir, name), text);
-    return dir;
-  };
+  const dirWith = (files: Record<string, string>) => files;
 
   it("marks the latest release's Updated and Breaking docs pages, never its New ones", () => {
     const dir = dirWith({
@@ -313,7 +308,6 @@ describe("latestMarks", () => {
     try {
       expect(latestMarks(dir, [])).toEqual({ updated: ["select"], ahead: [] });
     } finally {
-      rmSync(dir, { recursive: true, force: true });
     }
   });
 
@@ -329,8 +323,6 @@ describe("latestMarks", () => {
       expect(latestMarks(before, ahead)).toEqual({ updated: [], ahead: ["banner"] });
       expect(latestMarks(after, ahead)).toEqual({ updated: [], ahead: [] });
     } finally {
-      rmSync(before, { recursive: true, force: true });
-      rmSync(after, { recursive: true, force: true });
     }
   });
 
@@ -356,7 +348,6 @@ describe("latestMarks", () => {
       ];
       expect(recentNew(dir, "2026-10", ahead).sort()).toEqual(["banner", "field"]);
     } finally {
-      rmSync(dir, { recursive: true, force: true });
     }
   });
 
@@ -368,7 +359,6 @@ describe("latestMarks", () => {
       expect(error).toHaveBeenCalledOnce();
     } finally {
       error.mockRestore();
-      rmSync(dir, { recursive: true, force: true });
     }
   });
 });

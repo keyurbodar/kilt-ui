@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from "@/lib/metadata";
 import "@/registry/kilt/tokens.css";
 import "@/registry/kilt/themes.css";
 import "./fonts.css";

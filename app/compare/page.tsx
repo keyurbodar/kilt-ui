@@ -2,8 +2,8 @@
 
 import { inKeyboardScope } from "@/lib/keyboard-scope";
 import { Suspense, useState, useEffect, useRef, useCallback } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
+import { useRouter, useSearchParams } from "@/lib/router";
+import { Link } from "@/lib/router";
 import { componentList } from "@/lib/docs/components";
 import { useReleaseMarks } from "@/lib/changelog/marks";
 import { previewMap } from "@/app/components/bento-previews";

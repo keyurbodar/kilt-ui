@@ -1,9 +1,8 @@
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import type { ChangeEntry } from "@/lib/changelog/parse";
 import { systemList } from "@/lib/docs/components";
+import registryFiles from "@/lib/registry-files.gen.json";
 
-// Server only: what an entry installs, read from the repo at build time, so
+// What an entry installs, from the registry files the build wrote, so
 // /changelog.md can tell an agent exactly what to re-install.
 
 export type EntryInstall =
@@ -17,8 +16,8 @@ export type EntryInstall =
    *  over several named components. */
   | { kind: "none" };
 
-const ROOT = process.cwd();
-const has = (...parts: string[]) => existsSync(join(ROOT, ...parts));
+const ITEMS = new Set(registryFiles.items);
+const BASE_ITEMS = new Set(registryFiles.base);
 
 /** The registry name a doc page installs: its system entry's `installSlug`
  *  when it has one (Surfaces installs `elevated`), else the slug itself. The
@@ -28,8 +27,8 @@ function installNameForPage(slug: string): string {
 }
 
 const item = (name: string): EntryInstall =>
-  has("public", "r", `${name}.json`)
-    ? { kind: "item", name, base: has("public", "r", "base", `${name}.json`) }
+  ITEMS.has(name)
+    ? { kind: "item", name, base: BASE_ITEMS.has(name) }
     : { kind: "none" };
 
 export function entryInstall(entry: ChangeEntry): EntryInstall {

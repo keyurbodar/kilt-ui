@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from "@/lib/metadata";
 import { MARKDOWN_PAGES } from "@/lib/docs/markdown";
 import { UNLISTED_SLUGS } from "@/lib/docs/components";
 import { plainDescription } from "@/lib/docs/install-brief";

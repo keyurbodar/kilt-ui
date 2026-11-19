@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/lib/router";
 import { kiltCatalog } from "@/lib/kilt/catalog.gen";
 import { KILT_SITE_URL } from "@/lib/kilt/site";
 

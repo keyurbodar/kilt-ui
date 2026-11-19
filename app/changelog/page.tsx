@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from "@/lib/metadata";
 import { entryInstall } from "@/lib/changelog/install";
 import { loadReleases } from "@/lib/changelog/load";
 import { highlightDiff } from "@/lib/docs/highlight";

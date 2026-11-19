@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState, createElement, type CSSProperties, type ReactNode } from "react";
-import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { spring } from "@/registry/default/lib/springs";
 import {
@@ -1419,7 +1418,7 @@ export function SidebarPlayground({ children }: PlaygroundProps) {
                   <SidebarUserFooter
                     name="Micka Touillaud"
                     avatar={
-                      <Image
+                      <img
                         src="/micka.png"
                         alt=""
                         width={20}

@@ -1,4 +1,3 @@
-import { NextResponse } from "next/server";
 import { decodePreset } from "@/lib/preset/components";
 import { PRESET_GENERATORS } from "@/lib/preset/generators";
 // Same flavor rules as the postbuild's resolver — a parity test keeps the
@@ -17,15 +16,11 @@ const CACHE = "public, max-age=31536000, immutable";
 /** GET handler for /r/preset/[code], and with standard hover for its twin
  *  /r/standard/preset/[code], whose dependencies install from r/standard/. */
 export function presetRoute(hover: "fluid" | "standard" = "fluid") {
-  return async function GET(
-    _req: Request,
-    { params }: { params: Promise<{ code: string }> }
-  ) {
-    const { code: raw } = await params;
+  return function GET(raw: string): Response {
     const code = raw.replace(/\.json$/, "");
     const decoded = decodePreset(code);
     if (!decoded.ok) {
-      return NextResponse.json(
+      return Response.json(
         { error: decoded.error },
         { status: 400, headers: { "Cache-Control": "no-store" } }
       );
@@ -33,7 +28,7 @@ export function presetRoute(hover: "fluid" | "standard" = "fluid") {
     const { def, preset } = decoded;
     const generator = PRESET_GENERATORS[def.tag];
     if (!def.installable || !generator) {
-      return NextResponse.json(
+      return Response.json(
         {
           error: `${def.label} presets are share-only — open ${SITE}${def.docsPath}?preset=${code} instead.`,
         },
@@ -56,7 +51,7 @@ export function presetRoute(hover: "fluid" | "standard" = "fluid") {
         .map((dep) => (hover === "standard" ? standardHoverUrl(dep, closure) : dep)),
       files: generator.files(preset),
     };
-    return NextResponse.json(item, {
+    return Response.json(item, {
       headers: { "Cache-Control": CACHE, "Content-Type": "application/json" },
     });
   };

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/lib/router";
 import { fontWeights } from "@/registry/default/lib/font-weight";
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";

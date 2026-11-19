@@ -1,6 +1,5 @@
 "use client";
 
-import { track } from "@vercel/analytics";
 import { DocPage, DocSection } from "@/lib/docs/DocPage";
 import { SKILL_INSTALL_PROMPT } from "@/lib/docs/install-brief";
 import { SkillExamples } from "./hero";
@@ -20,7 +19,6 @@ export default function FluidSkillDoc() {
       slug="skill"
       installNote="One prompt for your coding agent: it installs the skill, then audits your project with it."
       installPrompt={SKILL_INSTALL_PROMPT}
-      onInstallCopy={() => track("Skill install copied", { method: "prompt" })}
       description="Gives your coding agent the components and the craft behind them, then puts both to work on your project."
     >
       <DocSection title="What it does">

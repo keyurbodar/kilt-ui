@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/lib/router";
 import { CopyPromptButton } from "@/lib/docs/copy-prompt-button";
 import type { KiltCatalogEntry } from "@/lib/kilt/catalog.gen";
 import { kiltDemos } from "@/lib/kilt/demos";

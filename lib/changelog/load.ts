@@ -1,22 +1,23 @@
-import { readdirSync, readFileSync } from "node:fs";
-import { join } from "node:path";
 import { ChangelogFormatError, parseRelease, releaseEntries, type ChangeKind, type Release } from "@/lib/changelog/parse";
 import type { ReleaseMarks } from "@/lib/changelog/marks";
 
-// Server only: reads content/changelog/, for the page and /changelog.md at
-// build, and for the root layout's New and Updated markers.
-
-export const CHANGELOG_DIR = join(process.cwd(), "content", "changelog");
+/** Every release file under content/changelog/, by file name, bundled at build. */
+export type ChangelogFiles = Record<string, string>;
+export const CHANGELOG_FILES: ChangelogFiles = Object.fromEntries(
+  Object.entries(import.meta.glob<string>("/content/changelog/*.md", { query: "?raw", import: "default", eager: true })).map(
+    ([path, text]) => [path.split("/").pop()!, text]
+  )
+);
 const FILE = /^(\d{4}-\d{2})\.md$/;
 
 /** Every release, newest month first. Throws on a malformed file. */
-export function loadReleases(dir = CHANGELOG_DIR): Release[] {
-  return readdirSync(dir)
+export function loadReleases(files: ChangelogFiles = CHANGELOG_FILES): Release[] {
+  return Object.keys(files)
     .filter((name) => FILE.test(name))
     .sort()
     .reverse()
     .map((name) => {
-      const release = parseRelease(readFileSync(join(dir, name), "utf8"), `content/changelog/${name}`);
+      const release = parseRelease(files[name]!, `content/changelog/${name}`);
       if (release.month !== FILE.exec(name)![1]) {
         throw new ChangelogFormatError(`content/changelog/${name}`, 2, "`month` does not match the file name");
       }
@@ -52,11 +53,11 @@ let marksCache: ReleaseMarks | null = null;
  *  landed this month. Read once per server in production, where release
  *  files only change with a deploy; every request in development, so an
  *  edited release shows. */
-export function latestMarks(dir = CHANGELOG_DIR, ahead = AHEAD_OF_RELEASE): ReleaseMarks {
-  if (marksCache && process.env.NODE_ENV === "production") return marksCache;
+export function latestMarks(files: ChangelogFiles = CHANGELOG_FILES, ahead = AHEAD_OF_RELEASE): ReleaseMarks {
+  if (marksCache && import.meta.env.PROD) return marksCache;
   let marks: ReleaseMarks = { updated: [], ahead: [] };
   try {
-    const latest = loadReleases(dir)[0];
+    const latest = loadReleases(files)[0];
     const pending = ahead.filter((a) => !latest || a.month > latest.month).flatMap((a) => a.slugs);
     if (latest) {
       const slugs = (kinds: ChangeKind[]) =>
@@ -87,14 +88,14 @@ let recentCache: string[] | null = null;
  *  dots these, so a page stays marked past its own release; the New badges
  *  elsewhere keep the narrower latestMarks().ahead. */
 export function recentNew(
-  dir = CHANGELOG_DIR,
+  files: ChangelogFiles = CHANGELOG_FILES,
   since = NEW_SINCE,
   ahead = AHEAD_OF_RELEASE
 ): string[] {
-  if (recentCache && process.env.NODE_ENV === "production") return recentCache;
+  if (recentCache && import.meta.env.PROD) return recentCache;
   const slugs = new Set<string>();
   try {
-    for (const release of loadReleases(dir)) {
+    for (const release of loadReleases(files)) {
       if (release.month < since) continue;
       for (const e of releaseEntries(release)) {
         const slug = e.kind === "new" && e.href ? /^\/docs\/([^/#?]+)/.exec(e.href)?.[1] : undefined;

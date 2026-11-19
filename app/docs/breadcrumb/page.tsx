@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, useRef, useState, type MouseEvent } from "react";
-import Link from "next/link";
+import { Link } from "@/lib/router";
 import { Home, Folder, Globe, Palette, FileText } from "lucide-react";
 import {
   Breadcrumb,

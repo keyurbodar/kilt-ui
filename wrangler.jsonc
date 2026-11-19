@@ -1,0 +1,38 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kilt-ui",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    // The Worker answers these first: API, generated registry items,
+    // Markdown variants of pages, redirects, robots and sitemap. Everything
+    // else is a static file or the SPA shell.
+    "run_worker_first": [
+      "/api/*",
+      "/r/preset/*",
+      "/r/starter/*",
+      "/r/setup/*",
+      "/r/standard/preset/*",
+      "/r/standard/starter/*",
+      "/r/standard/setup/*",
+      "/r/use-proximity-hover.json",
+      "/r/tabs-subtle.json",
+      "/r/base/tabs-subtle.json",
+      "/r/radix/tabs-subtle.json",
+      "/docs",
+      "/docs/*",
+      "/docs.md",
+      "/changelog",
+      "/changelog.md",
+      "/llms.txt",
+      "/llms-full.txt",
+      "/skill",
+      "/robots.txt",
+      "/sitemap.xml"
+    ]
+  },
+  "observability": { "enabled": true }
+}

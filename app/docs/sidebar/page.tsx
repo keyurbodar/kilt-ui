@@ -2,7 +2,6 @@
 
 import { Fragment, createElement, useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { createPortal } from "react-dom";
-import Image from "next/image";
 import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react";
 import { spring } from "@/lib/springs";
 import {
@@ -337,7 +336,7 @@ function DemoFooterUser() {
                     axis (24px in); the chevron rides a 24px slot pulled
                     -mr-0.5 onto the trailing action axis — same idiom as the
                     nesting rows' chevron box. */}
-                <Image
+                <img
                   src="/micka.png"
                   alt=""
                   width={20}
