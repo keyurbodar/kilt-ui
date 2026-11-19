@@ -89,6 +89,27 @@ const KIKO = {
     if (kLight.has(k)) light.set(kilt, kLight.get(k));
   }
 }
+// app.devin.ai's semantic palette (scripts/kilt/vendor/devin/palette.json,
+// rgb channel triplets) sits over kiko: it remaps Kilt's roles and adds every
+// Devin colour as --kilt-color-<name>.
+const DEVIN = {
+  "color-background": "bg-page", "color-panel": "bg-wash", "color-popover": "bg-elevated",
+  "color-card": "tint-tertiary", "color-secondary": "tint-secondary", "color-foreground": "text-primary",
+  "color-muted-foreground-1": "text-secondary", "color-muted-foreground-3": "text-disabled",
+  "color-border-1": "border-primary", "color-border-2": "border-secondary", "color-card-hairline": "border-secondary",
+  "color-primary": "bg-accent-primary", "color-destructive": "bg-destructive", "color-text-link": "text-link",
+  "color-success": "text-green", "color-warning": "text-orange",
+};
+{
+  const devin = JSON.parse(readFileSync(new URL("./vendor/devin/palette.json", import.meta.url), "utf8"));
+  const rgb = (value) => (/^[\d. ]+(\/ [\d.]+)?$/.test(value) ? `rgb(${value})` : null);
+  const put = (kilt, name) => {
+    const [d, l] = [rgb(devin.dark[name] ?? ""), rgb(devin.light[name] ?? "")];
+    if (d && l) { dark.set(kilt, d); light.set(kilt, l); }
+  };
+  for (const name of Object.keys(devin.dark)) put(`color-${name}`, name);
+  for (const [kilt, name] of Object.entries(DEVIN)) put(kilt, name);
+}
 const names = [...dark.keys()];
 const v = (n) => `--${PREFIX}-${n}`;
 // Bare zeros ("0em") need a unit for a registered <length>; Doop already
