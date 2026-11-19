@@ -1,6 +1,7 @@
 import { Composer } from "@/registry/kilt/app/components/composer";
 import { DiffCards } from "@/registry/kilt/app/components/diff-cards";
 import { ModelPicker } from "@/registry/kilt/app/components/model-picker";
+import { sampleCommands, sampleSources } from "@/registry/kilt/app/fixtures";
 import type { Metadata } from "@/lib/metadata";
 
 export const metadata: Metadata = { title: "System — Kilt" };
@@ -17,7 +18,12 @@ export default function KiltSystemPage() {
         </p>
       </header>
       <section className="kilt-app dark flex flex-col gap-4 rounded-xl bg-background p-6 text-foreground">
-        <Composer onSubmit={() => true} leftControls={<ModelPicker compact />} />
+        <Composer
+          onSubmit={() => true}
+          commands={sampleCommands}
+          sources={sampleSources}
+          leftControls={<ModelPicker compact />}
+        />
       </section>
       <section className="kilt-app dark rounded-xl bg-background p-6 text-foreground">
         <DiffCards />
